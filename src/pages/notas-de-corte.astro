@@ -1,0 +1,102 @@
+---
+// src/pages/notas-de-corte.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import gradosData from '../data/grados.json';
+
+const gradosOrdenados = [...gradosData].sort((a, b) => b.notaCorte2026 - a.notaCorte2026);
+const gradosJsonString = JSON.stringify(gradosOrdenados);
+---
+
+<MainLayout 
+  title="Notas de Corte Oficiales 2026 | UniMatchES"
+  description="Consulta y busca entre todas las notas de corte actualizadas para titulaciones universitarias en España."
+>
+  <div class="space-y-8 py-6 max-w-4xl mx-auto">
+    
+    <div class="space-y-2">
+      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        Notas de Corte <span class="text-amber-400">2026</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400">
+        Buscador rápido de titulaciones ordenadas de mayor a menor nota de acceso.
+      </p>
+    </div>
+
+    <!-- BARRA DE BÚSQUEDA RÁPIDA -->
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 backdrop-blur-sm">
+      <input 
+        type="text" 
+        id="searchNotasInput" 
+        placeholder="🔍 Buscar por nombre de grado o universidad..." 
+        oninput="filtrarNotasCorte()"
+        class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-3 text-xs text-white outline-none transition"
+      />
+    </div>
+
+    <!-- TABLA DE RESULTADOS -->
+    <div class="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-4 sm:p-6 backdrop-blur-xl overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+              <th class="py-3 px-4">Titulación / Universidad</th>
+              <th class="py-3 px-4">Comunidad</th>
+              <th class="py-3 px-4">Tipo</th>
+              <th class="py-3 px-4 text-right">Nota 2026</th>
+            </tr>
+          </thead>
+          <tbody id="tablaNotasBody" class="divide-y divide-slate-800/60 text-xs">
+            <!-- Renderizado dinámico por JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</MainLayout>
+
+<script define:vars={{ gradosJsonString }}>
+  const todosLosGrados = JSON.parse(gradosJsonString);
+
+  function renderTabla(grados) {
+    const tbody = document.getElementById('tablaNotasBody');
+    if (grados.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="4" class="py-8 text-center text-slate-500">No se han encontrado titulaciones.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = grados.map(g => `
+      <tr class="hover:bg-slate-800/30 transition-colors">
+        <td class="py-4 px-4">
+          <a href="/grados/${g.id}" class="font-bold text-white hover:text-amber-400 transition-colors block">
+            ${g.nombre}
+          </a>
+          <span class="text-[11px] text-slate-400">${g.universidad}</span>
+        </td>
+        <td class="py-4 px-4 text-slate-300 font-medium">${g.ciudad}</td>
+        <td class="py-4 px-4">
+          <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300">
+            ${g.tipo}
+          </span>
+        </td>
+        <td class="py-4 px-4 text-right font-mono font-bold text-amber-400 text-sm">
+          ${g.notaCorte2026.toFixed(3)}
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function filtrarNotasCorte() {
+    const texto = document.getElementById('searchNotasInput').value.toLowerCase().trim();
+    const filtrados = todosLosGrados.filter(g => 
+      g.nombre.toLowerCase().includes(texto) || 
+      g.universidad.toLowerCase().includes(texto) || 
+      g.ciudad.toLowerCase().includes(texto)
+    );
+    renderTabla(filtrados);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderTabla(todosLosGrados);
+  });
+</script>

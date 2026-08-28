@@ -1,0 +1,103 @@
+---
+// src/pages/universidades.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import gradosData from '../data/grados.json';
+
+const universidadesMap = new Map();
+gradosData.forEach(g => {
+  if (!universidadesMap.has(g.universidadSlug)) {
+    universidadesMap.set(g.universidadSlug, {
+      nombre: g.universidad,
+      comunidad: g.comunidad,
+      tipo: g.tipo,
+      carrerasCount: 1
+    });
+  } else {
+    const item = universidadesMap.get(g.universidadSlug);
+    item.carrerasCount += 1;
+  }
+});
+
+const universidades = Array.from(universidadesMap.values());
+const universidadesJsonString = JSON.stringify(universidades);
+---
+
+<MainLayout 
+  title="Universidades del Catálogo | UniMatchES"
+  description="Busca y consulta las universidades públicas, privadas y online disponibles en nuestro sistema."
+>
+  <div class="space-y-8 py-6 max-w-4xl mx-auto">
+    
+    <div class="space-y-2">
+      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        Universidades en el <span class="text-amber-400">Catálogo</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400">
+        Busca instituciones académicas por nombre o comunidad autónoma.
+      </p>
+    </div>
+
+    <!-- BARRA DE BÚSQUEDA RÁPIDA -->
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 backdrop-blur-sm">
+      <input 
+        type="text" 
+        id="searchUniInput" 
+        placeholder="🔍 Buscar universidad o comunidad autónoma..." 
+        oninput="filtrarUniversidades()"
+        class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-3 text-xs text-white outline-none transition"
+      />
+    </div>
+
+    <!-- GRID DE UNIVERSIDADES -->
+    <div id="universidadesContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- Renderizado dinámico por JS -->
+    </div>
+
+  </div>
+</MainLayout>
+
+<script define:vars={{ universidadesJsonString }}>
+  const todasLasUniversidades = JSON.parse(universidadesJsonString);
+
+  function renderUniversidades(unis) {
+    const container = document.getElementById('universidadesContainer');
+    if (unis.length === 0) {
+      container.innerHTML = `<div class="col-span-full py-8 text-center text-slate-500 text-xs">No se han encontrado universidades.</div>`;
+      return;
+    }
+
+    container.innerHTML = unis.map(uni => `
+      <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-5 space-y-3 backdrop-blur-xl flex flex-col justify-between">
+        <div class="space-y-1">
+          <div class="flex justify-between items-start gap-2">
+            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
+              ${uni.tipo}
+            </span>
+            <span class="text-xs font-mono text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-md">
+              ${uni.carrerasCount} ${uni.carrerasCount === 1 ? 'titulación' : 'titulaciones'}
+            </span>
+          </div>
+          <h2 class="text-sm font-bold text-white pt-1">
+            ${uni.nombre}
+          </h2>
+        </div>
+        <div class="pt-2 border-t border-slate-800/80 text-xs text-slate-400 font-medium">
+          📍 ${uni.comunidad}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function filtrarUniversidades() {
+    const texto = document.getElementById('searchUniInput').value.toLowerCase().trim();
+    const filtradas = todasLasUniversidades.filter(uni => 
+      uni.nombre.toLowerCase().includes(texto) || 
+      uni.comunidad.toLowerCase().includes(texto)
+    );
+    renderUniversidades(filtradas);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderUniversidades(todasLasUniversidades);
+  });
+</script>
