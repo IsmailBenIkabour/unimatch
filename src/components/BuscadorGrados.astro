@@ -2,8 +2,15 @@
 // src/components/BuscadorGrados.astro
 import gradosData from '../data/grados.json';
 
-// Extraer comunidades únicas para el selector y ordenarlas
-const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
+// Ordenar grados alfabéticamente de forma 100% segura (evita undefined)
+const gradosOrdenados = [...gradosData].sort((a, b) => {
+  const nombreA = a && a.nombre ? String(a.nombre) : '';
+  const nombreB = b && b.nombre ? String(b.nombre) : '';
+  return nombreA.localeCompare(nombreB);
+});
+
+// Extraer universidades únicas de Cataluña
+const universidades = [...new Set(gradosData.map(g => g && g.universidad).filter(Boolean))].sort();
 ---
 
 <div class="space-y-6">
@@ -27,8 +34,8 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
       <label for="maxNotaInput" class="block text-[11px] font-semibold text-slate-400">Tu Nota Máxima</label>
       <input 
         type="number" 
-        id="maxNotaInput" 
         step="0.01" 
+        id="maxNotaInput" 
         min="5" 
         max="14" 
         placeholder="Ej. 11.50" 
@@ -46,20 +53,19 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
         <option value="">Todas las universidades</option>
         <option value="Pública">Públicas</option>
         <option value="Privada">Privadas</option>
-        <option value="Online">Online</option>
       </select>
     </div>
 
-    <!-- Filtro Comunidad -->
+    <!-- Filtro Universidad de Cataluña -->
     <div class="space-y-1">
-      <label for="comunidadSelect" class="block text-[11px] font-semibold text-slate-400">Comunidad Autónoma</label>
+      <label for="universidadSelect" class="block text-[11px] font-semibold text-slate-400">Universidad (Cataluña)</label>
       <select 
-        id="comunidadSelect" 
+        id="universidadSelect" 
         class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-slate-200 outline-none transition"
       >
-        <option value="">Toda España</option>
-        {comunidades.map(comunidad => (
-          <option value={comunidad}>{comunidad}</option>
+        <option value="">Todas de Cataluña</option>
+        {universidades.map(uni => (
+          <option value={uni}>{uni}</option>
         ))}
       </select>
     </div>
@@ -68,113 +74,123 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 
   <!-- CONTADOR DE RESULTADOS -->
   <div class="flex justify-between items-center px-1">
-    <span id="contadorResultados" class="text-xs text-slate-400 font-mono">Cargando titulaciones...</span>
+    <span id="contadorResultados" class="text-xs text-slate-400 font-mono">
+      {gradosOrdenados.length} titulaciones encontradas
+    </span>
   </div>
 
-  <!-- LISTADO DE TARJETAS DE GRADOS -->
+  <!-- LISTADO DE TARJETAS (Renderizado estático directo de Astro) -->
   <div id="gradosContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <!-- Renderizado por JS -->
-  </div>
+    {gradosOrdenados.map(g => {
+      if (!g || !g.nombre) return null;
+      const idTarget = g.id || g.slug || '';
+      const notaFormateada = typeof g.notaCorte2026 === 'number' ? g.notaCorte2026.toFixed(3) : (g.notaCorte2026 || '0.000');
 
-</div>
-
-<!-- SCRIPT DE FILTRADO Y ORDEN ALFABÉTICO SEGURO -->
-<script type="application/json" id="grados-json" set:html={JSON.stringify(gradosData)} />
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const jsonElement = document.getElementById('grados-json');
-    if (!jsonElement) return;
-    
-    const todosLosGrados = JSON.parse(jsonElement.textContent || '[]');
-
-    const searchInput = document.getElementById('searchInput');
-    const maxNotaInput = document.getElementById('maxNotaInput');
-    const tipoSelect = document.getElementById('tipoSelect');
-    const comunidadSelect = document.getElementById('comunidadSelect');
-
-    function filtrarGrados() {
-      const texto = searchInput.value.toLowerCase().trim();
-      const notaMaxVal = maxNotaInput.value.replace(',', '.');
-      const notaMax = notaMaxVal ? parseFloat(notaMaxVal) : null;
-      const tipo = tipoSelect.value;
-      const comunidad = comunidadSelect.value;
-
-      const filtrados = todosLosGrados.filter(g => {
-        const coincideTexto = g.nombre.toLowerCase().includes(texto) || g.ciudad.toLowerCase().includes(texto) || g.universidad.toLowerCase().includes(texto);
-        if (!coincideTexto) return false;
-
-        if (notaMax !== null && !isNaN(notaMax)) {
-          if (g.notaCorte2026 > notaMax) return false;
-        }
-
-        if (tipo && !g.tipo.toLowerCase().includes(tipo.toLowerCase())) return false;
-        if (comunidad && g.comunidad !== comunidad) return false;
-
-        return true;
-      });
-
-      // Ordenar alfabéticamente por nombre de la titulación (A-Z)
-      filtrados.sort((a, b) => a.nombre.localeCompare(b.nombre));
-
-      renderizarGrados(filtrados);
-    }
-
-    function renderizarGrados(grados) {
-      const container = document.getElementById('gradosContainer');
-      const contador = document.getElementById('contadorResultados');
-      
-      contador.innerText = `${grados.length} titulaciones encontradas`;
-
-      if (grados.length === 0) {
-        container.innerHTML = `
-          <div class="col-span-full py-12 text-center bg-slate-900/40 border border-slate-800 rounded-2xl space-y-2">
-            <p class="text-sm font-semibold text-slate-300">No se han encontrado titulaciones con estos filtros.</p>
-            <p class="text-xs text-slate-500">Prueba a subir tu nota máxima o limpiar los filtros de búsqueda.</p>
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = grados.map(g => `
+      return (
         <a 
-          href="/grados/${g.id}" 
-          class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between space-y-4"
+          href={`/grados/${idTarget}`} 
+          data-nombre={String(g.nombre).toLowerCase()}
+          data-ciudad={String(g.ciudad || '').toLowerCase()}
+          data-universidad={g.universidad || ''}
+          data-nota={g.notaCorte2026 || 0}
+          data-tipo={g.tipo || 'Pública'}
+          class="grado-card group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between space-y-4"
         >
           <div class="space-y-2">
             <div class="flex justify-between items-start gap-2">
               <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-                ${g.rama}
+                {g.rama || 'Grado'}
               </span>
               <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">
-                Corte: ${g.notaCorte2026.toFixed(3)}
+                Corte: {notaFormateada}
               </span>
             </div>
 
             <div>
               <h3 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
-                ${g.nombre}
+                {g.nombre}
               </h3>
-              <p class="text-xs text-slate-400 mt-1">${g.universidad}</p>
+              <p class="text-xs text-slate-400 mt-1">{g.universidad}</p>
             </div>
           </div>
 
           <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span>📍 ${g.ciudad} (${g.comunidad})</span>
+            <span>📍 {g.ciudad || 'Cataluña'} ({g.comunidad || 'Cataluña'})</span>
             <span class="font-semibold text-slate-300 group-hover:translate-x-0.5 transition-transform">Ver ficha →</span>
           </div>
         </a>
-      `).join('');
+      );
+    })}
+  </div>
+
+  <!-- MENSAJE DE NO RESULTADOS -->
+  <div id="noResultados" class="hidden py-12 text-center bg-slate-900/40 border border-slate-800 rounded-2xl space-y-2">
+    <p class="text-sm font-semibold text-slate-300">No se han encontrado titulaciones con estos filtros.</p>
+    <p class="text-xs text-slate-500">Prueba a subir tu nota máxima o limpiar los filtros de búsqueda.</p>
+  </div>
+
+</div>
+
+<!-- SCRIPT DE FILTRADO CLIENTE -->
+<script>
+  function setupFiltros() {
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    const maxNotaInput = document.getElementById('maxNotaInput') as HTMLInputElement;
+    const tipoSelect = document.getElementById('tipoSelect') as HTMLSelectElement;
+    const universidadSelect = document.getElementById('universidadSelect') as HTMLSelectElement;
+    
+    const cards = document.querySelectorAll('.grado-card');
+    const contador = document.getElementById('contadorResultados');
+    const noResultados = document.getElementById('noResultados');
+
+    if (!cards.length) return;
+
+    function filtrar() {
+      const texto = searchInput?.value.toLowerCase().trim() || '';
+      const notaMaxVal = maxNotaInput?.value.replace(',', '.') || '';
+      const notaMax = notaMaxVal ? parseFloat(notaMaxVal) : null;
+      const tipo = tipoSelect?.value || '';
+      const universidad = universidadSelect?.value || '';
+
+      let visibles = 0;
+
+      cards.forEach(card => {
+        const el = card as HTMLElement;
+        const nombre = el.dataset.nombre || '';
+        const ciudad = el.dataset.ciudad || '';
+        const uniCard = el.dataset.universidad || '';
+        const tipoCard = el.dataset.tipo || '';
+        const notaCard = parseFloat(el.dataset.nota || '0');
+
+        const coincideTexto = !texto || nombre.includes(texto) || ciudad.includes(texto) || uniCard.toLowerCase().includes(texto);
+        const coincideNota = notaMax === null || isNaN(notaMax) || notaCard <= notaMax;
+        const coincideTipo = !tipo || tipoCard.toLowerCase().includes(tipo.toLowerCase());
+        const coincideUni = !universidad || uniCard === universidad;
+
+        if (coincideTexto && coincideNota && coincideTipo && coincideUni) {
+          el.style.display = 'flex';
+          visibles++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      if (contador) {
+        contador.innerText = `${visibles} titulaciones encontradas`;
+      }
+
+      if (noResultados) {
+        noResultados.style.display = visibles === 0 ? 'block' : 'none';
+      }
     }
 
-    // Event listeners
-    searchInput.addEventListener('input', filtrarGrados);
-    maxNotaInput.addEventListener('input', filtrarGrados);
-    tipoSelect.addEventListener('change', filtrarGrados);
-    comunidadSelect.addEventListener('change', filtrarGrados);
+    searchInput?.addEventListener('input', filtrar);
+    maxNotaInput?.addEventListener('input', filtrar);
+    tipoSelect?.addEventListener('change', filtrar);
+    universidadSelect?.addEventListener('change', filtrar);
+  }
 
-    // Render inicial ordenado alfabéticamente
-    const gradosIniciales = [...todosLosGrados].sort((a, b) => a.nombre.localeCompare(b.nombre));
-    renderizarGrados(gradosIniciales);
-  });
+  document.addEventListener('DOMContentLoaded', setupFiltros);
+  document.addEventListener('astro:page-load', setupFiltros);
+  setupFiltros();
 </script>

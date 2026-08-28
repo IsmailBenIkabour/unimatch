@@ -2,27 +2,42 @@
 // src/components/Footer.astro
 ---
 
-<footer class="bg-slate-950 border-t border-slate-800 py-8 mt-auto">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<footer class="w-full bg-slate-950 border-t border-slate-800/80 py-10 px-4 mt-20 text-slate-400">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-xs">
     
-    <div class="space-y-1">
-      <a href="/" class="font-black text-lg text-amber-400 flex items-center justify-center md:justify-start gap-1.5">
-        <span>🎓</span> UniMatch
-      </a>
-      <p class="text-xs text-slate-500">
-        Portal independiente de orientación universitaria y datos de admisión en España.
+    <!-- COLUMNA 1: PROYECTO -->
+    <div class="space-y-3">
+      <div class="text-sm font-black text-white tracking-tight">
+        UniMatch<span class="text-amber-400">CAT</span>
+      </div>
+      <p class="text-slate-400 leading-relaxed">
+        Plataforma independiente de orientación para futuros estudiantes universitarios en el Distrito Universitario de Cataluña.
       </p>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-400">
-      <a href="/privacidad" class="hover:text-amber-400 transition">Privacidad</a>
-      <a href="/aviso-legal" class="hover:text-amber-400 transition">Aviso Legal</a>
-      <a href="/metodologia" class="hover:text-amber-400 transition">Fuentes y Datos</a>
+    <!-- COLUMNA 2: ENLACES RÁPIDOS -->
+    <div class="space-y-2">
+      <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider mb-2">Recursos</span>
+      <ul class="space-y-2 font-medium">
+        <li><a href="/notas-de-corte" class="hover:text-amber-400 transition-colors">Notas de Corte 2026</a></li>
+        <li><a href="/calculadora-pau" class="hover:text-amber-400 transition-colors">Calculadora de Nota PAU</a></li>
+        <li><a href="/universidades" class="hover:text-amber-400 transition-colors">Universidades Catalanas</a></li>
+        <li><a href="/metodologia" class="hover:text-amber-400 transition-colors">Metodología de cálculo</a></li>
+      </ul>
     </div>
 
-    <p class="text-xs text-slate-600">
-      &copy; {new Date().getFullYear()} UniMatch. Todos los derechos reservados.
-    </p>
+    <!-- COLUMNA 3: LEGAL -->
+    <div class="space-y-2">
+      <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider mb-2">Legal</span>
+      <ul class="space-y-2 font-medium">
+        <li><a href="/aviso-legal" class="hover:text-amber-400 transition-colors">Aviso Legal</a></li>
+        <li><a href="/privacidad" class="hover:text-amber-400 transition-colors">Política de Privacidad</a></li>
+      </ul>
+    </div>
 
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-[11px] text-slate-500 font-mono">
+    © 2026 UniMatch Cataluña • Datos de asignación universitaria oficiales.
   </div>
 </footer>

@@ -2,25 +2,34 @@
 // src/pages/grados.astro
 import MainLayout from '../layouts/MainLayout.astro';
 import BuscadorGrados from '../components/BuscadorGrados.astro';
+import gradosData from '../data/grados.json';
+
+const totalGrados = gradosData.length;
 ---
 
 <MainLayout 
-  title="Directorio de Grados Universitarios en España | UniMatchES"
-  description="Explora todos los grados universitarios en España, sus notas de corte históricas, precios públicos por crédito y tasas de empleabilidad."
+  title="Catálogo de Grados Universitarios en Cataluña | UniMatch"
+  description="Explora la lista completa de carreras universitarias en Cataluña. Filtra por nota de corte, universitat o rama."
 >
-  <div class="space-y-8 py-4">
-    <div class="space-y-2 text-center max-w-2xl mx-auto">
-      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-        Grados Universitarios y <span class="text-amber-400">Notas de Corte</span>
+  <div class="space-y-10 py-8 max-w-5xl mx-auto px-4">
+    
+    <header class="text-center space-y-3 max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-medium tracking-wide font-mono">
+        <span class="text-amber-400 font-bold">{totalGrados}</span> Ofertas Disponibles
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Catálogo de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Grados</span>
       </h1>
+      
       <p class="text-xs sm:text-sm text-slate-400">
-        Consulta el listado completo de carreras universitarias en España con datos oficiales actualizados.
+        Encuentra todas las titulaciones de las universidades catalanas ordenadas alfabéticamente con las notas de corte oficiales actualizadas.
       </p>
-    </div>
+    </header>
 
-    <!-- REUTILIZAMOS EL BUSCADOR DE GRADOS -->
-    <div class="max-w-4xl mx-auto">
+    <main class="pt-4">
       <BuscadorGrados />
-    </div>
+    </main>
+
   </div>
 </MainLayout>

@@ -4,95 +4,26 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout 
-  title="Metodología y Fuentes de Datos Oficiales | UniMatchES"
-  description="Conoce la procedencia de nuestras notas de corte, la fórmula matemática del algoritmo de la PAU y la transparencia en el cálculo de ponderaciones."
+  title="Metodología de Cálculo PAU Cataluña | UniMatch"
+  description="Explicación detallada sobre cómo calculamos la nota de admisión sobre 14 en Cataluña."
 >
-  <div class="space-y-10 py-4 max-w-4xl mx-auto">
-    
-    <!-- CABECERA -->
-    <div class="space-y-3 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold">
-        <span>🛡️</span> Transparencia y Rigor Académico
+  <div class="space-y-8 py-8 max-w-3xl mx-auto px-4">
+    <header class="space-y-2">
+      <h1 class="text-3xl font-black text-white tracking-tight">Metodología de Cálculo</h1>
+      <p class="text-xs text-slate-400">Transparencia sobre la simulación de notas para Cataluña.</p>
+    </header>
+
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4 text-xs text-slate-300 leading-relaxed">
+      <h2 class="text-sm font-bold text-amber-400 uppercase tracking-wider font-mono">Fórmula de Admisión PAU</h2>
+      <p>
+        La nota de admisión se calcula sobre un máximo de 14 puntos de acuerdo con los criterios del Consell Interuniversitari de Catalunya:
+      </p>
+      <div class="bg-slate-950 p-4 rounded-xl font-mono text-amber-300 border border-slate-800">
+        Nota Final = (Bachillerato × 0.6) + (Fase General × 0.4) + (M1 × a) + (M2 × b)
       </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
-        Metodología y <span class="text-amber-400">Fuentes Oficiales</span>
-      </h1>
-      <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        En UniMatchES procesamos datos públicos de admisión universitaria en España para ofrecer herramientas precisas, independientes y actualizadas.
+      <p>
+        Donde <strong>M1</strong> y <strong>M2</strong> son las dos mejores calificaciones obtenidas en las materias ponderables de la Fase Específica, y <strong>a</strong> / <strong>b</strong> sus coeficientes de ponderación (0.1 o 0.2).
       </p>
     </div>
-
-    <!-- SECCIÓN 1: ORIGEN DE LOS DATOS -->
-    <section class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6">
-      <h2 class="text-xl font-black text-white flex items-center gap-2">
-        <span>🏛️</span> Procedencia de las Notas de Corte y Precios
-      </h2>
-      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-        Las notas de corte corresponden a la calificación de la última persona admitida en la primera fase de adjudicación del curso académico correspondiente. Los datos son recopilados directamente de los boletines y portales de transparencia oficiales:
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-medium">
-        <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-1">
-          <span class="text-amber-400 font-bold block">Ministerio de Ciencia, Innovación y Universidades</span>
-          <p class="text-slate-400 text-[11px]">Sistema Integrado de Información Universitaria (SIIU) y datos de empleabilidad de la Seguridad Social.</p>
-        </div>
-        <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-1">
-          <span class="text-amber-400 font-bold block">Distritos Únicos Autonómicos</span>
-          <p class="text-slate-400 text-[11px]">Listados oficiales de adjudicación de plazas de Madrid (VGU), Andalucía (DUA), Cataluña (Gencat) y demás CCAA.</p>
-        </div>
-        <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-1">
-          <span class="text-amber-400 font-bold block">Precios Públicos Oficiales</span>
-          <p class="text-slate-400 text-[11px]">Decretos de tasas universitarias publicados anualmente en los boletines oficiales autonómicos (BOE/BOCM/BOJA/DOGC).</p>
-        </div>
-        <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-1">
-          <span class="text-amber-400 font-bold block">Universidades Privadas y Online</span>
-          <p class="text-slate-400 text-[11px]">Memorias anuales e información pública facilitada por las secretarías académicas de cada centro.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 2: FÓRMULA MATEMÁTICA PAU -->
-    <section class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6">
-      <h2 class="text-xl font-black text-white flex items-center gap-2">
-        <span>🧮</span> Algoritmo de Cálculo de la Nota sobre 14
-      </h2>
-      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-        Nuestra calculadora aplica de forma estricta la fórmula estandarizada fijada por el Real Decreto de acceso a la universidad española:
-      </p>
-
-      <div class="bg-slate-950 p-4 sm:p-6 rounded-2xl border border-amber-500/20 text-center font-mono text-xs sm:text-sm text-amber-400 font-bold overflow-x-auto">
-        Nota Final = (0,6 × NMB) + (0,4 × General) + (a × M1) + (b × M2)
-      </div>
-
-      <ul class="space-y-3 text-xs text-slate-300">
-        <li class="flex items-start gap-2">
-          <span class="text-amber-400 font-bold">•</span>
-          <span><strong>NMB:</strong> Nota Media de Bachillerato (60% de la nota base). Requiere calificación aprobada (≥ 5,00).</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-amber-400 font-bold">•</span>
-          <span><strong>General:</strong> Calificación de la Fase Obligatoria de la PAU (40% de la nota base). Se exige un mínimo de 4,00 puntos para poder calcular la media.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-amber-400 font-bold">•</span>
-          <span><strong>M1, M2:</strong> Las dos mejores calificaciones de las asignaturas superadas en la Fase Específica/Voluntaria (≥ 5,00).</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-amber-400 font-bold">•</span>
-          <span><strong>a, b:</strong> Parámetros de ponderación asignados por cada universidad y grado (habitualmente 0.1 o 0.2).</span>
-        </li>
-      </ul>
-    </section>
-
-    <!-- SECCIÓN 3: DESCARGO DE RESPONSABILIDAD LEGAL -->
-    <section class="bg-amber-500/5 border border-amber-500/20 rounded-3xl p-6 sm:p-8 space-y-3 text-xs text-slate-400">
-      <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2">
-        <span>⚠️</span> Aviso de Orientación Independiente
-      </h3>
-      <p class="leading-relaxed">
-        UniMatchES es una plataforma independiente de orientación informativa y no posee vinculación institucional directa con el Ministerio de Educación ni con las universidades citadas. Las notas de corte son de carácter orientativo respecto al proceso de preinscripción del curso anterior. La decisión final de admisión corresponde exclusivamente a los órganos de gestión de cada distrito universitario.
-      </p>
-    </section>
-
   </div>
 </MainLayout>

@@ -1,99 +1,95 @@
 ---
 // src/components/ComparadorGrados.astro
 import gradosData from '../data/grados.json';
-
-// Ordenar alfabéticamente por el nombre del grado
-const gradosOrdenados = [...gradosData].sort((a, b) => a.nombre.localeCompare(b.nombre));
-const gradosJsonString = JSON.stringify(gradosOrdenados);
 ---
 
 <div class="space-y-6">
-  <div class="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 backdrop-blur-xl grid grid-cols-1 md:grid-cols-2 gap-6">
-    
-    <!-- Selector Grado 1 -->
-    <div class="space-y-2">
-      <label for="grado1Select" class="block text-xs font-bold text-slate-300">Seleccionar Primera Titulación</label>
-      <select id="grado1Select" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs text-white outline-none transition">
-        <option value="">-- Elige un grado --</option>
-        {gradosOrdenados.map(g => (
-          <option value={g.id}>{g.nombre} - {g.universidad}</option>
+  
+  <!-- SELECTORES DE COMPARACIÓN -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4">
+      <label for="gradoSelect1" class="block text-[11px] font-semibold text-slate-400 mb-2">Selecciona el primer grado</label>
+      <select id="gradoSelect1" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-white outline-none">
+        <option value="">-- Elige titulación --</option>
+        {gradosData.map(g => (
+          <option value={g.id}>{g.nombre} ({g.universidad})</option>
         ))}
       </select>
     </div>
 
-    <!-- Selector Grado 2 -->
-    <div class="space-y-2">
-      <label for="grado2Select" class="block text-xs font-bold text-slate-300">Seleccionar Segunda Titulación</label>
-      <select id="grado2Select" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs text-white outline-none transition">
-        <option value="">-- Elige un grado --</option>
-        {gradosOrdenados.map(g => (
-          <option value={g.id}>{g.nombre} - {g.universidad}</option>
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4">
+      <label for="gradoSelect2" class="block text-[11px] font-semibold text-slate-400 mb-2">Selecciona el segundo grado</label>
+      <select id="gradoSelect2" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-white outline-none">
+        <option value="">-- Elige titulación --</option>
+        {gradosData.map(g => (
+          <option value={g.id}>{g.nombre} ({g.universidad})</option>
         ))}
       </select>
     </div>
-
   </div>
 
-  <!-- CONTENEDOR DE COMPARACIÓN -->
-  <div id="comparadorResultado" class="hidden bg-slate-900/40 border border-slate-800/80 rounded-3xl p-6 backdrop-blur-xl space-y-6">
-    <!-- Se llena por JS -->
+  <!-- TABLA COMPARATIVA -->
+  <div id="comparadorContainer" class="hidden bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-sm">
+    <div class="grid grid-cols-3 gap-4 text-xs">
+      <div class="font-bold text-slate-400 uppercase tracking-wider">Criterio</div>
+      <div id="nombreGrado1" class="font-bold text-amber-400">Grado 1</div>
+      <div id="nombreGrado2" class="font-bold text-amber-400">Grado 2</div>
+      
+      <div class="py-3 border-t border-slate-800 text-slate-400">Nota de Corte 2026</div>
+      <div id="notaGrado1" class="py-3 border-t border-slate-800 font-mono font-bold text-white">--</div>
+      <div id="notaGrado2" class="py-3 border-t border-slate-800 font-mono font-bold text-white">--</div>
+
+      <div class="py-3 border-t border-slate-800 text-slate-400">Universidad</div>
+      <div id="uniGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+      <div id="uniGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+
+      <div class="py-3 border-t border-slate-800 text-slate-400">Rama</div>
+      <div id="ramaGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+      <div id="ramaGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+
+      <div class="py-3 border-t border-slate-800 text-slate-400">Población</div>
+      <div id="ciudadGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+      <div id="ciudadGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+    </div>
   </div>
+
 </div>
 
-<script type="application/json" id="comparador-json" set:html={gradosJsonString} />
+<!-- DATA PASSTHROUGH -->
+<script type="application/json" id="comparador-json" set:html={JSON.stringify(gradosData)} />
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const jsonElement = document.getElementById('comparador-json');
-    if (!jsonElement) return;
+    const jsonEl = document.getElementById('comparador-json');
+    if (!jsonEl) return;
+    const datos = JSON.parse(jsonEl.textContent || '[]');
 
-    const grados = JSON.parse(jsonElement.textContent || '[]');
-    const select1 = document.getElementById('grado1Select');
-    const select2 = document.getElementById('grado2Select');
-    const resultadoDiv = document.getElementById('comparadorResultado');
+    const select1 = document.getElementById('gradoSelect1');
+    const select2 = document.getElementById('gradoSelect2');
+    const container = document.getElementById('comparadorContainer');
 
     function actualizarComparacion() {
-      const id1 = select1.value;
-      const id2 = select2.value;
+      const g1 = datos.find(g => g.id === select1.value);
+      const g2 = datos.find(g => g.id === select2.value);
 
-      if (!id1 || !id2) {
-        resultadoDiv.classList.add('hidden');
+      if (!g1 || !g2) {
+        container.classList.add('hidden');
         return;
       }
 
-      const g1 = grados.find(x => x.id === id1);
-      const g2 = grados.find(x => x.id === id2);
+      container.classList.remove('hidden');
 
-      if (!g1 || !g2) return;
+      document.getElementById('nombreGrado1').innerText = g1.nombre;
+      document.getElementById('notaGrado1').innerText = g1.notaCorte2026.toFixed(3);
+      document.getElementById('uniGrado1').innerText = g1.universidad;
+      document.getElementById('ramaGrado1').innerText = g1.rama;
+      document.getElementById('ciudadGrado1').innerText = g1.ciudad;
 
-      resultadoDiv.innerHTML = `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Grado 1 -->
-          <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-3">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">${g1.rama}</span>
-            <h3 class="text-sm font-bold text-white">${g1.nombre}</h3>
-            <p class="text-xs text-slate-400">${g1.universidad}</p>
-            <div class="pt-3 border-t border-slate-800 space-y-2 text-xs font-mono">
-              <div class="flex justify-between"><span class="text-slate-400">Nota Corte 2026:</span><span class="text-amber-400 font-bold">${g1.notaCorte2026.toFixed(3)}</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">Precio Crédito:</span><span class="text-white">${g1.precioCredito} €</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">Empleabilidad:</span><span class="text-emerald-400">${g1.empleabilidad}%</span></div>
-            </div>
-          </div>
-
-          <!-- Grado 2 -->
-          <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-3">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">${g2.rama}</span>
-            <h3 class="text-sm font-bold text-white">${g2.nombre}</h3>
-            <p class="text-xs text-slate-400">${g2.universidad}</p>
-            <div class="pt-3 border-t border-slate-800 space-y-2 text-xs font-mono">
-              <div class="flex justify-between"><span class="text-slate-400">Nota Corte 2026:</span><span class="text-amber-400 font-bold">${g2.notaCorte2026.toFixed(3)}</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">Precio Crédito:</span><span class="text-white">${g2.precioCredito} €</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">Empleabilidad:</span><span class="text-emerald-400">${g2.empleabilidad}%</span></div>
-            </div>
-          </div>
-        </div>
-      `;
-      resultadoDiv.classList.remove('hidden');
+      document.getElementById('nombreGrado2').innerText = g2.nombre;
+      document.getElementById('notaGrado2').innerText = g2.notaCorte2026.toFixed(3);
+      document.getElementById('uniGrado2').innerText = g2.universidad;
+      document.getElementById('ramaGrado2').innerText = g2.rama;
+      document.getElementById('ciudadGrado2').innerText = g2.ciudad;
     }
 
     select1.addEventListener('change', actualizarComparacion);

@@ -5,22 +5,28 @@ import ComparadorGrados from '../components/ComparadorGrados.astro';
 ---
 
 <MainLayout 
-  title="Comparador de Grados y Universidades | UniMatchES"
-  description="Compara dos grados universitarios en España frente a frente: notas de corte, precio de matrícula, salidas laborales y ponderaciones oficial."
+  title="Comparador de Grados en Cataluña | UniMatch"
+  description="Compara notas de corte, precio por crédito y salidas profesionales entre distintas titulaciones en Cataluña."
 >
-  <div class="space-y-8 py-4 max-w-4xl mx-auto">
+  <div class="space-y-10 py-8 max-w-6xl mx-auto px-4">
     
-    <div class="space-y-2 text-center">
-      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-        Comparador de <span class="text-amber-400">Titulaciones Universitarias</span>
+    <header class="text-center space-y-3 max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-medium tracking-wide">
+        Herramienta de Comparación
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Compara <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Titulaciones</span>
       </h1>
-      <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
-        ¿Dudas entre dos carreras o universidades? Compara todos los datos oficiales frente a frente para tomar la decisión correcta.
+      
+      <p class="text-xs sm:text-sm text-slate-400">
+        Analiza frente a frente las notas de corte de la 2ª asignación, plazas y ponderaciones de las carreras universitarias en Cataluña.
       </p>
-    </div>
+    </header>
 
-    <!-- COMPONENTE COMPARADOR -->
-    <ComparadorGrados />
+    <main class="pt-4">
+      <ComparadorGrados />
+    </main>
 
   </div>
 </MainLayout>

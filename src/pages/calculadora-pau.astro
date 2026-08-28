@@ -5,38 +5,29 @@ import CalculadoraPau from '../components/CalculadoraPau.astro';
 ---
 
 <MainLayout 
-  title="Calculadora Nota de Admisión PAU 2026 | UniMatchES"
-  description="Calcula tu nota final de admisión a la universidad en España sobre 14 puntos. Herramienta oficial adaptada al baremo del Ministerio de Educación."
+  title="Calculadora Nota PAU Cataluña | UniMatch"
+  description="Calcula tu nota de admisión sobre 14 puntos para las universidades públicas de Cataluña según los baremos oficiales."
 >
-  <div class="space-y-8 py-4 max-w-3xl mx-auto">
+  <div class="space-y-10 py-8 max-w-4xl mx-auto px-4">
     
-    <!-- CABECERA DE LA PÁGINA -->
-    <div class="space-y-2 text-center">
-      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
-        Calculadora de Nota de Admisión <span class="text-amber-400">PAU / EBAU</span>
+    <header class="text-center space-y-3 max-w-2xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-medium tracking-wide">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        Baremo Oficial PAU Cataluña
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+        Calculadora de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Nota PAU</span>
       </h1>
-      <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
-        Introduce tus notas de Bachillerato, la Fase Oblatoria y tus asignaturas optativas para obtener tu nota oficial sobre 14 puntos.
+      
+      <p class="text-xs sm:text-sm text-slate-400">
+        Introduce tus notas del Bachillerato y de las asignaturas de la Fase General y Específica para simular tu nota final de admisión (hasta 14.000).
       </p>
-    </div>
+    </header>
 
-    <!-- REUTILIZAMOS EL COMPONENTE DE CALCULADORA -->
-    <CalculadoraPau />
-
-    <!-- GUÍA EXPLICATIVA SEO -->
-    <section class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
-      <h2 class="text-base font-bold text-white flex items-center gap-2">
-        <span>📖</span> ¿Cómo se calcula la nota de admisión a la universidad?
-      </h2>
-      <p>
-        La nota final de admisión se calcula sumando la **Nota de Acceso (hasta 10 puntos)** y la **Fase Voluntaria (hasta 4 puntos extra)**:
-      </p>
-      <ul class="list-disc list-inside space-y-1 text-slate-400 pl-2">
-        <strong class="text-slate-200">Nota Media de Bachillerato (NMB):</strong> Cuenta un 60% de la nota base.
-        <strong class="text-slate-200">Fase General PAU:</strong> Cuenta un 40% de la nota base (se requiere mínimo un 4.0).
-        <strong class="text-slate-200">Fase Específica:</strong> Las 2 mejores notas optativas aprobadas (≥ 5.0) multiplicadas por su ponderación (0.1 o 0.2).
-      </ul>
-    </section>
+    <main class="max-w-xl mx-auto">
+      <CalculadoraPau />
+    </main>
 
   </div>
 </MainLayout>
