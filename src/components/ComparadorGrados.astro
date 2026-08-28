@@ -1,152 +1,99 @@
 ---
 // src/components/ComparadorGrados.astro
 import gradosData from '../data/grados.json';
+const gradosJsonString = JSON.stringify(gradosData);
 ---
 
-<div class="space-y-8">
-  
-  <!-- SELECTORES DE GRADOS -->
-  <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
-    <div class="text-center max-w-xl mx-auto space-y-2">
-      <h2 class="text-xl sm:text-2xl font-black text-white flex items-center justify-center gap-2">
-        <span>⚔️</span> Enfrenta dos Titulaciones
-      </h2>
-      <p class="text-xs sm:text-sm text-slate-400">
-        Selecciona dos opciones para comparar sus notas de corte, precios y empleabilidad.
-      </p>
+<div class="space-y-6">
+  <div class="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 backdrop-blur-xl grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <!-- Selector Grado 1 -->
+    <div class="space-y-2">
+      <label for="grado1Select" class="block text-xs font-bold text-slate-300">Seleccionar Primera Titulación</label>
+      <select id="grado1Select" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs text-white outline-none transition">
+        <option value="">-- Elige un grado --</option>
+        {gradosData.map(g => (
+          <option value={g.id}>{g.nombre} ({g.universidad})</option>
+        ))}
+      </select>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-      
-      <!-- Selector 1 -->
-      <div class="space-y-1.5">
-        <label for="gradoSelect1" class="block text-xs font-bold text-amber-400">Opción 1</label>
-        <select 
-          id="gradoSelect1" 
-          onchange="window.actualizarComparativa()" 
-          class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 text-xs font-semibold text-white rounded-xl p-3 outline-none"
-        >
-          {gradosData.map((g, idx) => (
-            <option value={g.id} selected={idx === 0}>{g.nombre} - {g.universidad}</option>
-          ))}
-        </select>
-      </div>
-
-      <!-- Selector 2 -->
-      <div class="space-y-1.5">
-        <label for="gradoSelect2" class="block text-xs font-bold text-sky-400">Opción 2</label>
-        <select 
-          id="gradoSelect2" 
-          onchange="window.actualizarComparativa()" 
-          class="w-full bg-slate-950 border border-slate-800 focus:border-sky-400 text-xs font-semibold text-white rounded-xl p-3 outline-none"
-        >
-          {gradosData.map((g, idx) => (
-            <option value={g.id} selected={idx === 1}>{g.nombre} - {g.universidad}</option>
-          ))}
-        </select>
-      </div>
-
+    <!-- Selector Grado 2 -->
+    <div class="space-y-2">
+      <label for="grado2Select" class="block text-xs font-bold text-slate-300">Seleccionar Segunda Titulación</label>
+      <select id="grado2Select" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs text-white outline-none transition">
+        <option value="">-- Elige un grado --</option>
+        {gradosData.map(g => (
+          <option value={g.id}>{g.nombre} ({g.universidad})</option>
+        ))}
+      </select>
     </div>
+
   </div>
 
-  <!-- TABLA COMPARATIVA RESPONSIVE -->
-  <div class="bg-slate-900/50 border border-slate-800 rounded-3xl p-4 sm:p-6 overflow-x-auto">
-    <table class="w-full text-left border-collapse text-xs sm:text-sm">
-      <thead>
-        <tr class="border-b border-slate-800">
-          <th class="p-3 text-slate-400 font-bold uppercase text-[11px] w-1/3">Criterio</th>
-          <th id="headerGrado1" class="p-3 text-amber-400 font-black text-sm sm:text-base w-1/3">---</th>
-          <th id="headerGrado2" class="p-3 text-sky-400 font-black text-sm sm:text-base w-1/3">---</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-slate-800/60 font-medium">
-        <tr>
-          <td class="p-3 text-slate-400 font-semibold">Universidad</td>
-          <td id="univ1" class="p-3 text-slate-200">---</td>
-          <td id="univ2" class="p-3 text-slate-200">---</td>
-        </tr>
-        <tr>
-          <td class="p-3 text-slate-400 font-semibold">Tipo / Modalidad</td>
-          <td id="tipo1" class="p-3 text-slate-300">---</td>
-          <td id="tipo2" class="p-3 text-slate-300">---</td>
-        </tr>
-        <tr>
-          <td class="p-3 text-slate-400 font-semibold">Ubicación</td>
-          <td id="ubicacion1" class="p-3 text-slate-300">---</td>
-          <td id="ubicacion2" class="p-3 text-slate-300">---</td>
-        </tr>
-        <tr class="bg-slate-950/40">
-          <td class="p-3 text-slate-300 font-bold">Nota Corte 2026</td>
-          <td id="nota1" class="p-3 font-mono font-black text-amber-400 text-base">---</td>
-          <td id="nota2" class="p-3 font-mono font-black text-sky-400 text-base">---</td>
-        </tr>
-        <tr class="bg-slate-950/40">
-          <td class="p-3 text-slate-300 font-bold">Precio Est. 1er Año</td>
-          <td id="precio1" class="p-3 font-mono font-bold text-emerald-400">---</td>
-          <td id="precio2" class="p-3 font-mono font-bold text-emerald-400">---</td>
-        </tr>
-        <tr>
-          <td class="p-3 text-slate-400 font-semibold">Inserción Laboral</td>
-          <td id="empleo1" class="p-3 font-mono font-bold text-slate-200">---</td>
-          <td id="empleo2" class="p-3 font-mono font-bold text-slate-200">---</td>
-        </tr>
-        <tr>
-          <td class="p-3 text-slate-400 font-semibold">Plazas Ofertadas</td>
-          <td id="plazas1" class="p-3 text-slate-300">---</td>
-          <td id="plazas2" class="p-3 text-slate-300">---</td>
-        </tr>
-        <tr>
-          <td class="p-3 text-slate-400 font-semibold">Ponderaciones Clave</td>
-          <td id="pond1" class="p-3 text-xs text-slate-400">---</td>
-          <td id="pond2" class="p-3 text-xs text-slate-400">---</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- CONTENEDOR DE COMPARACIÓN -->
+  <div id="comparadorResultado" class="hidden bg-slate-900/40 border border-slate-800/80 rounded-3xl p-6 backdrop-blur-xl space-y-6">
+    <!-- Se llena por JS -->
   </div>
-
 </div>
 
-<!-- INYECCIÓN DIRECTA DE DATOS JSON EN JAVASCRIPT NATIVO -->
-<script is:inline set:html={`
-  const listaGrados = ${JSON.stringify(gradosData)};
+<script type="application/json" id="comparador-json" set:html={gradosJsonString} />
 
-  window.actualizarComparativa = function() {
-    const select1 = document.getElementById('gradoSelect1');
-    const select2 = document.getElementById('gradoSelect2');
-    if (!select1 || !select2) return;
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const jsonElement = document.getElementById('comparador-json');
+    if (!jsonElement) return;
 
-    const id1 = select1.value;
-    const id2 = select2.value;
+    const grados = JSON.parse(jsonElement.textContent || '[]');
+    const select1 = document.getElementById('grado1Select');
+    const select2 = document.getElementById('grado2Select');
+    const resultadoDiv = document.getElementById('comparadorResultado');
 
-    const g1 = listaGrados.find(g => g.id === id1);
-    const g2 = listaGrados.find(g => g.id === id2);
+    function actualizarComparacion() {
+      const id1 = select1.value;
+      const id2 = select2.value;
 
-    if (!g1 || !g2) return;
+      if (!id1 || !id2) {
+        resultadoDiv.classList.add('hidden');
+        return;
+      }
 
-    // Actualizar Opción 1
-    document.getElementById('headerGrado1').innerText = g1.nombre;
-    document.getElementById('univ1').innerText = g1.universidad;
-    document.getElementById('tipo1').innerText = g1.tipo;
-    document.getElementById('ubicacion1').innerText = g1.ciudad + " (" + g1.comunidad + ")";
-    document.getElementById('nota1').innerText = Number(g1.notaCorte2026).toFixed(3);
-    document.getElementById('precio1').innerText = Math.round(g1.precioCredito * 60) + " €";
-    document.getElementById('empleo1').innerText = g1.empleabilidad + "%";
-    document.getElementById('plazas1').innerText = g1.plazas + " plazas";
-    document.getElementById('pond1').innerText = g1.ponderaciones.join(', ');
+      const g1 = grados.find(x => x.id === id1);
+      const g2 = grados.find(x => x.id === id2);
 
-    // Actualizar Opción 2
-    document.getElementById('headerGrado2').innerText = g2.nombre;
-    document.getElementById('univ2').innerText = g2.universidad;
-    document.getElementById('tipo2').innerText = g2.tipo;
-    document.getElementById('ubicacion2').innerText = g2.ciudad + " (" + g2.comunidad + ")";
-    document.getElementById('nota2').innerText = Number(g2.notaCorte2026).toFixed(3);
-    document.getElementById('precio2').innerText = Math.round(g2.precioCredito * 60) + " €";
-    document.getElementById('empleo2').innerText = g2.empleabilidad + "%";
-    document.getElementById('plazas2').innerText = g2.plazas + " plazas";
-    document.getElementById('pond2').innerText = g2.ponderaciones.join(', ');
-  };
+      if (!g1 || !g2) return;
 
-  document.addEventListener('DOMContentLoaded', window.actualizarComparativa);
-  setTimeout(window.actualizarComparativa, 100);
-`}>
+      resultadoDiv.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Grado 1 -->
+          <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-3">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">${g1.rama}</span>
+            <h3 class="text-sm font-bold text-white">${g1.nombre}</h3>
+            <p class="text-xs text-slate-400">${g1.universidad}</p>
+            <div class="pt-3 border-t border-slate-800 space-y-2 text-xs font-mono">
+              <div class="flex justify-between"><span class="text-slate-400">Nota Corte 2026:</span><span class="text-amber-400 font-bold">${g1.notaCorte2026.toFixed(3)}</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Precio Crédito:</span><span class="text-white">${g1.precioCredito} €</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Empleabilidad:</span><span class="text-emerald-400">${g1.empleabilidad}%</span></div>
+            </div>
+          </div>
+
+          <!-- Grado 2 -->
+          <div class="bg-slate-950/60 p-5 rounded-2xl border border-slate-800 space-y-3">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">${g2.rama}</span>
+            <h3 class="text-sm font-bold text-white">${g2.nombre}</h3>
+            <p class="text-xs text-slate-400">${g2.universidad}</p>
+            <div class="pt-3 border-t border-slate-800 space-y-2 text-xs font-mono">
+              <div class="flex justify-between"><span class="text-slate-400">Nota Corte 2026:</span><span class="text-amber-400 font-bold">${g2.notaCorte2026.toFixed(3)}</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Precio Crédito:</span><span class="text-white">${g2.precioCredito} €</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Empleabilidad:</span><span class="text-emerald-400">${g2.empleabilidad}%</span></div>
+            </div>
+          </div>
+        </div>
+      `;
+      resultadoDiv.classList.remove('hidden');
+    }
+
+    select1.addEventListener('change', actualizarComparacion);
+    select2.addEventListener('change', actualizarComparacion);
+  });
 </script>

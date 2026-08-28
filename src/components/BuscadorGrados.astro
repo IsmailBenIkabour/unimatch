@@ -2,8 +2,6 @@
 // src/components/BuscadorGrados.astro
 import gradosData from '../data/grados.json';
 
-const gradosJsonString = JSON.stringify(gradosData);
-
 // Extraer comunidades únicas para el selector
 const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 ---
@@ -19,8 +17,7 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
       <input 
         type="text" 
         id="searchInput" 
-        placeholder="Ej. Medicina, Madrid..." 
-        oninput="filtrarGrados()"
+        placeholder="Ej. Medicina, Barcelona..." 
         class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-white outline-none transition"
       />
     </div>
@@ -35,7 +32,6 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
         min="5" 
         max="14" 
         placeholder="Ej. 11.50" 
-        oninput="filtrarGrados()"
         class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs font-bold text-amber-400 outline-none transition"
       />
     </div>
@@ -45,7 +41,6 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
       <label for="tipoSelect" class="block text-[11px] font-semibold text-slate-400">Tipo de Centro</label>
       <select 
         id="tipoSelect" 
-        onchange="filtrarGrados()"
         class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-slate-200 outline-none transition"
       >
         <option value="">Todas las universidades</option>
@@ -60,7 +55,6 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
       <label for="comunidadSelect" class="block text-[11px] font-semibold text-slate-400">Comunidad Autónoma</label>
       <select 
         id="comunidadSelect" 
-        onchange="filtrarGrados()"
         class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-slate-200 outline-none transition"
       >
         <option value="">Toda España</option>
@@ -74,7 +68,7 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 
   <!-- CONTADOR DE RESULTADOS -->
   <div class="flex justify-between items-center px-1">
-    <span id="contadorResultados" class="text-xs text-slate-400 font-mono">Mostrando todas las titulaciones</span>
+    <span id="contadorResultados" class="text-xs text-slate-400 font-mono">Cargando titulaciones...</span>
   </div>
 
   <!-- LISTADO DE TARJETAS DE GRADOS -->
@@ -84,88 +78,99 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 
 </div>
 
-<!-- SCRIPT DE FILTRADO EN CLIENTE -->
-<script define:vars={{ gradosJsonString }}>
-  const todosLosGrados = JSON.parse(gradosJsonString);
+<!-- SCRIPT DE FILTRADO SEGURO -->
+<script type="application/json" id="grados-json" set:html={JSON.stringify(gradosData)} />
 
-  function filtrarGrados() {
-    const texto = document.getElementById('searchInput').value.toLowerCase().trim();
-    const notaMaxInput = document.getElementById('maxNotaInput').value.replace(',', '.');
-    const notaMax = notaMaxInput ? parseFloat(notaMaxInput) : null;
-    const tipo = document.getElementById('tipoSelect').value;
-    const comunidad = document.getElementById('comunidadSelect').value;
-
-    const filtrados = todosLosGrados.filter(g => {
-      // Filtro texto (nombre o ciudad)
-      const coincideTexto = g.nombre.toLowerCase().includes(texto) || g.ciudad.toLowerCase().includes(texto) || g.universidad.toLowerCase().includes(texto);
-      if (!coincideTexto) return false;
-
-      // Filtro nota (tu nota debe ser mayor o igual a la nota de corte)
-      if (notaMax !== null && !isNaN(notaMax)) {
-        if (g.notaCorte2026 > notaMax) return false;
-      }
-
-      // Filtro tipo
-      if (tipo && !g.tipo.toLowerCase().includes(tipo.toLowerCase())) return false;
-
-      // Filtro comunidad
-      if (comunidad && g.comunidad !== comunidad) return false;
-
-      return true;
-    });
-
-    renderizarGrados(filtrados);
-  }
-
-  function renderizarGrados(grados) {
-    const container = document.getElementById('gradosContainer');
-    const contador = document.getElementById('contadorResultados');
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const jsonElement = document.getElementById('grados-json');
+    if (!jsonElement) return;
     
-    contador.innerText = `${grados.length} titulaciones encontradas`;
+    const todosLosGrados = JSON.parse(jsonElement.textContent || '[]');
 
-    if (grados.length === 0) {
-      container.innerHTML = `
-        <div class="col-span-full py-12 text-center bg-slate-900/40 border border-slate-800 rounded-2xl space-y-2">
-          <p class="text-sm font-semibold text-slate-300">No se han encontrado titulaciones con estos filtros.</p>
-          <p class="text-xs text-slate-500">Prueba a subir tu nota máxima o limpiar los filtros de búsqueda.</p>
-        </div>
-      `;
-      return;
+    const searchInput = document.getElementById('searchInput');
+    const maxNotaInput = document.getElementById('maxNotaInput');
+    const tipoSelect = document.getElementById('tipoSelect');
+    const comunidadSelect = document.getElementById('comunidadSelect');
+
+    function filtrarGrados() {
+      const texto = searchInput.value.toLowerCase().trim();
+      const notaMaxVal = maxNotaInput.value.replace(',', '.');
+      const notaMax = notaMaxVal ? parseFloat(notaMaxVal) : null;
+      const tipo = tipoSelect.value;
+      const comunidad = comunidadSelect.value;
+
+      const filtrados = todosLosGrados.filter(g => {
+        const coincideTexto = g.nombre.toLowerCase().includes(texto) || g.ciudad.toLowerCase().includes(texto) || g.universidad.toLowerCase().includes(texto);
+        if (!coincideTexto) return false;
+
+        if (notaMax !== null && !isNaN(notaMax)) {
+          if (g.notaCorte2026 > notaMax) return false;
+        }
+
+        if (tipo && !g.tipo.toLowerCase().includes(tipo.toLowerCase())) return false;
+        if (comunidad && g.comunidad !== comunidad) return false;
+
+        return true;
+      });
+
+      renderizarGrados(filtrados);
     }
 
-    container.innerHTML = grados.map(g => `
-      <a 
-        href="/grados/${g.id}" 
-        class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between space-y-4"
-      >
-        <div class="space-y-2">
-          <div class="flex justify-between items-start gap-2">
-            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-              ${g.rama}
-            </span>
-            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">
-              Corte: ${g.notaCorte2026.toFixed(3)}
-            </span>
+    function renderizarGrados(grados) {
+      const container = document.getElementById('gradosContainer');
+      const contador = document.getElementById('contadorResultados');
+      
+      contador.innerText = `${grados.length} titulaciones encontradas`;
+
+      if (grados.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center bg-slate-900/40 border border-slate-800 rounded-2xl space-y-2">
+            <p class="text-sm font-semibold text-slate-300">No se han encontrado titulaciones con estos filtros.</p>
+            <p class="text-xs text-slate-500">Prueba a subir tu nota máxima o limpiar los filtros de búsqueda.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = grados.map(g => `
+        <a 
+          href="/grados/${g.id}" 
+          class="group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between space-y-4"
+        >
+          <div class="space-y-2">
+            <div class="flex justify-between items-start gap-2">
+              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
+                ${g.rama}
+              </span>
+              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">
+                Corte: ${g.notaCorte2026.toFixed(3)}
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
+                ${g.nombre}
+              </h3>
+              <p class="text-xs text-slate-400 mt-1">${g.universidad}</p>
+            </div>
           </div>
 
-          <div>
-            <h3 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
-              ${g.nombre}
-            </h3>
-            <p class="text-xs text-slate-400 mt-1">${g.universidad}</p>
+          <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
+            <span>📍 ${g.ciudad} (${g.comunidad})</span>
+            <span class="font-semibold text-slate-300 group-hover:translate-x-0.5 transition-transform">Ver ficha →</span>
           </div>
-        </div>
+        </a>
+      `).join('');
+    }
 
-        <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-          <span>📍 ${g.ciudad} (${g.comunidad})</span>
-          <span class="font-semibold text-slate-300 group-hover:translate-x-0.5 transition-transform">Ver ficha →</span>
-        </div>
-      </a>
-    `).join('');
-  }
+    // Event listeners
+    searchInput.addEventListener('input', filtrarGrados);
+    maxNotaInput.addEventListener('input', filtrarGrados);
+    tipoSelect.addEventListener('change', filtrarGrados);
+    comunidadSelect.addEventListener('change', filtrarGrados);
 
-  // Render inicial al cargar la página
-  document.addEventListener('DOMContentLoaded', () => {
+    // Render inicial
     renderizarGrados(todosLosGrados);
   });
 </script>

@@ -4,7 +4,6 @@ import MainLayout from '../layouts/MainLayout.astro';
 import gradosData from '../data/grados.json';
 
 const gradosOrdenados = [...gradosData].sort((a, b) => b.notaCorte2026 - a.notaCorte2026);
-const gradosJsonString = JSON.stringify(gradosOrdenados);
 ---
 
 <MainLayout 
@@ -28,7 +27,6 @@ const gradosJsonString = JSON.stringify(gradosOrdenados);
         type="text" 
         id="searchNotasInput" 
         placeholder="🔍 Buscar por nombre de grado o universidad..." 
-        oninput="filtrarNotasCorte()"
         class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-4 py-3 text-xs text-white outline-none transition"
       />
     </div>
@@ -55,48 +53,55 @@ const gradosJsonString = JSON.stringify(gradosOrdenados);
   </div>
 </MainLayout>
 
-<script define:vars={{ gradosJsonString }}>
-  const todosLosGrados = JSON.parse(gradosJsonString);
+<script type="application/json" id="notas-json" set:html={JSON.stringify(gradosOrdenados)} />
 
-  function renderTabla(grados) {
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const jsonElement = document.getElementById('notas-json');
+    if (!jsonElement) return;
+
+    const todosLosGrados = JSON.parse(jsonElement.textContent || '[]');
+    const searchInput = document.getElementById('searchNotasInput');
     const tbody = document.getElementById('tablaNotasBody');
-    if (grados.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="4" class="py-8 text-center text-slate-500">No se han encontrado titulaciones.</td></tr>`;
-      return;
+
+    function renderTabla(grados) {
+      if (grados.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="py-8 text-center text-slate-500">No se han encontrado titulaciones.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = grados.map(g => `
+        <tr class="hover:bg-slate-800/30 transition-colors">
+          <td class="py-4 px-4">
+            <a href="/grados/${g.id}" class="font-bold text-white hover:text-amber-400 transition-colors block">
+              ${g.nombre}
+            </a>
+            <span class="text-[11px] text-slate-400">${g.universidad}</span>
+          </td>
+          <td class="py-4 px-4 text-slate-300 font-medium">${g.ciudad}</td>
+          <td class="py-4 px-4">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300">
+              ${g.tipo}
+            </span>
+          </td>
+          <td class="py-4 px-4 text-right font-mono font-bold text-amber-400 text-sm">
+            ${g.notaCorte2026.toFixed(3)}
+          </td>
+        </tr>
+      `).join('');
     }
 
-    tbody.innerHTML = grados.map(g => `
-      <tr class="hover:bg-slate-800/30 transition-colors">
-        <td class="py-4 px-4">
-          <a href="/grados/${g.id}" class="font-bold text-white hover:text-amber-400 transition-colors block">
-            ${g.nombre}
-          </a>
-          <span class="text-[11px] text-slate-400">${g.universidad}</span>
-        </td>
-        <td class="py-4 px-4 text-slate-300 font-medium">${g.ciudad}</td>
-        <td class="py-4 px-4">
-          <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300">
-            ${g.tipo}
-          </span>
-        </td>
-        <td class="py-4 px-4 text-right font-mono font-bold text-amber-400 text-sm">
-          ${g.notaCorte2026.toFixed(3)}
-        </td>
-      </tr>
-    `).join('');
-  }
+    function filtrarNotasCorte() {
+      const texto = searchInput.value.toLowerCase().trim();
+      const filtrados = todosLosGrados.filter(g => 
+        g.nombre.toLowerCase().includes(texto) || 
+        g.universidad.toLowerCase().includes(texto) || 
+        g.ciudad.toLowerCase().includes(texto)
+      );
+      renderTabla(filtrados);
+    }
 
-  function filtrarNotasCorte() {
-    const texto = document.getElementById('searchNotasInput').value.toLowerCase().trim();
-    const filtrados = todosLosGrados.filter(g => 
-      g.nombre.toLowerCase().includes(texto) || 
-      g.universidad.toLowerCase().includes(texto) || 
-      g.ciudad.toLowerCase().includes(texto)
-    );
-    renderTabla(filtrados);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
+    searchInput.addEventListener('input', filtrarNotasCorte);
     renderTabla(todosLosGrados);
   });
 </script>
