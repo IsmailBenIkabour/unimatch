@@ -15,6 +15,31 @@ const { grado } = Astro.props;
 ---
 
 <MainLayout title={`${grado.nombre} en ${grado.universidad} | Nota de Corte y Precios`}>
+  
+  <!-- DATOS ESTRUCTURADOS SCHEMA.ORG PARA GOOGLE -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "EducationalOccupationalProgram",
+    "name": grado.nombre,
+    "description": `${grado.nombre} impartido en ${grado.universidad}. Nota de corte 2026: ${grado.notaCorte2026}.`,
+    "provider": {
+      "@type": "CollegeOrUniversity",
+      "name": grado.universidad,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": grado.ciudad,
+        "addressRegion": grado.comunidad,
+        "addressCountry": "ES"
+      }
+    },
+    "educationalProgramMode": grado.tipo,
+    "offers": {
+      "@type": "Offer",
+      "price": (grado.precioCredito * 60).toFixed(0),
+      "priceCurrency": "EUR"
+    }
+  })} />
+
   <article class="space-y-8 py-4">
     
     <!-- MIGAS DE PAN (BREADCRUMBS PARA SEO) -->

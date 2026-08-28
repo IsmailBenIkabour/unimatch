@@ -6,35 +6,55 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const { 
-  title = "UniMatch | Orientación Universitaria y Notas de Corte en España",
-  description = "Calcula tu nota de admisión a la PAU/EBAU, descubre qué carreras puedes estudiar según tu nota y compara universidades públicas y privadas." 
+  title = "UniMatchES | Orientación Universitaria y Notas de Corte en España",
+  description = "Calcula tu nota de admisión a la PAU/EBAU sobre 14 puntos, consulta el histórico de notas de corte y compara universidades públicas y privadas.",
+  image = "/og-image.jpg"
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://unimatch.netlify.app");
 ---
 
 <!DOCTYPE html>
 <html lang="es" class="h-full bg-slate-950 text-slate-100 selection:bg-amber-500 selection:text-slate-950">
   <head>
+    <!-- METADATOS BÁSICOS -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
+    
+    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- OPEN GRAPH / FACEBOOK / WHATSAPP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="UniMatchES" />
+
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
   </head>
   <body class="min-h-full flex flex-col font-sans antialiased">
     
-    <!-- Componente Header -->
     <Header />
 
-    <!-- Hueco donde se insertará el contenido de cada página -->
     <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
       <slot />
     </main>
 
-    <!-- Componente Footer -->
     <Footer />
 
   </body>
