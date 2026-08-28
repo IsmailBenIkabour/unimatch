@@ -2,7 +2,7 @@
 // src/components/BuscadorGrados.astro
 import gradosData from '../data/grados.json';
 
-// Extraer comunidades únicas para el selector
+// Extraer comunidades únicas para el selector y ordenarlas
 const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 ---
 
@@ -78,7 +78,7 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 
 </div>
 
-<!-- SCRIPT DE FILTRADO SEGURO -->
+<!-- SCRIPT DE FILTRADO Y ORDEN ALFABÉTICO SEGURO -->
 <script type="application/json" id="grados-json" set:html={JSON.stringify(gradosData)} />
 
 <script>
@@ -113,6 +113,9 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 
         return true;
       });
+
+      // Ordenar alfabéticamente por nombre de la titulación (A-Z)
+      filtrados.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
       renderizarGrados(filtrados);
     }
@@ -170,7 +173,8 @@ const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
     tipoSelect.addEventListener('change', filtrarGrados);
     comunidadSelect.addEventListener('change', filtrarGrados);
 
-    // Render inicial
-    renderizarGrados(todosLosGrados);
+    // Render inicial ordenado alfabéticamente
+    const gradosIniciales = [...todosLosGrados].sort((a, b) => a.nombre.localeCompare(b.nombre));
+    renderizarGrados(gradosIniciales);
   });
 </script>
