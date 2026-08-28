@@ -3,7 +3,12 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import gradosData from '../data/grados.json';
 
-const gradosOrdenados = [...gradosData].sort((a, b) => b.notaCorte2026 - a.notaCorte2026);
+// Ordenar grados por nota de corte de mayor a menor con validación de valores
+const gradosOrdenados = [...gradosData].sort((a, b) => {
+  const notaA = typeof a?.notaCorte2026 === 'number' ? a.notaCorte2026 : 0;
+  const notaB = typeof b?.notaCorte2026 === 'number' ? b.notaCorte2026 : 0;
+  return notaB - notaA;
+});
 ---
 
 <MainLayout 
@@ -34,16 +39,23 @@ const gradosOrdenados = [...gradosData].sort((a, b) => b.notaCorte2026 - a.notaC
           </tr>
         </thead>
         <tbody class="divide-y divide-slate-800/50">
-          {gradosOrdenados.map(g => (
-            <tr class="hover:bg-slate-800/30 transition-colors">
-              <td class="p-3.5 font-bold text-white">{g.nombre}</td>
-              <td class="p-3.5 text-slate-400">{g.universidad}</td>
-              <td class="p-3.5 text-slate-400">{g.ciudad}</td>
-              <td class="p-3.5 text-right font-mono font-bold text-amber-400">
-                {g.notaCorte2026.toFixed(3)}
-              </td>
-            </tr>
-          ))}
+          {gradosOrdenados.map(g => {
+            if (!g || !g.nombre) return null;
+            const notaFormateada = typeof g.notaCorte2026 === 'number' 
+              ? g.notaCorte2026.toFixed(3) 
+              : (g.notaCorte2026 || '0.000');
+
+            return (
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="p-3.5 font-bold text-white">{g.nombre}</td>
+                <td class="p-3.5 text-slate-400">{g.universidad || 'N/A'}</td>
+                <td class="p-3.5 text-slate-400">{g.ciudad || 'Cataluña'}</td>
+                <td class="p-3.5 text-right font-mono font-bold text-amber-400">
+                  {notaFormateada}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

@@ -4,16 +4,22 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import gradosData from '../../data/grados.json';
 
 export async function getStaticPaths() {
-  return gradosData.map((grado) => ({
-    params: { id: grado.id },
-    props: { grado },
-  }));
+  // Filtrar elementos sin ID/slug para evitar el error "Missing parameter: id" en la build
+  return gradosData
+    .filter(grado => grado && (grado.id || grado.slug))
+    .map((grado) => {
+      const paramId = String(grado.id || grado.slug);
+      return {
+        params: { id: paramId },
+        props: { grado },
+      };
+    });
 }
 
 const { grado } = Astro.props;
 ---
 
-<MainLayout title={`${grado.nombre} | UniMatch Cataluña`}>
+<MainLayout title={`${grado.nombre || 'Grado'} | UniMatch Cataluña`}>
   <div class="space-y-8 py-8 max-w-4xl mx-auto px-4">
     
     <a href="/grados" class="text-xs text-amber-400 hover:underline font-mono">← Volver al buscador</a>
@@ -21,12 +27,12 @@ const { grado } = Astro.props;
     <header class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
       <div class="flex justify-between items-start gap-4">
         <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-          {grado.rama}
+          {grado.rama || 'Grado'}
         </span>
         <div class="text-right">
           <span class="text-[10px] text-slate-400 uppercase font-mono block">Nota de corte 2026</span>
           <span class="text-2xl font-mono font-bold text-amber-400">
-            {grado.notaCorte2026.toFixed(3)}
+            {typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.toFixed(3) : (grado.notaCorte2026 || '0.000')}
           </span>
         </div>
       </div>
@@ -34,7 +40,7 @@ const { grado } = Astro.props;
       <div>
         <h1 class="text-2xl sm:text-3xl font-black text-white">{grado.nombre}</h1>
         <p class="text-sm text-slate-400 mt-1">{grado.universidad}</p>
-        <p class="text-xs text-slate-500 mt-0.5">📍 {grado.ciudad} (Cataluña)</p>
+        <p class="text-xs text-slate-500 mt-0.5">📍 {grado.ciudad || 'Cataluña'} (Cataluña)</p>
       </div>
     </header>
 
@@ -42,7 +48,7 @@ const { grado } = Astro.props;
       <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 space-y-3">
         <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">Ponderaciones PAU</h3>
         <ul class="space-y-1.5 text-xs text-slate-400">
-          {grado.ponderaciones.map((p) => (
+          {(grado.ponderaciones || []).map((p) => (
             <li class="bg-slate-950 px-3 py-2 rounded-xl border border-slate-800/60 flex items-center gap-2">
               <span class="text-amber-400">•</span> {p}
             </li>
@@ -53,7 +59,7 @@ const { grado } = Astro.props;
       <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 space-y-3">
         <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">Salidas Profesionales</h3>
         <ul class="space-y-1.5 text-xs text-slate-400">
-          {grado.salidas.map((s) => (
+          {(grado.salidas || []).map((s) => (
             <li class="bg-slate-950 px-3 py-2 rounded-xl border border-slate-800/60 flex items-center gap-2">
               <span class="text-amber-400">✓</span> {s}
             </li>
