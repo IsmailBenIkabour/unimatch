@@ -1,7 +1,10 @@
 ---
 // src/components/ComparadorGrados.astro
 import gradosData from '../data/grados.json';
-const gradosJsonString = JSON.stringify(gradosData);
+
+// Ordenar alfabéticamente por el nombre del grado
+const gradosOrdenados = [...gradosData].sort((a, b) => a.nombre.localeCompare(b.nombre));
+const gradosJsonString = JSON.stringify(gradosOrdenados);
 ---
 
 <div class="space-y-6">
@@ -12,8 +15,8 @@ const gradosJsonString = JSON.stringify(gradosData);
       <label for="grado1Select" class="block text-xs font-bold text-slate-300">Seleccionar Primera Titulación</label>
       <select id="grado1Select" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs text-white outline-none transition">
         <option value="">-- Elige un grado --</option>
-        {gradosData.map(g => (
-          <option value={g.id}>{g.nombre} ({g.universidad})</option>
+        {gradosOrdenados.map(g => (
+          <option value={g.id}>{g.nombre} - {g.universidad}</option>
         ))}
       </select>
     </div>
@@ -23,8 +26,8 @@ const gradosJsonString = JSON.stringify(gradosData);
       <label for="grado2Select" class="block text-xs font-bold text-slate-300">Seleccionar Segunda Titulación</label>
       <select id="grado2Select" class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs text-white outline-none transition">
         <option value="">-- Elige un grado --</option>
-        {gradosData.map(g => (
-          <option value={g.id}>{g.nombre} ({g.universidad})</option>
+        {gradosOrdenados.map(g => (
+          <option value={g.id}>{g.nombre} - {g.universidad}</option>
         ))}
       </select>
     </div>
