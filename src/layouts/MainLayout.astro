@@ -15,7 +15,7 @@ const {
   image = "/og-image.jpg"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://unimatch.netlify.app");
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://unimatches.netlify.app");
 ---
 
 <!DOCTYPE html>
@@ -28,6 +28,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://unimatch
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
+
+    <!-- VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
+    <meta name="google-site-verification" content="2eEkVifQgYEj1qJUf245lJSDtpFtUYvSxkOhF0IKaqE" />
     
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
