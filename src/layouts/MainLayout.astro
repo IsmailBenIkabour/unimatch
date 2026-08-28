@@ -1,0 +1,41 @@
+---
+// src/layouts/MainLayout.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "UniMatch | Orientación Universitaria y Notas de Corte en España",
+  description = "Calcula tu nota de admisión a la PAU/EBAU, descubre qué carreras puedes estudiar según tu nota y compara universidades públicas y privadas." 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-950 text-slate-100 selection:bg-amber-500 selection:text-slate-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-full flex flex-col font-sans antialiased">
+    
+    <!-- Componente Header -->
+    <Header />
+
+    <!-- Hueco donde se insertará el contenido de cada página -->
+    <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
+      <slot />
+    </main>
+
+    <!-- Componente Footer -->
+    <Footer />
+
+  </body>
+</html>
