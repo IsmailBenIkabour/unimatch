@@ -1955,5 +1955,43 @@
     "empleabilidad": 96.0,
     "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)", "Química (0.1)"],
     "salidas": ["Arquitectura de Software", "Desarrollo Fullstack", "Gestión Ágil de Proyectos"]
+  },
+  {
+    "id": "informatica-ub",
+    "slug": "informatica-ub",
+    "nombre": "Grado en Ingeniería Informática",
+    "rama": "Ingeniería y Arquitectura",
+    "universidad": "Universitat de Barcelona (UB)",
+    "universidadSlug": "ub",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Barcelona",
+    "notaCorte2026": 9.750,
+    "notaCorte2025": 9.600,
+    "notaCorte2024": 9.450,
+    "plazas": 150,
+    "precioCredito": 18.46,
+    "empleabilidad": 98.0,
+    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)", "Química (0.1)"],
+    "salidas": ["Ingeniería de Software", "Sistemas Inteligentes", "Bases de Datos y Cloud"]
+  },
+  {
+    "id": "informatica-upf",
+    "slug": "informatica-upf",
+    "nombre": "Grado en Ingeniería en Informática",
+    "rama": "Ingeniería y Arquitectura",
+    "universidad": "Universitat Pompeu Fabra (UPF)",
+    "universidadSlug": "upf",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Barcelona",
+    "notaCorte2026": 12.300,
+    "notaCorte2025": 12.150,
+    "notaCorte2024": 12.000,
+    "plazas": 120,
+    "precioCredito": 18.46,
+    "empleabilidad": 98.8,
+    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)", "Tecnología e Ingeniería (0.2)"],
+    "salidas": ["Software Development", "Inteligencia Artificial", "Arquitectura de Computadores"]
   }
 ]
