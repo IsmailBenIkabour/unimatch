@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://unimatches.netlify.app',
+  site: 'https://unimatchcat.netlify.app',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
