@@ -150,4 +150,11 @@
     document.getElementById('desgloseText').innerText = `Base (Bach+PAU): ${notaBase.toFixed(3)} | Extra Específica: +${extraTotal.toFixed(3)}`;
     document.getElementById('resultadoBox').classList.remove('hidden');
   }
+  // Auto-actualizar el buscador con la nota obtenida y hacer scroll
+    const maxInput = document.getElementById('maxNotaInput');
+    if (maxInput) {
+      maxInput.value = notaFinal.toFixed(3);
+      if (typeof filtrarGrados === 'function') filtrarGrados();
+      document.getElementById('buscadorSection')?.scrollIntoView({ behavior: 'smooth' });
+    }
 </script>

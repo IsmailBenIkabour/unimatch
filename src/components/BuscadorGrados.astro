@@ -1,46 +1,48 @@
 ---
 // src/components/BuscadorGrados.astro
 import gradosData from '../data/grados.json';
+
+// Extraemos las comunidades autónomas únicas del JSON para rellenar el selector automáticamente
+const comunidades = [...new Set(gradosData.map(g => g.comunidad))].sort();
 ---
 
-<div class="space-y-6">
+<div id="buscadorSection" class="space-y-6">
   
   <!-- CABECERA Y FILTROS DEL BUSCADOR -->
-  <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4">
+  <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <div>
         <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-          <span>🔍</span> Enlaces y Carreras Disponibles
+          <span>🔍</span> Explora y Filtra Titulaciones
         </h2>
         <p class="text-xs sm:text-sm text-slate-400 mt-1">
-          Filtra por tu nota calculada o busca por nombre de grado o ciudad.
+          Filtra por tu nota estimada, tipo de universidad o comunidad autónoma.
         </p>
       </div>
 
-      <!-- BADGE DE REGISTROS -->
       <span class="text-xs font-bold font-mono px-3 py-1 rounded-full bg-slate-950 text-slate-400 border border-slate-800 self-start sm:self-auto">
-        {gradosData.length} Titulaciones en catálogo
+        {gradosData.length} Titulaciones
       </span>
     </div>
 
-    <!-- CONTROLES DE FILTRADO -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+    <!-- CONTROLES DE FILTRADO (GRID DE 4 CAMPOS) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
       
-      <!-- Buscador de Texto -->
+      <!-- 1. Buscador de Texto -->
       <div class="space-y-1">
         <label for="searchQuery" class="block text-xs font-semibold text-slate-300">Buscar por nombre o ciudad</label>
         <input 
           type="text" 
           id="searchQuery" 
           oninput="filtrarGrados()" 
-          placeholder="Ej. Informática, Barcelona, Medicina..." 
+          placeholder="Ej. Informática, UCM..." 
           class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs font-semibold text-white outline-none transition"
         />
       </div>
 
-      <!-- Filtro por Nota Máxima -->
+      <!-- 2. Filtro por Nota -->
       <div class="space-y-1">
-        <label for="maxNotaInput" class="block text-xs font-semibold text-slate-300">Filtrar por mi nota (Máxima nota de corte)</label>
+        <label for="maxNotaInput" class="block text-xs font-semibold text-slate-300">Nota máxima de corte</label>
         <input 
           type="number" 
           id="maxNotaInput" 
@@ -51,6 +53,36 @@ import gradosData from '../data/grados.json';
           placeholder="Ej. 11.500" 
           class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs font-semibold text-amber-400 font-mono outline-none transition"
         />
+      </div>
+
+      <!-- 3. Filtro por Tipo (Pública / Privada / Online) -->
+      <div class="space-y-1">
+        <label for="tipoSelect" class="block text-xs font-semibold text-slate-300">Tipo de centro</label>
+        <select 
+          id="tipoSelect" 
+          onchange="filtrarGrados()" 
+          class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 text-xs font-semibold text-slate-200 rounded-xl p-3 outline-none transition"
+        >
+          <option value="">Todos los tipos</option>
+          <option value="pública">Pública</option>
+          <option value="privada">Privada</option>
+          <option value="online">Online</option>
+        </select>
+      </div>
+
+      <!-- 4. Filtro por Comunidad Autónoma -->
+      <div class="space-y-1">
+        <label for="comunidadSelect" class="block text-xs font-semibold text-slate-300">Comunidad Autónoma</label>
+        <select 
+          id="comunidadSelect" 
+          onchange="filtrarGrados()" 
+          class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 text-xs font-semibold text-slate-200 rounded-xl p-3 outline-none transition"
+        >
+          <option value="">Todas las Comunidades</option>
+          {comunidades.map(c => (
+            <option value={c.toLowerCase()}>{c}</option>
+          ))}
+        </select>
       </div>
 
     </div>
@@ -64,6 +96,8 @@ import gradosData from '../data/grados.json';
         class="grado-card block bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 transition-all group"
         data-nombre={grado.nombre.toLowerCase()}
         data-ciudad={grado.ciudad.toLowerCase()}
+        data-tipo={grado.tipo.toLowerCase()}
+        data-comunidad={grado.comunidad.toLowerCase()}
         data-nota={grado.notaCorte2026}
       >
         <div class="flex flex-col h-full justify-between space-y-4">
@@ -71,7 +105,7 @@ import gradosData from '../data/grados.json';
           <div class="space-y-2">
             <div class="flex items-center justify-between text-[11px] font-semibold text-slate-400">
               <span class="text-amber-400 font-bold">{grado.rama}</span>
-              <span>{grado.ciudad} ({grado.tipo})</span>
+              <span class="px-2 py-0.5 rounded bg-slate-950 border border-slate-800">{grado.tipo}</span>
             </div>
 
             <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition">
@@ -79,7 +113,7 @@ import gradosData from '../data/grados.json';
             </h3>
 
             <p class="text-xs text-slate-400">
-              🏛️ {grado.universidad}
+              🏛️ {grado.universidad} <span class="text-slate-500">({grado.ciudad})</span>
             </p>
           </div>
 
@@ -102,32 +136,30 @@ import gradosData from '../data/grados.json';
 
 </div>
 
-<!-- SCRIPT DE FILTRADO NATIVO EN CLIENTE (CORREGIDO) -->
+<!-- SCRIPT DE FILTRADO MULTI-CRITERIO NATIVO -->
 <script is:inline>
   function filtrarGrados() {
-    // 1. Obtener y limpiar texto de búsqueda
     const query = document.getElementById('searchQuery').value.toLowerCase().trim();
-    
-    // 2. Obtener nota introducida (remplazando comas por puntos por si el teclado móvil usa comas)
     const rawNota = document.getElementById('maxNotaInput').value.replace(',', '.');
     const maxNotaVal = parseFloat(rawNota);
+    const tipoFiltro = document.getElementById('tipoSelect').value.toLowerCase();
+    const comunidadFiltro = document.getElementById('comunidadSelect').value.toLowerCase();
 
     const cards = document.querySelectorAll('.grado-card');
 
     cards.forEach(card => {
       const nombre = card.getAttribute('data-nombre') || '';
       const ciudad = card.getAttribute('data-ciudad') || '';
-      const notaStr = card.getAttribute('data-nota') || '0';
-      const nota = parseFloat(notaStr);
+      const tipo = card.getAttribute('data-tipo') || '';
+      const comunidad = card.getAttribute('data-comunidad') || '';
+      const nota = parseFloat(card.getAttribute('data-nota') || '0');
 
-      // Comprobar si coincide el texto (nombre o ciudad)
       const coincideTexto = query === '' || nombre.includes(query) || ciudad.includes(query);
-      
-      // Comprobar si coincide la nota (si no hay nota escrita o si la nota de corte es MENOR o IGUAL a la del alumno)
       const coincideNota = isNaN(maxNotaVal) || nota <= maxNotaVal;
+      const coincideTipo = tipoFiltro === '' || tipo.includes(tipoFiltro);
+      const coincideComunidad = comunidadFiltro === '' || comunidad === comunidadFiltro;
 
-      // Mostrar solo si cumple ambos filtros
-      if (coincideTexto && coincideNota) {
+      if (coincideTexto && coincideNota && coincideTipo && coincideComunidad) {
         card.style.display = 'block';
       } else {
         card.style.display = 'none';
