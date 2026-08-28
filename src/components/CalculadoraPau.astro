@@ -15,6 +15,7 @@
 
   <form id="pauForm" onsubmit="return false;" class="space-y-6">
     
+    <!-- BLOQUE 1: NOTA SOBRE 10 -->
     <div class="space-y-4">
       <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider">
         1. Fase Obligatoria (Hasta 10 puntos)
@@ -55,6 +56,7 @@
       </div>
     </div>
 
+    <!-- BLOQUE 2: FASE ESPECÍFICA -->
     <div class="space-y-4 pt-2 border-t border-slate-800">
       <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider">
         2. Fase Voluntaria / Ponderaciones (Hasta 4 puntos extra)
@@ -62,6 +64,7 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
+        <!-- Optativa 1 -->
         <div class="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 space-y-3">
           <span class="block text-xs font-bold text-slate-300">Optativa 1</span>
           <div>
@@ -78,6 +81,7 @@
           </div>
         </div>
 
+        <!-- Optativa 2 -->
         <div class="bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 space-y-3">
           <span class="block text-xs font-bold text-slate-300">Optativa 2</span>
           <div>
@@ -97,6 +101,7 @@
       </div>
     </div>
 
+    <!-- BOTÓN CALCULAR -->
     <button 
       type="button" 
       onclick="calcularNotaPAU()" 
@@ -106,22 +111,45 @@
     </button>
   </form>
 
-  <div id="resultadoBox" class="hidden bg-slate-950 border border-amber-500/30 rounded-2xl p-6 text-center space-y-2 animate-fadeIn">
-    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tu Nota de Admisión Estimada</span>
-    <div id="notaFinalDisplay" class="text-4xl sm:text-5xl font-black text-amber-400 font-mono">
-      0.000
+  <!-- RESULTADO FINAL CON BARRA DE PROGRESO -->
+  <div id="resultadoBox" class="hidden bg-slate-950 border border-amber-500/30 rounded-2xl p-6 text-center space-y-4 animate-fadeIn">
+    <div class="space-y-1">
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tu Nota de Admisión Estimada</span>
+      <div id="notaFinalDisplay" class="text-4xl sm:text-5xl font-black text-amber-400 font-mono">
+        0.000
+      </div>
+      <p id="desgloseText" class="text-xs text-slate-400 font-mono pt-1">
+        Base (Bach+PAU): 0.000 | Extra Específica: +0.000
+      </p>
     </div>
-    <p id="desgloseText" class="text-xs text-slate-400 font-mono pt-1">
-      Base de Bachillerato + PAU: 0.000 | Extra Específica: +0.000
-    </p>
+
+    <!-- BARRA VISUAL DE NIVEL SOBRE 14 -->
+    <div class="space-y-1.5 pt-2 border-t border-slate-800">
+      <div class="flex justify-between items-center text-[11px] font-bold text-slate-400 font-mono">
+        <span>5.000</span>
+        <span id="porcentajeText" class="text-amber-400">0% del máximo</span>
+        <span>14.000</span>
+      </div>
+      <div class="w-full bg-slate-900 h-3.5 rounded-full overflow-hidden p-0.5 border border-slate-800">
+        <div 
+          id="progressBar" 
+          class="bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400 h-full rounded-full transition-all duration-700 ease-out" 
+          style="width: 0%;"
+        ></div>
+      </div>
+    </div>
   </div>
 
 </div>
 
+<!-- SCRIPT DE CÁLCULO Y ANIMACIÓN -->
 <script is:inline>
   function calcularNotaPAU() {
-    const nmb = parseFloat(document.getElementById('nmb').value) || 0;
-    const pauGen = parseFloat(document.getElementById('pauGeneral').value) || 0;
+    const rawNmb = document.getElementById('nmb').value.replace(',', '.');
+    const rawPauGen = document.getElementById('pauGeneral').value.replace(',', '.');
+
+    const nmb = parseFloat(rawNmb) || 0;
+    const pauGen = parseFloat(rawPauGen) || 0;
     
     if (nmb < 5 || pauGen < 4) {
       alert("Por favor, introduce al menos una Nota de Bachillerato válida (mínimo 5) y una nota de Fase General (mínimo 4).");
@@ -131,30 +159,37 @@
     // 1. Cálculo Base (sobre 10)
     const notaBase = (nmb * 0.6) + (pauGen * 0.4);
 
-    // 2. Cálculo Optativa 1
-    const opt1Nota = parseFloat(document.getElementById('opt1Nota').value) || 0;
+    // 2. Optativa 1
+    const opt1Nota = parseFloat(document.getElementById('opt1Nota').value.replace(',', '.')) || 0;
     const opt1Pond = parseFloat(document.getElementById('opt1Pond').value) || 0;
     const extra1 = opt1Nota >= 5 ? opt1Nota * opt1Pond : 0;
 
-    // 3. Cálculo Optativa 2
-    const opt2Nota = parseFloat(document.getElementById('opt2Nota').value) || 0;
+    // 3. Optativa 2
+    const opt2Nota = parseFloat(document.getElementById('opt2Nota').value.replace(',', '.')) || 0;
     const opt2Pond = parseFloat(document.getElementById('opt2Pond').value) || 0;
     const extra2 = opt2Nota >= 5 ? opt2Nota * opt2Pond : 0;
 
     // 4. Suma Total
     const extraTotal = extra1 + extra2;
-    const notaFinal = notaBase + extraTotal;
+    const notaFinal = Math.min(14, notaBase + extraTotal);
 
-    // Mostrar en pantalla
+    // Mostrar Resultado
     document.getElementById('notaFinalDisplay').innerText = notaFinal.toFixed(3);
     document.getElementById('desgloseText').innerText = `Base (Bach+PAU): ${notaBase.toFixed(3)} | Extra Específica: +${extraTotal.toFixed(3)}`;
+    
+    // Cálculo del Porcentaje para la Barra
+    const porcentaje = Math.round((notaFinal / 14) * 100);
+    document.getElementById('porcentajeText').innerText = `${porcentaje}% del máximo`;
+    document.getElementById('progressBar').style.width = `${porcentaje}%`;
+
     document.getElementById('resultadoBox').classList.remove('hidden');
-  }
-  // Auto-actualizar el buscador con la nota obtenida y hacer scroll
+
+    // Auto-actualizar el buscador con la nota obtenida y hacer scroll
     const maxInput = document.getElementById('maxNotaInput');
     if (maxInput) {
       maxInput.value = notaFinal.toFixed(3);
       if (typeof filtrarGrados === 'function') filtrarGrados();
       document.getElementById('buscadorSection')?.scrollIntoView({ behavior: 'smooth' });
     }
+  }
 </script>
