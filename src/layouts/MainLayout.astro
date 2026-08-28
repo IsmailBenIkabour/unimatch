@@ -1,5 +1,6 @@
 ---
 // src/layouts/MainLayout.astro
+import '../styles/global.css'; // <-- ¡Esta línea es la que inyecta los estilos!
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -10,8 +11,8 @@ interface Props {
 }
 
 const { 
-  title = "UniMatchES | Orientación Universitaria y Notas de Corte en España",
-  description = "Calcula tu nota de admisión a la PAU/EBAU sobre 14 puntos, consulta el histórico de notas de corte y compara universidades públicas y privadas.",
+  title = "UniMatchES | Orientación Universitaria y Notas de Corte",
+  description = "Calcula tu nota de admisión a la PAU/EBAU sobre 14 puntos.",
   image = "/og-image.jpg"
 } = Astro.props;
 
@@ -19,38 +20,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://unimatch
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-950 text-slate-100 selection:bg-amber-500 selection:text-slate-950">
+<html lang="es" class="h-full bg-slate-950 text-slate-100 selection:bg-amber-400 selection:text-slate-950">
   <head>
-    <!-- METADATOS BÁSICOS -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    <meta name="robots" content="index, follow" />
-
-    <!-- VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
-    <meta name="google-site-verification" content="2eEkVifQgYEj1qJUf245lJSDtpFtUYvSxkOhF0IKaqE" />
-    
-    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- OPEN GRAPH / FACEBOOK / WHATSAPP -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="UniMatchES" />
-
-    <!-- TWITTER CARDS -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
   </head>
-  <body class="min-h-full flex flex-col font-sans antialiased">
+  <body class="min-h-full flex flex-col font-sans antialiased bg-slate-950 text-slate-100">
     
     <Header />
 
