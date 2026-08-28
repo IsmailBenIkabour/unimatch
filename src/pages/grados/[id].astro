@@ -1,0 +1,118 @@
+---
+// src/pages/grados/[id].astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import gradosData from '../../data/grados.json';
+
+// Esta función le dice a Astro qué URLs debe construir en tiempo de compilación
+export async function getStaticPaths() {
+  return gradosData.map((grado) => ({
+    params: { id: grado.id },
+    props: { grado },
+  }));
+}
+
+const { grado } = Astro.props;
+---
+
+<MainLayout title={`${grado.nombre} en ${grado.universidad} | Nota de Corte y Precios`}>
+  <article class="space-y-8 py-4">
+    
+    <!-- MIGAS DE PAN (BREADCRUMBS PARA SEO) -->
+    <nav class="text-xs text-slate-400 flex items-center gap-2">
+      <a href="/" class="hover:text-amber-400 transition">Inicio</a>
+      <span>/</span>
+      <a href="/grados" class="hover:text-amber-400 transition">Grados</a>
+      <span>/</span>
+      <span class="text-slate-200 font-semibold">{grado.nombre}</span>
+    </nav>
+
+    <!-- CABECERA DEL GRADO -->
+    <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold">
+          {grado.rama}
+        </span>
+        <span class="text-xs text-slate-400 font-mono">
+          {grado.tipo} • {grado.ciudad} ({grado.comunidad})
+        </span>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+        {grado.nombre}
+      </h1>
+      
+      <p class="text-sm text-slate-300 font-semibold flex items-center gap-2">
+        <span>🏛️</span> {grado.universidad}
+      </p>
+    </div>
+
+    <!-- TARJETAS DE DATOS RÁPIDOS -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      
+      <!-- Nota de Corte 2026 -->
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 text-center space-y-1">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Nota de Corte 2026</span>
+        <span class="text-3xl font-black text-amber-400 font-mono">{grado.notaCorte2026.toFixed(3)}</span>
+        <span class="text-[11px] text-slate-500 block">Último admitido</span>
+      </div>
+
+      <!-- Precio Crédito -->
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 text-center space-y-1">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Precio estimado</span>
+        <span class="text-3xl font-black text-emerald-400 font-mono">{(grado.precioCredito * 60).toFixed(0)} €</span>
+        <span class="text-[11px] text-slate-500 block">1er año ({grado.precioCredito} €/crédito)</span>
+      </div>
+
+      <!-- Empleabilidad -->
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 text-center space-y-1">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Inserción Laboral</span>
+        <span class="text-3xl font-black text-sky-400 font-mono">{grado.empleabilidad}%</span>
+        <span class="text-[11px] text-slate-500 block">Afiliación SS a los 4 años</span>
+      </div>
+
+    </div>
+
+    <!-- HISTÓRICO Y PONDERACIONES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Tabla Histórico Notas de Corte -->
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 space-y-4">
+        <h2 class="text-base font-bold text-white flex items-center gap-2">
+          <span>📈</span> Evolución de la Nota de Corte
+        </h2>
+        
+        <div class="space-y-2 text-xs font-mono">
+          <div class="flex justify-between items-center p-2 bg-slate-950 rounded-lg">
+            <span class="text-slate-400">Curso 2026/2027</span>
+            <span class="text-amber-400 font-bold">{grado.notaCorte2026.toFixed(3)}</span>
+          </div>
+          <div class="flex justify-between items-center p-2 bg-slate-950/60 rounded-lg">
+            <span class="text-slate-400">Curso 2025/2026</span>
+            <span class="text-slate-200 font-bold">{grado.notaCorte2025.toFixed(3)}</span>
+          </div>
+          <div class="flex justify-between items-center p-2 bg-slate-950/40 rounded-lg">
+            <span class="text-slate-400">Curso 2024/2025</span>
+            <span class="text-slate-300 font-bold">{grado.notaCorte2024.toFixed(3)}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asignaturas que Ponderan -->
+      <div class="bg-slate-900/50 border border-slate-800 rounded-2xl p-6 space-y-4">
+        <h2 class="text-base font-bold text-white flex items-center gap-2">
+          <span>🎯</span> Asignaturas que Más Ponderan
+        </h2>
+        
+        <ul class="space-y-2 text-xs">
+          {grado.ponderaciones.map((p) => (
+            <li class="p-2.5 bg-slate-950 rounded-lg text-slate-300 font-semibold border border-slate-800/80">
+              {p}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+  </article>
+</MainLayout>

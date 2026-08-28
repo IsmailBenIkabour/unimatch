@@ -1,0 +1,137 @@
+---
+// src/components/BuscadorGrados.astro
+import gradosData from '../data/grados.json';
+---
+
+<div class="space-y-6">
+  
+  <!-- CABECERA Y FILTROS DEL BUSCADOR -->
+  <div class="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+          <span>🔍</span> Enlaces y Carreras Disponibles
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">
+          Filtra por tu nota calculada o busca por nombre de grado o ciudad.
+        </p>
+      </div>
+
+      <!-- BADGE DE REGISTROS -->
+      <span class="text-xs font-bold font-mono px-3 py-1 rounded-full bg-slate-950 text-slate-400 border border-slate-800 self-start sm:self-auto">
+        {gradosData.length} Titulaciones en catálogo
+      </span>
+    </div>
+
+    <!-- CONTROLES DE FILTRADO -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+      
+      <!-- Buscador de Texto -->
+      <div class="space-y-1">
+        <label for="searchQuery" class="block text-xs font-semibold text-slate-300">Buscar por nombre o ciudad</label>
+        <input 
+          type="text" 
+          id="searchQuery" 
+          oninput="filtrarGrados()" 
+          placeholder="Ej. Informática, Barcelona, Medicina..." 
+          class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs font-semibold text-white outline-none transition"
+        />
+      </div>
+
+      <!-- Filtro por Nota Máxima -->
+      <div class="space-y-1">
+        <label for="maxNotaInput" class="block text-xs font-semibold text-slate-300">Filtrar por mi nota (Máxima nota de corte)</label>
+        <input 
+          type="number" 
+          id="maxNotaInput" 
+          min="5" 
+          max="14" 
+          step="0.01" 
+          oninput="filtrarGrados()" 
+          placeholder="Ej. 11.500" 
+          class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl p-3 text-xs font-semibold text-amber-400 font-mono outline-none transition"
+        />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LISTADO DE TARJETAS DE GRADOS -->
+  <div id="gradosContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {gradosData.map((grado) => (
+      <a 
+        href={`/grados/${grado.id}`}
+        class="grado-card block bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 transition-all group"
+        data-nombre={grado.nombre.toLowerCase()}
+        data-ciudad={grado.ciudad.toLowerCase()}
+        data-nota={grado.notaCorte2026}
+      >
+        <div class="flex flex-col h-full justify-between space-y-4">
+          
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[11px] font-semibold text-slate-400">
+              <span class="text-amber-400 font-bold">{grado.rama}</span>
+              <span>{grado.ciudad} ({grado.tipo})</span>
+            </div>
+
+            <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition">
+              {grado.nombre}
+            </h3>
+
+            <p class="text-xs text-slate-400">
+              🏛️ {grado.universidad}
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase block font-bold">Nota Corte 2026</span>
+              <span class="text-lg font-black text-amber-400 font-mono">{grado.notaCorte2026.toFixed(3)}</span>
+            </div>
+
+            <div class="text-right">
+              <span class="text-[10px] text-slate-500 uppercase block font-bold">Empleabilidad</span>
+              <span class="text-sm font-bold text-emerald-400 font-mono">{grado.empleabilidad}%</span>
+            </div>
+          </div>
+
+        </div>
+      </a>
+    ))}
+  </div>
+
+</div>
+
+<!-- SCRIPT DE FILTRADO NATIVO EN CLIENTE (CORREGIDO) -->
+<script is:inline>
+  function filtrarGrados() {
+    // 1. Obtener y limpiar texto de búsqueda
+    const query = document.getElementById('searchQuery').value.toLowerCase().trim();
+    
+    // 2. Obtener nota introducida (remplazando comas por puntos por si el teclado móvil usa comas)
+    const rawNota = document.getElementById('maxNotaInput').value.replace(',', '.');
+    const maxNotaVal = parseFloat(rawNota);
+
+    const cards = document.querySelectorAll('.grado-card');
+
+    cards.forEach(card => {
+      const nombre = card.getAttribute('data-nombre') || '';
+      const ciudad = card.getAttribute('data-ciudad') || '';
+      const notaStr = card.getAttribute('data-nota') || '0';
+      const nota = parseFloat(notaStr);
+
+      // Comprobar si coincide el texto (nombre o ciudad)
+      const coincideTexto = query === '' || nombre.includes(query) || ciudad.includes(query);
+      
+      // Comprobar si coincide la nota (si no hay nota escrita o si la nota de corte es MENOR o IGUAL a la del alumno)
+      const coincideNota = isNaN(maxNotaVal) || nota <= maxNotaVal;
+
+      // Mostrar solo si cumple ambos filtros
+      if (coincideTexto && coincideNota) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
