@@ -1,0 +1,42 @@
+---
+// src/pages/calculadora-pau.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import CalculadoraPau from '../components/CalculadoraPau.astro';
+---
+
+<MainLayout 
+  title="Calculadora Nota de Admisión PAU 2026 | UniMatchES"
+  description="Calcula tu nota final de admisión a la universidad en España sobre 14 puntos. Herramienta oficial adaptada al baremo del Ministerio de Educación."
+>
+  <div class="space-y-8 py-4 max-w-3xl mx-auto">
+    
+    <!-- CABECERA DE LA PÁGINA -->
+    <div class="space-y-2 text-center">
+      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        Calculadora de Nota de Admisión <span class="text-amber-400">PAU / EBAU</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+        Introduce tus notas de Bachillerato, la Fase Oblatoria y tus asignaturas optativas para obtener tu nota oficial sobre 14 puntos.
+      </p>
+    </div>
+
+    <!-- REUTILIZAMOS EL COMPONENTE DE CALCULADORA -->
+    <CalculadoraPau />
+
+    <!-- GUÍA EXPLICATIVA SEO -->
+    <section class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+      <h2 class="text-base font-bold text-white flex items-center gap-2">
+        <span>📖</span> ¿Cómo se calcula la nota de admisión a la universidad?
+      </h2>
+      <p>
+        La nota final de admisión se calcula sumando la **Nota de Acceso (hasta 10 puntos)** y la **Fase Voluntaria (hasta 4 puntos extra)**:
+      </p>
+      <ul class="list-disc list-inside space-y-1 text-slate-400 pl-2">
+        <strong class="text-slate-200">Nota Media de Bachillerato (NMB):</strong> Cuenta un 60% de la nota base.
+        <strong class="text-slate-200">Fase General PAU:</strong> Cuenta un 40% de la nota base (se requiere mínimo un 4.0).
+        <strong class="text-slate-200">Fase Específica:</strong> Las 2 mejores notas optativas aprobadas (≥ 5.0) multiplicadas por su ponderación (0.1 o 0.2).
+      </ul>
+    </section>
+
+  </div>
+</MainLayout>

@@ -1,0 +1,26 @@
+---
+// src/pages/grados.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import BuscadorGrados from '../components/BuscadorGrados.astro';
+---
+
+<MainLayout 
+  title="Directorio de Grados Universitarios en España | UniMatchES"
+  description="Explora todos los grados universitarios en España, sus notas de corte históricas, precios públicos por crédito y tasas de empleabilidad."
+>
+  <div class="space-y-8 py-4">
+    <div class="space-y-2 text-center max-w-2xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+        Grados Universitarios y <span class="text-amber-400">Notas de Corte</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400">
+        Consulta el listado completo de carreras universitarias en España con datos oficiales actualizados.
+      </p>
+    </div>
+
+    <!-- REUTILIZAMOS EL BUSCADOR DE GRADOS -->
+    <div class="max-w-4xl mx-auto">
+      <BuscadorGrados />
+    </div>
+  </div>
+</MainLayout>
