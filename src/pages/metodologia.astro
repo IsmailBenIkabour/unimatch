@@ -4,26 +4,40 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout 
-  title="Metodología de Cálculo PAU Cataluña | UniMatch"
-  description="Explicación detallada sobre cómo calculamos la nota de admisión sobre 14 en Cataluña."
+  title="Metodología y Fuentes de Datos | UniMatchCAT"
+  description="Conoce cómo recopilamos y tratamos los datos oficiales de notas de corte y universidades en Cataluña."
 >
-  <div class="space-y-8 py-8 max-w-3xl mx-auto px-4">
-    <header class="space-y-2">
-      <h1 class="text-3xl font-black text-white tracking-tight">Metodología de Cálculo</h1>
-      <p class="text-xs text-slate-400">Transparencia sobre la simulación de notas para Cataluña.</p>
+  <div class="space-y-8 py-8 max-w-4xl mx-auto px-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
+    <header class="space-y-2 border-b border-slate-800 pb-6">
+      <h1 class="text-2xl sm:text-4xl font-black text-white">Metodología y Fuentes</h1>
+      <p class="text-xs text-slate-500 font-mono">Transparencia y rigor en los datos universitarios de Cataluña.</p>
     </header>
 
-    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4 text-xs text-slate-300 leading-relaxed">
-      <h2 class="text-sm font-bold text-amber-400 uppercase tracking-wider font-mono">Fórmula de Admisión PAU</h2>
+    <section class="space-y-3">
+      <h2 class="text-base font-bold text-white font-mono uppercase tracking-wider text-amber-400">1. Origen Oficial de los Datos</h2>
       <p>
-        La nota de admisión se calcula sobre un máximo de 14 puntos de acuerdo con los criterios del Consell Interuniversitari de Catalunya:
+        En <strong class="text-white">UniMatchCAT</strong> nos tomamos muy en serio la fiabilidad de la información académica. Todas las notas de corte, plazas ofertadas y titulaciones disponibles en nuestro catálogo proceden directamente de los listados oficiales publicados por el <strong class="text-white">Consell Interuniversitari de Catalunya</strong> a través de la <strong class="text-white">Oficina d'Accés a la Universitat</strong>.
       </p>
-      <div class="bg-slate-950 p-4 rounded-xl font-mono text-amber-300 border border-slate-800">
-        Nota Final = (Bachillerato × 0.6) + (Fase General × 0.4) + (M1 × a) + (M2 × b)
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-base font-bold text-white font-mono uppercase tracking-wider text-amber-400">2. Proceso de Actualización</h2>
+      <p>
+        Los datos se actualizan conforme se publican las sucesivas fases de asignación de plazas (1ª asignación en julio, reasignaciones y llamamientos posteriores). Cada ficha de grado detalla la nota correspondiente al proceso oficial vigente, permitiendo al estudiante contrastar la evolución respecto a cursos anteriores.
+      </p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-base font-bold text-white font-mono uppercase tracking-wider text-amber-400">3. Simulador de la PAU</h2>
+      <p>
+        El cálculo de la nota de admisión se efectúa aplicando estrictamente la fórmula oficial de ponderaciones establecida por la Generalitat:
+      </p>
+      <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl font-mono text-amber-300 text-center">
+        Nota de Admisión = NPA + (a1 × M1) + (a2 × M2)
       </div>
-      <p>
-        Donde <strong>M1</strong> y <strong>M2</strong> son las dos mejores calificaciones obtenidas en las materias ponderables de la Fase Específica, y <strong>a</strong> / <strong>b</strong> sus coeficientes de ponderación (0.1 o 0.2).
+      <p class="text-xs text-slate-400">
+        Donde NPA es la Nota de Acceso a la Universidad (media de Bachillerato y fase general de las PAU), y M1/M2 son las calificaciones de las materias de la fase específica multiplicadas por su respectiva ponderación (0.2 o 0.1).
       </p>
-    </div>
+    </section>
   </div>
 </MainLayout>

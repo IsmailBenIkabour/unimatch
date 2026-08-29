@@ -1,0 +1,36 @@
+---
+// src/pages/contacto.astro
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout 
+  title="Contacto y Soporte | UniMatchCAT"
+  description="Ponte en contacto con el equipo de UniMatchCAT para dudas, sugerencias o corrección de datos."
+>
+  <div class="space-y-8 py-8 max-w-2xl mx-auto px-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
+    <header class="space-y-2 border-b border-slate-800 pb-6 text-center">
+      <h1 class="text-2xl sm:text-4xl font-black text-white">Contacto</h1>
+      <p class="text-xs text-slate-400">¿Tienes alguna duda, sugerencia o has detectado alguna errata en las notas de corte?</p>
+    </header>
+
+    <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-6 backdrop-blur-sm">
+      <div class="space-y-2">
+        <h2 class="text-sm font-bold text-white font-mono uppercase tracking-wider text-amber-400">Canal de Comunicación</h2>
+        <p>
+          Como proyecto independiente enfocado en la comunidad estudiantil de Cataluña, valoramos enormemente vuestro feedback. Si encuentras algún dato desactualizado o deseas proponer alguna mejora en las herramientas, puedes escribirnos directamente a nuestro correo de contacto del proyecto:
+        </p>
+      </div>
+
+      <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+        <span class="text-xs text-slate-400 block font-mono">Correo electrónico oficial:</span>
+        <a href="mailto:soporte.unimatchcat@gmail.com" class="text-amber-400 font-bold hover:underline text-sm font-mono mt-1 inline-block">
+          soporte.unimatchcat@gmail.com
+        </a>
+      </div>
+
+      <p class="text-[11px] text-slate-500 text-center">
+        Intentamos responder a todas las consultas de los estudiantes con la mayor brevedad posible, especialmente durante los periodos de preinscripción y asignación de plazas universitarias.
+      </p>
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,115 @@
+---
+// src/pages/universidades/[slug].astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import gradosData from '../../data/grados.json';
+
+export async function getStaticPaths() {
+  const universidades = [
+    { nombre: "Universitat de Barcelona (UB)", busqueda: "barcelona", slug: "ub", ciudad: "Barcelona", tipo: "Pública", web: "https://www.ub.edu", desc: "Referente internacional en investigación y la universidad pública más antigua de Cataluña." },
+    { nombre: "Universitat Autònoma de Barcelona (UAB)", busqueda: "autònoma", slug: "uab", ciudad: "Cerdanyola del Vallès", tipo: "Pública", web: "https://www.uab.cat", desc: "Campus de excelencia internacional destacado por su investigación científica y gran campus integrado." },
+    { nombre: "Universitat Politècnica de Catalunya (UPC)", busqueda: "politècnica", slug: "upc", ciudad: "Barcelona / Cataluña", tipo: "Pública", web: "https://www.upc.edu", desc: "Universidad líder en los ámbitos de la ingeniería, arquitectura, ciencias y tecnología." },
+    { nombre: "Universitat Pompeu Fabra (UPF)", busqueda: "pompeu", slug: "upf", ciudad: "Barcelona", tipo: "Pública", web: "https://www.upf.edu", desc: "Institución altamente especializada en ciencias sociales, humanidades, comunicación y ciencias de la salud." },
+    { nombre: "Universitat Rovira i Virgili (URV)", busqueda: "rovira", slug: "urv", ciudad: "Tarragona / Reus", web: "https://www.urv.cat", desc: "Universidad pública del sur de Cataluña, con fuerte vinculación al tejido industrial y territorial." },
+    { nombre: "Universitat de Lleida (UdL)", busqueda: "lleida", slug: "udl", ciudad: "Lleida", tipo: "Pública", web: "https://www.udl.cat", desc: "Primera universidad moderna de Cataluña, referente en agronomía, biomedicina y letras." },
+    { nombre: "Universitat de Girona (UdG)", busqueda: "girona", slug: "udg", ciudad: "Girona", tipo: "Pública", desc: "Comprometida con la excelencia docente y la integración en el entorno histórico de Girona." }
+  ];
+
+  return universidades.map(uni => {
+    const gradosUni = gradosData.filter(g => {
+      if (!g || !g.universidad) return false;
+      return g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase());
+    });
+
+    return {
+      params: { slug: uni.slug },
+      props: { universidad: uni, grados: gradosUni }
+    };
+  });
+}
+
+const { universidad, grados } = Astro.props;
+---
+
+<MainLayout 
+  title={`${universidad.nombre} - Grados y Notas de Corte | UniMatchCAT`}
+  description={`Consulta todos los grados, plazas y notas de corte oficiales de la ${universidad.nombre} en Cataluña.`}
+>
+  <div class="space-y-8 py-8 max-w-5xl mx-auto px-4">
+    <!-- Cabecera de la Universidad -->
+    <header class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4 backdrop-blur-sm">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20 uppercase tracking-wider">
+          {universidad.tipo} • {universidad.ciudad}
+        </span>
+        {universidad.web && (
+          <a 
+            href={universidad.web} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-mono text-amber-400 hover:underline flex items-center gap-1"
+          >
+            Sitio Web Oficial ↗
+          </a>
+        )}
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+        {universidad.nombre}
+      </h1>
+
+      <p class="text-sm text-slate-300 max-w-3xl leading-relaxed">
+        {universidad.desc}
+      </p>
+
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+        <span>Total de grados impartidos: <strong class="text-amber-400">{grados.length}</strong></span>
+        <a href="/universidades" class="hover:text-white transition">← Volver a Universidades</a>
+      </div>
+    </header>
+
+    <!-- LISTADO DE GRADOS DE ESTA UNIVERSIDAD -->
+    <section class="space-y-4">
+      <h2 class="text-lg font-bold text-white font-mono uppercase tracking-wider">
+        Grados Disponibles y Notas de Corte
+      </h2>
+
+      {grados.length === 0 ? (
+        <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-8 text-center text-slate-400 text-xs">
+          No hay grados registrados actualmente para esta institución en el catálogo base.
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {grados.map((grado: any) => (
+            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between">
+              <div class="space-y-1.5">
+                <span class="text-[10px] font-mono text-slate-500 block">
+                  {grado.rama || "Grado Universitario"}
+                </span>
+                <h3 class="text-base font-bold text-white leading-snug">
+                  {grado.nombre}
+                </h3>
+              </div>
+
+              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+                <div>
+                  <span class="text-slate-500 block text-[10px]">Nota de Corte (2026)</span>
+                  <span class="text-amber-400 font-bold text-sm">
+                    {grado.notaCorte2026 !== undefined ? grado.notaCorte2026 : "N/D"}
+                  </span>
+                </div>
+                {grado.slug ? (
+                  <a 
+                    href={`/grados/${grado.slug}`}
+                    class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-amber-400 hover:text-slate-950 font-bold transition text-[11px]"
+                  >
+                    Ver Ficha →
+                  </a>
+                ) : null}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  </div>
+</MainLayout>

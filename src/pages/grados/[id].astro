@@ -20,6 +20,21 @@ const { grado } = Astro.props;
 ---
 
 <MainLayout title={`${grado.nombre || 'Grado'} | UniMatch Cataluña`}>
+  <!-- DATOS ESTRUCTURADOS SCHEMA.ORG (Course) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": grado.nombre,
+    "description": `Grado universitario de ${grado.rama || 'estudios superiores'} impartido en ${grado.universidad}. Nota de corte oficial: ${grado.notaCorte2026 || 'N/D'}.`,
+    "provider": {
+      "@type": "CollegeOrUniversity",
+      "name": grado.universidad,
+      "sameAs": "https://unimatchcat.netlify.app"
+    },
+    "educationalCredentialAwarded": "Grado Universitario",
+    "occupationalCredentialAwarded": grado.rama
+  })} />
+
   <div class="space-y-8 py-8 max-w-4xl mx-auto px-4">
     
     <a href="/grados" class="text-xs text-amber-400 hover:underline font-mono">← Volver al buscador</a>

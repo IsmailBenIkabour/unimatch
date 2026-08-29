@@ -1,49 +1,128 @@
 ---
 // src/pages/universidades.astro
 import MainLayout from '../layouts/MainLayout.astro';
+import gradosData from '../data/grados.json';
 
-const universidades = [
-  { nombre: "Universitat de Barcelona", sigles: "UB", ciudad: "Barcelona", tipo: "Pública" },
-  { nombre: "Universitat Autònoma de Barcelona", sigles: "UAB", ciudad: "Cerdanyola del Vallès", tipo: "Pública" },
-  { nombre: "Universitat Politècnica de Catalunya", sigles: "UPC", ciudad: "Barcelona", tipo: "Pública" },
-  { nombre: "Universitat Pompeu Fabra", sigles: "UPF", ciudad: "Barcelona", tipo: "Pública" },
-  { nombre: "Universitat de Girona", sigles: "UdG", ciudad: "Girona", tipo: "Pública" },
-  { nombre: "Universitat de Lleida", sigles: "UdL", ciudad: "Lleida", tipo: "Pública" },
-  { nombre: "Universitat Rovira i Virgili", sigles: "URV", ciudad: "Tarragona / Reus", tipo: "Pública" },
-  { nombre: "Universitat de Vic - UCC", sigles: "UVic-UCC", ciudad: "Vic / Manresa", tipo: "Pública / Concertada" }
+// Lista de universidades con palabras clave flexibles para buscar en el JSON
+const universidadesInfo = [
+  {
+    nombre: "Universitat de Barcelona (UB)",
+    busqueda: "barcelona", // Palabra clave para buscar en el JSON
+    tipo: "Pública",
+    ciudad: "Barcelona",
+    slug: "ub",
+    descripcion: "La universidad pública más antigua de Cataluña y un referente internacional en investigación."
+  },
+  {
+    nombre: "Universitat Autònoma de Barcelona (UAB)",
+    busqueda: "autònoma",
+    tipo: "Pública",
+    ciudad: "Cerdanyola del Vallès",
+    slug: "uab",
+    descripcion: "Campus de excelencia internacional destacado por su investigación científica y su gran campus integrado."
+  },
+  {
+    nombre: "Universitat Politècnica de Catalunya (UPC)",
+    busqueda: "politècnica",
+    tipo: "Pública",
+    ciudad: "Barcelona / Cataluña",
+    slug: "upc",
+    descripcion: "Universidad líder en los ámbitos de la ingeniería, arquitectura, ciencias y tecnología."
+  },
+  {
+    nombre: "Universitat Pompeu Fabra (UPF)",
+    busqueda: "pompeu",
+    tipo: "Pública",
+    ciudad: "Barcelona",
+    slug: "upf",
+    descripcion: "Institución altamente especializada en ciencias sociales, humanidades, comunicación y ciencias de la salud."
+  },
+  {
+    nombre: "Universitat Rovira i Virgili (URV)",
+    busqueda: "rovira",
+    tipo: "Pública",
+    ciudad: "Tarragona / Reus",
+    slug: "urv",
+    descripcion: "La universidad pública del sur de Cataluña, con una fuerte vinculación al territorio y tejido industrial."
+  },
+  {
+    nombre: "Universitat de Lleida (UdL)",
+    busqueda: "lleida",
+    tipo: "Pública",
+    ciudad: "Lleida",
+    slug: "udl",
+    descripcion: "Primera universidad moderna de Cataluña, referente en agronomía, biomedicina y letras."
+  },
+  {
+    nombre: "Universitat de Girona (UdG)",
+    busqueda: "girona",
+    tipo: "Pública",
+    ciudad: "Girona",
+    slug: "udg",
+    descripcion: "Comprometida con la excelencia docente y la integración en el entorno histórico y natural de Girona."
+  }
 ];
+
+// Filtrado robusto de los grados asociados a cada universidad
+const universidadesConDatos = universidadesInfo.map(uni => {
+  const gradosUni = gradosData.filter(g => {
+    if (!g || !g.universidad) return false;
+    return g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase());
+  });
+
+  return {
+    ...uni,
+    totalGrados: gradosUni.length,
+    grados: gradosUni
+  };
+});
 ---
 
 <MainLayout 
-  title="Universidades de Cataluña | UniMatch"
-  description="Directorio de universidades públicas y centros universitarios del sistema educativo catalán."
+  title="Universidades de Cataluña: Grados, Notas de Corte y Campus | UniMatchCAT"
+  description="Explora las universidades públicas de Cataluña, consulta los grados que ofrecen, notas de corte y accesos oficiales."
 >
-  <div class="space-y-10 py-8 max-w-5xl mx-auto px-4">
+  <div class="space-y-8 py-8 max-w-5xl mx-auto px-4">
     <header class="text-center space-y-3 max-w-2xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-medium tracking-wide">
-        Distrito Universitario Catalán
+        Distrito Universitario de Cataluña
       </div>
       <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
         Universidades de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Cataluña</span>
       </h1>
       <p class="text-xs sm:text-sm text-slate-400">
-        Centros educativos y universidades oficiales incluidas en la asignación de plazas.
+        Selecciona una universidad para ver todos sus grados disponibles, notas de corte y enlaces oficiales.
       </p>
     </header>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {universidades.map(u => (
-        <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 flex flex-col justify-between space-y-4">
+    <!-- GRID DE UNIVERSIDADES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {universidadesConDatos.map(uni => (
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4 backdrop-blur-sm flex flex-col justify-between hover:border-amber-400/50 transition">
           <div class="space-y-2">
-            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20">
-              {u.sigles}
-            </span>
-            <h3 class="text-sm font-bold text-white leading-snug pt-1">{u.nombre}</h3>
-            <p class="text-xs text-slate-400">📍 {u.ciudad}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20 uppercase tracking-wider">
+                {uni.tipo}
+              </span>
+              <span class="text-xs font-mono text-slate-400">📍 {uni.ciudad}</span>
+            </div>
+            <h2 class="text-xl font-bold text-white">{uni.nombre}</h2>
+            <p class="text-xs text-slate-400 leading-relaxed">{uni.descripcion}</p>
           </div>
-          <span class="text-[11px] font-semibold text-slate-400 border-t border-slate-800/80 pt-3 block">
-            Centro {u.tipo}
-          </span>
+
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-300">
+              <strong class="text-amber-400">{uni.totalGrados}</strong> grados registrados
+            </span>
+            <div class="flex items-center gap-2">
+              <a 
+                href={`/universidades/${uni.slug}`} 
+                class="px-4 py-2 rounded-xl bg-amber-400 text-slate-950 font-bold text-xs hover:bg-amber-300 transition"
+              >
+                Ver Grados →
+              </a>
+            </div>
+          </div>
         </div>
       ))}
     </div>
