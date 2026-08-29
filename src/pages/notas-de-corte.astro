@@ -3,17 +3,17 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import gradosData from '../data/grados.json';
 
-// Ordenar grados por nota de corte de mayor a menor con validación de valores
+// Ordenar grados alfabéticamente por el nombre de la titulación
 const gradosOrdenados = [...gradosData].sort((a, b) => {
-  const notaA = typeof a?.notaCorte2026 === 'number' ? a.notaCorte2026 : 0;
-  const notaB = typeof b?.notaCorte2026 === 'number' ? b.notaCorte2026 : 0;
-  return notaB - notaA;
+  const nombreA = a?.nombre || '';
+  const nombreB = b?.nombre || '';
+  return nombreA.localeCompare(nombreB, 'ca', { sensitivity: 'accent' });
 });
 ---
 
 <MainLayout 
   title="Tabla Oficial de Notas de Corte Cataluña 2026 | UniMatch"
-  description="Listado completo y ordenado de notas de corte de la 2ª asignación para las universidades de Cataluña."
+  description="Listado completo y ordenado alfabéticamente de notas de corte de la 2ª asignación para las universidades de Cataluña."
 >
   <div class="space-y-8 py-8 max-w-5xl mx-auto px-4">
     <header class="text-center space-y-3 max-w-2xl mx-auto">
@@ -24,7 +24,7 @@ const gradosOrdenados = [...gradosData].sort((a, b) => {
         Notas de Corte <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Cataluña 2026</span>
       </h1>
       <p class="text-xs sm:text-sm text-slate-400">
-        Notas correspondientes a la 2ª asignación de plazas (julio 2026).
+        Listado alfabético correspondiente a la 2ª asignación de plazas (julio 2026).
       </p>
     </header>
 
