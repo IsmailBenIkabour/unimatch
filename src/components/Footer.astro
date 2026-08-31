@@ -2,42 +2,75 @@
 // src/components/Footer.astro
 ---
 
-<footer class="w-full bg-slate-950 border-t border-slate-800/80 py-10 px-4 mt-20 text-slate-400">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-xs">
-    
-    <!-- COLUMNA 1: PROYECTO -->
-    <div class="space-y-3">
-      <div class="text-sm font-black text-white tracking-tight">
-        UniMatch<span class="text-amber-400">CAT</span>
+<footer class="w-full bg-slate-950 border-t border-slate-900 pt-12 pb-8 px-4 mt-20 text-slate-400">
+  <div class="max-w-6xl mx-auto space-y-10">
+
+    <!-- BANNER ADSENSE FOOTER -->
+    <div class="w-full bg-slate-900/40 rounded-2xl border border-slate-800/60 p-2 min-h-[90px] flex items-center justify-center overflow-hidden">
+      <ins class="adsbygoogle"
+           style="display:block; width:100%; min-height:90px;"
+           data-ad-client="ca-pub-1643342826312269"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- ESTRUCTURA PRINCIPAL DE FOOTER EN 4 COLUMNAS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs">
+      
+      <!-- COLUMNA 1: SOBRE EL PROYECTO -->
+      <div class="space-y-3">
+        <a href="/" class="text-base font-black text-white tracking-tight inline-block">
+          UniMatch<span class="text-amber-400">CAT</span>
+        </a>
+        <p class="text-slate-400 leading-relaxed">
+          Plataforma de orientación y consulta de notas de corte oficiales del Distrito Universitario de Cataluña (PAU 2026).
+        </p>
       </div>
-      <p class="text-slate-400 leading-relaxed">
-        Plataforma independiente de orientación para futuros estudiantes universitarios en el Distrito Universitario de Cataluña.
+
+      <!-- COLUMNA 2: HERRAMIENTAS Y RECURSOS -->
+      <div class="space-y-3">
+        <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider">Explorar</span>
+        <ul class="space-y-2 font-medium">
+          <li><a href="/grados" class="hover:text-amber-400 transition-colors">Todos los Grados</a></li>
+          <li><a href="/notas-de-corte" class="hover:text-amber-400 transition-colors">Notas de Corte 2026</a></li>
+          <li><a href="/comparar" class="hover:text-amber-400 transition-colors">Comparador de Grados</a></li>
+          <li><a href="/metodologia" class="hover:text-amber-400 transition-colors">Metodología de datos</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMNA 3: UNIVERSIDADES PRINCIPALES (SEO ENLACES INTERNOS) -->
+      <div class="space-y-3">
+        <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider">Universidades</span>
+        <ul class="space-y-2 font-medium">
+          <li><a href="/universidades/ub" class="hover:text-amber-400 transition-colors">Universitat de Barcelona (UB)</a></li>
+          <li><a href="/universidades/uab" class="hover:text-amber-400 transition-colors">Universitat Autònoma (UAB)</a></li>
+          <li><a href="/universidades/upc" class="hover:text-amber-400 transition-colors">Politècnica de Catalunya (UPC)</a></li>
+          <li><a href="/universidades/upf" class="hover:text-amber-400 transition-colors">Pompeu Fabra (UPF)</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMNA 4: LEGAL Y POLITICAS -->
+      <div class="space-y-3">
+        <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider">Información Legal</span>
+        <ul class="space-y-2 font-medium">
+          <li><a href="/aviso-legal" class="hover:text-amber-400 transition-colors">Aviso Legal</a></li>
+          <li><a href="/privacidad" class="hover:text-amber-400 transition-colors">Política de Privacidad</a></li>
+          <li><a href="/cookies" class="hover:text-amber-400 transition-colors">Política de Cookies</a></li>
+          <li><a href="/contacto" class="hover:text-amber-400 transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- DISCLAIMER LEGAL Y COPYRIGHT -->
+    <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 font-mono">
+      <p>© 2026 UniMatchCAT. Todos los derechos reservados.</p>
+      <p class="text-center sm:text-right text-[10px] text-slate-600 max-w-md">
+        Proyecto independiente. Las notas de corte corresponden a los datos de la 2ª asignación publicados por la Generalitat de Catalunya[cite: 9].
       </p>
     </div>
 
-    <!-- COLUMNA 2: ENLACES RÁPIDOS -->
-    <div class="space-y-2">
-      <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider mb-2">Recursos</span>
-      <ul class="space-y-2 font-medium">
-        <li><a href="/notas-de-corte" class="hover:text-amber-400 transition-colors">Notas de Corte 2026</a></li>
-        <li><a href="/calculadora-pau" class="hover:text-amber-400 transition-colors">Calculadora de Nota PAU</a></li>
-        <li><a href="/universidades" class="hover:text-amber-400 transition-colors">Universidades Catalanas</a></li>
-        <li><a href="/metodologia" class="hover:text-amber-400 transition-colors">Metodología de cálculo</a></li>
-      </ul>
-    </div>
-
-    <!-- COLUMNA 3: LEGAL -->
-    <div class="space-y-2">
-      <span class="block text-[11px] font-bold text-slate-200 uppercase tracking-wider mb-2">Legal</span>
-      <ul class="space-y-2 font-medium">
-        <li><a href="/aviso-legal" class="hover:text-amber-400 transition-colors">Aviso Legal</a></li>
-        <li><a href="/privacidad" class="hover:text-amber-400 transition-colors">Política de Privacidad</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-[11px] text-slate-500 font-mono">
-    © 2026 UniMatch Cataluña • Datos de asignación universitaria oficiales.
   </div>
 </footer>

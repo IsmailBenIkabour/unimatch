@@ -2,17 +2,17 @@
 // src/components/Header.astro
 ---
 <header class="border-b border-slate-900 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-  <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="font-black text-white text-lg tracking-tight flex items-center gap-2">
+  <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+    <a href="/" class="font-black text-white text-lg tracking-tight flex items-center gap-2 shrink-0">
       UniMatch<span class="text-amber-400">CAT</span>
     </a>
-    <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
+    <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold overflow-x-auto no-scrollbar whitespace-nowrap py-2">
       <a href="/grados" class="text-slate-300 hover:text-amber-400 transition">Grados</a>
       <a href="/universidades" class="text-slate-300 hover:text-amber-400 transition">Universidades</a>
       <a href="/notas-de-corte" class="text-slate-300 hover:text-amber-400 transition">Notas de Corte</a>
       <a href="/comparar" class="text-slate-300 hover:text-amber-400 transition">Comparar</a>
-      <a href="/metodologia" class="text-slate-300 hover:text-amber-400 transition hidden sm:inline-block">Metodología</a>
-      <a href="/contacto" class="text-slate-300 hover:text-amber-400 transition hidden sm:inline-block">Contacto</a>
+      <a href="/metodologia" class="text-slate-300 hover:text-amber-400 transition">Metodología</a>
+      <a href="/contacto" class="text-slate-300 hover:text-amber-400 transition">Contacto</a>
     </nav>
   </div>
 </header>
