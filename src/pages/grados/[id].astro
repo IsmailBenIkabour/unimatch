@@ -4,7 +4,6 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import gradosData from '../../data/grados.json';
 
 export async function getStaticPaths() {
-  // Filtrar elementos sin ID/slug para evitar el error "Missing parameter: id" en la build
   return gradosData
     .filter(grado => grado && (grado.id || grado.slug))
     .map((grado) => {
@@ -17,6 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { grado } = Astro.props;
+const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.toFixed(3) : (grado.notaCorte2026 || 'N/D');
 ---
 
 <MainLayout title={`${grado.nombre || 'Grado'} | UniMatch Cataluña`}>
@@ -25,7 +25,7 @@ const { grado } = Astro.props;
     "@context": "https://schema.org",
     "@type": "Course",
     "name": grado.nombre,
-    "description": `Grado universitario de ${grado.rama || 'estudios superiores'} impartido en ${grado.universidad}. Nota de corte oficial: ${grado.notaCorte2026 || 'N/D'}.`,
+    "description": `Grado universitario de ${grado.rama || 'estudios superiores'} impartido en ${grado.universidad}. Nota de corte oficial 2026: ${nota2026}.`,
     "provider": {
       "@type": "CollegeOrUniversity",
       "name": grado.universidad,
@@ -39,6 +39,7 @@ const { grado } = Astro.props;
     
     <a href="/grados" class="text-xs text-amber-400 hover:underline font-mono">← Volver al buscador</a>
 
+    <!-- HEADER PRINCIPAL DEL GRADO -->
     <header class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
       <div class="flex justify-between items-start gap-4">
         <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
@@ -46,8 +47,8 @@ const { grado } = Astro.props;
         </span>
         <div class="text-right">
           <span class="text-[10px] text-slate-400 uppercase font-mono block">Nota de corte 2026</span>
-          <span class="text-2xl font-mono font-bold text-amber-400">
-            {typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.toFixed(3) : (grado.notaCorte2026 || '0.000')}
+          <span class="text-3xl font-mono font-black text-amber-400">
+            {nota2026}
           </span>
         </div>
       </div>
@@ -55,13 +56,25 @@ const { grado } = Astro.props;
       <div>
         <h1 class="text-2xl sm:text-3xl font-black text-white">{grado.nombre}</h1>
         <p class="text-sm text-slate-400 mt-1">{grado.universidad}</p>
-        <p class="text-xs text-slate-500 mt-0.5">📍 {grado.ciudad || 'Cataluña'} (Cataluña)</p>
+        <p class="text-xs text-slate-500 mt-0.5">📍 {grado.ciudad || 'Cataluña'} (Distrito Universitario de Cataluña)</p>
       </div>
     </header>
 
+    <!-- RESUMEN INFORMATIVO DE ACCESO -->
+    <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-5 text-xs text-slate-300 leading-relaxed space-y-2">
+      <h2 class="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
+        <span>📋</span> Información de admisión 2026
+      </h2>
+      <p>
+        La nota de corte oficial de la 2ª asignación de junio para acceder a <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es de <strong class="text-amber-400">{nota2026}</strong>. 
+        Esta puntuación corresponde al último estudiante admitido a través de la vía de acceso general PAU / CFGS.
+      </p>
+    </section>
+
+    <!-- PONDERACIONES Y SALIDAS -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 space-y-3">
-        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">Ponderaciones PAU</h3>
+        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">Ponderaciones PAU (0.2)</h3>
         <ul class="space-y-1.5 text-xs text-slate-400">
           {(grado.ponderaciones || []).map((p) => (
             <li class="bg-slate-950 px-3 py-2 rounded-xl border border-slate-800/60 flex items-center gap-2">
