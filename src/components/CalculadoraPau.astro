@@ -4,104 +4,137 @@
 
 <div class="relative overflow-hidden bg-slate-900/40 border border-slate-800/80 hover:border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-xl transition-all space-y-6">
   
-  <!-- LÍNEA SUPERIOR DE BRILLO ELEGANTE -->
+  <!-- LÍNEA SUPERIOR DE BRILLO -->
   <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>
 
-  <!-- CABECERA DE LA CALCULADORA -->
+  <!-- CABECERA -->
   <div class="border-b border-slate-800/80 pb-4">
     <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 tracking-tight">
-      <span class="text-amber-400">🧮</span> Calculadora de Nota PAU
+      <span class="text-amber-400">🧮</span> Calculadora de Nota PAU Cataluña
     </h2>
     <p class="text-xs sm:text-sm text-slate-400 mt-1 font-normal">
-      Calcula tu nota sobre 14 puntos según el baremo oficial del Ministerio de Educación.
+      Calcula tu nota de acceso (sobre 10) y tu nota de admisión (sobre 14) según el baremo oficial de la Generalitat.
     </p>
   </div>
 
   <form id="pauForm" onsubmit="return false;" class="space-y-6">
     
-    <!-- BLOQUE 1: FASE OBLIGATORIA (HASTA 10 PUNTOS) -->
-    <div class="space-y-4">
+    <!-- BLOQUE 1: BACHILLERATO -->
+    <div class="space-y-3">
       <h3 class="text-[11px] font-bold text-amber-400 uppercase tracking-widest">
-        1. Fase Obligatoria (Hasta 10.000)
+        1. Nota Media de Bachillerato (60%)
       </h3>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        
-        <!-- Bachillerato -->
-        <div class="space-y-1.5">
-          <label for="nmb" class="block text-xs font-medium text-slate-300">
-            Nota Bachillerato (60%)
-          </label>
-          <input 
-            type="number" 
-            id="nmb" 
-            min="5" 
-            max="10" 
-            step="0.01" 
-            placeholder="Ej. 7.85" 
-            class="w-full bg-slate-950/80 border border-slate-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 rounded-xl p-3 text-sm font-bold text-white outline-none transition"
-            required
-          />
-        </div>
-
-        <!-- Fase General -->
-        <div class="space-y-1.5">
-          <label for="pauGeneral" class="block text-xs font-medium text-slate-300">
-            Fase General PAU (40%)
-          </label>
-          <input 
-            type="number" 
-            id="pauGeneral" 
-            min="4" 
-            max="10" 
-            step="0.01" 
-            placeholder="Ej. 6.90" 
-            class="w-full bg-slate-950/80 border border-slate-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 rounded-xl p-3 text-sm font-bold text-white outline-none transition"
-            required
-          />
-        </div>
-
+      <div class="space-y-1.5">
+        <input 
+          type="number" 
+          id="nmb" 
+          min="5" 
+          max="10" 
+          step="0.01" 
+          placeholder="Ej. 8.25" 
+          class="w-full bg-slate-950/80 border border-slate-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 rounded-xl p-3 text-sm font-bold text-white outline-none transition"
+          required
+        />
       </div>
     </div>
 
-    <!-- BLOQUE 2: FASE VOLUNTARIA (HASTA 4 PUNTOS EXTRA) -->
-    <div class="space-y-4 pt-2 border-t border-slate-800/80">
+    <!-- BLOQUE 2: FASE GENERAL / OBLIGATORIA (40%) -->
+    <div class="space-y-4 pt-4 border-t border-slate-800/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <h3 class="text-[11px] font-bold text-amber-400 uppercase tracking-widest">
+          2. Fase General (40%)
+        </h3>
+        
+        <!-- Pestañas para elegir modo de cálculo -->
+        <div class="flex bg-slate-950 p-1 rounded-xl border border-slate-800 text-[11px] font-bold">
+          <button type="button" id="tabDesglosado" class="px-3 py-1 rounded-lg bg-amber-400 text-slate-950 transition">
+            Por Asignaturas
+          </button>
+          <button type="button" id="tabDirecto" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">
+            Nota Ya Calculada
+          </button>
+        </div>
+      </div>
+
+      <!-- OPCIÓN A: CÁLCULO DESGLOSADO POR MATERIAS -->
+      <div id="modoDesglosado" class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/60">
+        <div>
+          <label class="block text-[11px] text-slate-400 mb-1">Llengua Catalana</label>
+          <input type="number" id="fgCat" min="0" max="10" step="0.01" placeholder="Ej. 7.50" class="w-full bg-slate-900/90 border border-slate-800 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none" />
+        </div>
+        <div>
+          <label class="block text-[11px] text-slate-400 mb-1">Llengua Castellana</label>
+          <input type="number" id="fgCast" min="0" max="10" step="0.01" placeholder="Ej. 6.80" class="w-full bg-slate-900/90 border border-slate-800 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none" />
+        </div>
+        <div>
+          <label class="block text-[11px] text-slate-400 mb-1">Llengua Estrangera (Anglès...)</label>
+          <input type="number" id="fgAng" min="0" max="10" step="0.01" placeholder="Ej. 8.00" class="w-full bg-slate-900/90 border border-slate-800 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none" />
+        </div>
+        <div>
+          <label class="block text-[11px] text-slate-400 mb-1">Història / Història de la Filosofia</label>
+          <input type="number" id="fgHist" min="0" max="10" step="0.01" placeholder="Ej. 7.00" class="w-full bg-slate-900/90 border border-slate-800 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none" />
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-[11px] text-slate-400 mb-1">Materia de Modalidad Obligatoria (Matemàtiques, Llatí...)</label>
+          <input type="number" id="fgMod" min="0" max="10" step="0.01" placeholder="Ej. 8.50" class="w-full bg-slate-900/90 border border-slate-800 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none" />
+        </div>
+      </div>
+
+      <!-- OPCIÓN B: NOTA DIRECTA -->
+      <div id="modoDirecto" class="hidden space-y-1.5">
+        <label for="pauGeneral" class="block text-xs font-medium text-slate-300">
+          Nota Media de la Fase General (Mínimo 4.0)
+        </label>
+        <input 
+          type="number" 
+          id="pauGeneral" 
+          min="4" 
+          max="10" 
+          step="0.01" 
+          placeholder="Ej. 7.36" 
+          class="w-full bg-slate-950/80 border border-slate-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 rounded-xl p-3 text-sm font-bold text-white outline-none transition"
+        />
+      </div>
+    </div>
+
+    <!-- BLOQUE 3: FASE ESPECÍFICA / VOLUNTARIA (HASTA +4 PUNTOS) -->
+    <div class="space-y-4 pt-4 border-t border-slate-800/80">
       <h3 class="text-[11px] font-bold text-amber-400 uppercase tracking-widest">
-        2. Fase Voluntaria / Ponderaciones (Hasta +4.000)
+        3. Fase Específica / Ponderaciones (Hasta +4.000)
       </h3>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
         <!-- Optativa 1 -->
         <div class="bg-slate-950/50 p-4 rounded-2xl border border-slate-800/60 space-y-3">
-          <span class="block text-xs font-bold text-slate-300">Asignatura Optativa 1</span>
+          <span class="block text-xs font-bold text-slate-300">Asignatura Específica 1</span>
           <div>
             <label for="opt1Nota" class="block text-[11px] text-slate-400 mb-1">Nota (Mínimo 5.0)</label>
             <input type="number" id="opt1Nota" min="5" max="10" step="0.01" placeholder="Ej. 8.50" class="w-full bg-slate-900/90 border border-slate-700/70 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none transition" />
           </div>
           <div>
-            <label for="opt1Pond" class="block text-[11px] text-slate-400 mb-1">Ponderación</label>
+            <label for="opt1Pond" class="block text-[11px] text-slate-400 mb-1">Ponderación para tu grado</label>
             <select id="opt1Pond" class="w-full bg-slate-900/90 border border-slate-700/70 text-xs font-semibold text-slate-200 rounded-xl p-2.5 outline-none transition">
-              <option value="0.2">0.2 (Máxima ponderación)</option>
-              <option value="0.1">0.1 (Ponderación media)</option>
-              <option value="0">0.0 (No pondera)</option>
+              <option value="0.2">0.2 (Ponderación Máxima)</option>
+              <option value="0.1">0.1 (Ponderación Media)</option>
+              <option value="0">0.0 (No Pondera)</option>
             </select>
           </div>
         </div>
 
         <!-- Optativa 2 -->
         <div class="bg-slate-950/50 p-4 rounded-2xl border border-slate-800/60 space-y-3">
-          <span class="block text-xs font-bold text-slate-300">Asignatura Optativa 2</span>
+          <span class="block text-xs font-bold text-slate-300">Asignatura Específica 2</span>
           <div>
             <label for="opt2Nota" class="block text-[11px] text-slate-400 mb-1">Nota (Mínimo 5.0)</label>
             <input type="number" id="opt2Nota" min="5" max="10" step="0.01" placeholder="Ej. 7.25" class="w-full bg-slate-900/90 border border-slate-700/70 focus:border-amber-400 rounded-xl p-2.5 text-xs font-bold text-white outline-none transition" />
           </div>
           <div>
-            <label for="opt2Pond" class="block text-[11px] text-slate-400 mb-1">Ponderación</label>
+            <label for="opt2Pond" class="block text-[11px] text-slate-400 mb-1">Ponderación para tu grado</label>
             <select id="opt2Pond" class="w-full bg-slate-900/90 border border-slate-700/70 text-xs font-semibold text-slate-200 rounded-xl p-2.5 outline-none transition">
-              <option value="0.2">0.2 (Máxima ponderación)</option>
-              <option value="0.1">0.1 (Ponderación media)</option>
-              <option value="0">0.0 (No pondera)</option>
+              <option value="0.2">0.2 (Ponderación Máxima)</option>
+              <option value="0.1">0.1 (Ponderación Media)</option>
+              <option value="0">0.0 (No Pondera)</option>
             </select>
           </div>
         </div>
@@ -109,26 +142,26 @@
       </div>
     </div>
 
-    <!-- BOTÓN CALCULAR CON GRADIENTE Y EFECTO HOVER -->
+    <!-- BOTÓN CALCULAR -->
     <button 
       type="button" 
       onclick="calcularNotaPAU()" 
-      class="w-full py-3.5 px-6 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-amber-400/10 hover:shadow-amber-400/25 active:scale-[0.99] cursor-pointer"
+      class="w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black rounded-2xl text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-amber-400/10 hover:shadow-amber-400/25 active:scale-[0.99] cursor-pointer"
     >
-      Calcular Mi Nota Final
+      Calcular Mi Nota Final PAU
     </button>
   </form>
 
-  <!-- RESULTADO CON BARRA VISUAL DE NIVEL -->
+  <!-- RESULTADOS -->
   <div id="resultadoBox" class="hidden bg-slate-950/90 border border-amber-400/30 rounded-2xl p-6 text-center space-y-4 transition-all">
     
     <div class="space-y-1">
-      <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Tu Nota de Admisión Estimada</span>
+      <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Tu Nota de Admisión Final</span>
       <div id="notaFinalDisplay" class="text-4xl sm:text-5xl font-black text-amber-400 font-mono tracking-tight">
         0.000
       </div>
       <p id="desgloseText" class="text-xs text-slate-400 font-mono pt-1">
-        Base (Bach+PAU): 0.000 | Extra Específica: +0.000
+        Bach (60%): 0.000 | PAU Gen (40%): 0.000 | Específica: +0.000
       </p>
     </div>
 
@@ -152,54 +185,110 @@
 
 </div>
 
-<!-- SCRIPT CON LA LÓGICA DE CÁLCULO Y AUTO-SCROLL -->
-<script is:inline>
+<!-- LÓGICA DE INTERACCIÓN Y CÁLCULO -->
+ <script is:inline>
+  let esModoDirecto = false;
+
+  const tabDesglosado = document.getElementById('tabDesglosado');
+  const tabDirecto = document.getElementById('tabDirecto');
+  const modoDesglosado = document.getElementById('modoDesglosado');
+  const modoDirecto = document.getElementById('modoDirecto');
+
+  tabDesglosado?.addEventListener('click', () => {
+    esModoDirecto = false;
+    tabDesglosado.className = "px-3 py-1 rounded-lg bg-amber-400 text-slate-950 transition";
+    tabDirecto.className = "px-3 py-1 rounded-lg text-slate-400 hover:text-white transition";
+    modoDesglosado.classList.remove('hidden');
+    modoDirecto.classList.add('hidden');
+  });
+
+  tabDirecto?.addEventListener('click', () => {
+    esModoDirecto = true;
+    tabDirecto.className = "px-3 py-1 rounded-lg bg-amber-400 text-slate-950 transition";
+    tabDesglosado.className = "px-3 py-1 rounded-lg text-slate-400 hover:text-white transition";
+    modoDirecto.classList.remove('hidden');
+    modoDesglosado.classList.add('hidden');
+  });
+
   function calcularNotaPAU() {
     const rawNmb = document.getElementById('nmb').value.replace(',', '.');
-    const rawPauGen = document.getElementById('pauGeneral').value.replace(',', '.');
-
     const nmb = parseFloat(rawNmb) || 0;
-    const pauGen = parseFloat(rawPauGen) || 0;
-    
-    if (nmb < 5 || pauGen < 4) {
-      alert("Por favor, introduce al menos una Nota de Bachillerato válida (mínimo 5) y una nota de Fase General (mínimo 4).");
+
+    if (nmb < 5 || nmb > 10) {
+      alert("Por favor, introduce una Nota de Bachillerato válida (entre 5.00 y 10.00).");
+      return;
+    }
+
+    let pauGen = 0;
+
+    if (esModoDirecto) {
+      pauGen = parseFloat(document.getElementById('pauGeneral').value.replace(',', '.')) || 0;
+      if (pauGen < 4) {
+        alert("La nota media de la Fase General debe ser de al menos 4.00 para poder ponderar.");
+        return;
+      }
+    } else {
+      const c1 = parseFloat(document.getElementById('fgCat').value.replace(',', '.')) || 0;
+      const c2 = parseFloat(document.getElementById('fgCast').value.replace(',', '.')) || 0;
+      const c3 = parseFloat(document.getElementById('fgAng').value.replace(',', '.')) || 0;
+      const c4 = parseFloat(document.getElementById('fgHist').value.replace(',', '.')) || 0;
+      const c5 = parseFloat(document.getElementById('fgMod').value.replace(',', '.')) || 0;
+
+      if ([c1, c2, c3, c4, c5].some(n => n === 0)) {
+        alert("Por favor, rellena las 5 asignaturas de la Fase General o cambia a la pestaña 'Nota Ya Calculada'.");
+        return;
+      }
+
+      pauGen = (c1 + c2 + c3 + c4 + c5) / 5;
+    }
+
+    if (pauGen < 4) {
+      alert("La nota media de la Fase General debe ser igual o superior a 4.00.");
       return;
     }
 
     // 1. Nota Base sobre 10
-    const notaBase = (nmb * 0.6) + (pauGen * 0.4);
+    const parteBach = nmb * 0.6;
+    const partePau = pauGen * 0.4;
+    const notaBase = parteBach + partePau;
 
-    // 2. Optativa 1
+    // 2. Fase Específica
     const opt1Nota = parseFloat(document.getElementById('opt1Nota').value.replace(',', '.')) || 0;
     const opt1Pond = parseFloat(document.getElementById('opt1Pond').value) || 0;
     const extra1 = opt1Nota >= 5 ? opt1Nota * opt1Pond : 0;
 
-    // 3. Optativa 2
     const opt2Nota = parseFloat(document.getElementById('opt2Nota').value.replace(',', '.')) || 0;
     const opt2Pond = parseFloat(document.getElementById('opt2Pond').value) || 0;
     const extra2 = opt2Nota >= 5 ? opt2Nota * opt2Pond : 0;
 
-    // 4. Suma total (máximo 14)
+    // 3. Nota Final
     const extraTotal = extra1 + extra2;
     const notaFinal = Math.min(14, notaBase + extraTotal);
 
-    // Mostrar el resultado en pantalla
+    // Actualizar Textos y Barra
     document.getElementById('notaFinalDisplay').innerText = notaFinal.toFixed(3);
-    document.getElementById('desgloseText').innerText = `Base (Bach+PAU): ${notaBase.toFixed(3)} | Extra Específica: +${extraTotal.toFixed(3)}`;
+    document.getElementById('desgloseText').innerText = `Bach (60%): ${parteBach.toFixed(3)} | PAU Gen (40%): ${partePau.toFixed(3)} | Específica: +${extraTotal.toFixed(3)}`;
     
-    // Animación de la barra de progreso
     const porcentaje = Math.round((notaFinal / 14) * 100);
     document.getElementById('porcentajeText').innerText = `${porcentaje}% del máximo`;
-    document.getElementById('progressBar').style.width = `${porcentaje}%`;
+    
+    // Desplegar el bloque de resultados
+    const resultadoBox = document.getElementById('resultadoBox');
+    resultadoBox.classList.remove('hidden');
 
-    document.getElementById('resultadoBox').classList.remove('hidden');
+    // Animación de la barra
+    setTimeout(() => {
+      document.getElementById('progressBar').style.width = `${porcentaje}%`;
+    }, 100);
 
-    // Conectar automáticamente con el buscador y hacer scroll suave
+    // Sincronizar nota con el filtro de búsqueda de la página
     const maxInput = document.getElementById('maxNotaInput');
     if (maxInput) {
       maxInput.value = notaFinal.toFixed(3);
       if (typeof filtrarGrados === 'function') filtrarGrados();
-      document.getElementById('buscadorSection')?.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // SCROLL CENTRADO EN EL RESULTADO (Sin saltar directamente al buscador)
+    resultadoBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 </script>
