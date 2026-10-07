@@ -25,7 +25,7 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
     "@context": "https://schema.org",
     "@type": "Course",
     "name": grado.nombre,
-    "description": `Grado universitario de ${grado.rama || 'estudios superiores'} impartido en ${grado.universidad}. Nota de corte oficial 2026: ${nota2026}.`,
+    "description": `Grado universitario en ${grado.nombre} impartido en la ${grado.universidad}. Nota de corte oficial 2026: ${nota2026}.`,
     "provider": {
       "@type": "CollegeOrUniversity",
       "name": grado.universidad,
@@ -37,16 +37,23 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
 
   <div class="space-y-8 py-8 max-w-4xl mx-auto px-4">
     
-    <a href="/grados" class="text-xs text-amber-400 hover:underline font-mono">← Volver al buscador</a>
+    <a href="/grados" class="text-xs text-amber-400 hover:underline font-mono flex items-center gap-1">
+      ← Volver al buscador de grados
+    </a>
 
     <!-- HEADER PRINCIPAL DEL GRADO -->
-    <header class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 space-y-4">
-      <div class="flex justify-between items-start gap-4">
-        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-          {grado.rama || 'Grado'}
-        </span>
-        <div class="text-right">
-          <span class="text-[10px] text-slate-400 uppercase font-mono block">Nota de corte 2026</span>
+    <header class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl backdrop-blur-md">
+      <div class="flex flex-wrap justify-between items-start gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-slate-800 text-amber-400 border border-slate-700/50">
+            {grado.rama || 'Grado'}
+          </span>
+          <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-slate-950 text-slate-300 border border-slate-800">
+            {grado.tipo || 'Pública'}
+          </span>
+        </div>
+        <div class="text-right bg-slate-950/80 px-4 py-2 rounded-xl border border-slate-800">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Nota de corte 2026 (Septiembre)</span>
           <span class="text-3xl font-mono font-black text-amber-400">
             {nota2026}
           </span>
@@ -54,46 +61,101 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
       </div>
 
       <div>
-        <h1 class="text-2xl sm:text-3xl font-black text-white">{grado.nombre}</h1>
-        <p class="text-sm text-slate-400 mt-1">{grado.universidad}</p>
-        <p class="text-xs text-slate-500 mt-0.5">📍 {grado.ciudad || 'Cataluña'} (Distrito Universitario de Cataluña)</p>
+        <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight">{grado.nombre}</h1>
+        <p class="text-base font-semibold text-slate-300 mt-1">{grado.universidad}</p>
+        <p class="text-xs text-slate-400 mt-1 flex items-center gap-2">
+          <span>📍 {grado.campus || grado.ciudad || 'Cataluña'}</span>
+          <span>•</span>
+          <span>💼 Empleabilidad: <strong class="text-emerald-400">{grado.empleabilidad || '90'}%</strong></span>
+        </p>
+      </div>
+
+      <!-- METADATOS RÁPIDOS EN GRID -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800/80 text-xs font-mono">
+        <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+          <span class="text-slate-500 block text-[10px]">DURACIÓN</span>
+          <span class="text-slate-200 font-bold">{grado.duracion || '4 años (240 ECTS)'}</span>
+        </div>
+        <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+          <span class="text-slate-500 block text-[10px]">MODALIDAD</span>
+          <span class="text-slate-200 font-bold">{grado.modalidad || 'Presencial'}</span>
+        </div>
+        <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+          <span class="text-slate-500 block text-[10px]">IDIOMAS</span>
+          <span class="text-slate-200 font-bold">{Array.isArray(grado.idiomas) ? grado.idiomas.join(', ') : 'Catalán, Castellano'}</span>
+        </div>
+        <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
+          <span class="text-slate-500 block text-[10px]">PRECIO CRÉDITO</span>
+          <span class="text-slate-200 font-bold">{grado.precioCredito ? `${grado.precioCredito}€` : 'Oficial'}</span>
+        </div>
       </div>
     </header>
 
     <!-- RESUMEN INFORMATIVO DE ACCESO -->
-    <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-5 text-xs text-slate-300 leading-relaxed space-y-2">
+    <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
       <h2 class="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
-        <span>📋</span> Información de admisión 2026
+        <span>📋</span> Detalles de la Asignación 2026
       </h2>
       <p>
-        La nota de corte oficial de la 2ª asignación de junio para acceder a <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es de <strong class="text-amber-400">{nota2026}</strong>. 
-        Esta puntuación corresponde al último estudiante admitido a través de la vía de acceso general PAU / CFGS.
+        La nota de corte oficial de la 2ª asignación de septiembre para acceder a <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es de <strong class="text-amber-400">{nota2026}</strong>. Esta nota refleja la calificación del último admitido en la convocatoria general de la PAU.
       </p>
     </section>
 
-    <!-- PONDERACIONES Y SALIDAS -->
+    <!-- PERFIL RECOMENDADO Y VENTAJAS -->
+    {grado.perfilRecomendado && (
+      <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 space-y-3">
+        <h2 class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">🎯 Perfil de Ingreso Recomendado</h2>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">{grado.perfilRecomendado}</p>
+      </section>
+    )}
+
+    {grado.porQueEstudiarlo && Array.isArray(grado.porQueEstudiarlo) && (
+      <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 space-y-3">
+        <h2 class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">🚀 ¿Por qué elegir este grado?</h2>
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+          {grado.porQueEstudiarlo.map((motivo: string) => (
+            <li class="flex items-start gap-2.5">
+              <span class="text-amber-400 font-bold">✓</span>
+              <span>{motivo}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- PONDERACIONES Y SALIDAS EN GRID -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <!-- Ponderaciones -->
       <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 space-y-3">
-        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">Ponderaciones PAU (0.2)</h3>
+        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono flex items-center gap-2">
+          <span>⚖️</span> Ponderaciones PAU (0.2 / 0.1)
+        </h3>
         <ul class="space-y-1.5 text-xs text-slate-400">
-          {(grado.ponderaciones || []).map((p) => (
-            <li class="bg-slate-950 px-3 py-2 rounded-xl border border-slate-800/60 flex items-center gap-2">
-              <span class="text-amber-400">•</span> {p}
+          {(grado.ponderaciones || []).map((p: string) => (
+            <li class="bg-slate-950 px-3 py-2.5 rounded-xl border border-slate-800/60 flex items-center gap-2">
+              <span class="text-amber-400 font-bold">•</span>
+              <span class="text-slate-200">{p}</span>
             </li>
           ))}
         </ul>
       </div>
 
+      <!-- Salidas Profesionales -->
       <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 space-y-3">
-        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">Salidas Profesionales</h3>
+        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono flex items-center gap-2">
+          <span>💼</span> Salidas Profesionales
+        </h3>
         <ul class="space-y-1.5 text-xs text-slate-400">
-          {(grado.salidas || []).map((s) => (
-            <li class="bg-slate-950 px-3 py-2 rounded-xl border border-slate-800/60 flex items-center gap-2">
-              <span class="text-amber-400">✓</span> {s}
+          {(grado.salidas || []).map((s: string) => (
+            <li class="bg-slate-950 px-3 py-2.5 rounded-xl border border-slate-800/60 flex items-center gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span class="text-slate-200">{s}</span>
             </li>
           ))}
         </ul>
       </div>
+
     </div>
 
   </div>
