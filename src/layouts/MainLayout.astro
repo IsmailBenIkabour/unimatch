@@ -1,6 +1,7 @@
 ---
 // src/layouts/MainLayout.astro
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
@@ -72,18 +73,8 @@ const canonicalURL = new URL(Astro.url.pathname, site);
       <slot />
     </main>
 
-    <!-- Pie de página -->
-    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-xs text-slate-500">
-      <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>© 2026 UniMatchCAT. Datos oficiales de la Generalitat de Catalunya.</p>
-        <div class="flex items-center gap-6">
-          <a href="/metodologia" class="hover:text-slate-300 transition">Metodología</a>
-          <a href="/aviso-legal" class="hover:text-slate-300 transition">Aviso Legal</a>
-          <a href="/privacidad" class="hover:text-slate-300 transition">Privacidad</a>
-          <a href="/contacto" class="hover:text-slate-300 transition">Contacto</a>
-        </div>
-      </div>
-    </footer>
+    <!-- Pie de página (Componente reutilizable) -->
+    <Footer />
 
   </body>
 </html>
