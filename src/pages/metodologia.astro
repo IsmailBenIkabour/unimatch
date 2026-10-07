@@ -3,40 +3,37 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout 
-  title="Metodología y Fuentes de Datos | UniMatchCAT"
-  description="Conoce cómo recopilamos y tratamos los datos oficiales de notas de corte y universidades en Cataluña."
->
-  <div class="space-y-8 py-8 max-w-4xl mx-auto px-4 text-slate-300 text-xs sm:text-sm leading-relaxed">
-    <header class="space-y-2 border-b border-slate-800 pb-6">
-      <h1 class="text-2xl sm:text-4xl font-black text-white">Metodología y Fuentes</h1>
-      <p class="text-xs text-slate-500 font-mono">Transparencia y rigor en los datos universitarios de Cataluña.</p>
+<MainLayout title="Metodología y Fuentes | UniMatchCAT">
+  <div class="max-w-3xl mx-auto py-10 px-4 space-y-6 text-slate-300 text-xs sm:text-sm leading-relaxed">
+    <a href="/" class="text-xs text-amber-400 hover:underline font-mono">← Volver a la calculadora</a>
+    
+    <header class="border-b border-slate-800 pb-4 space-y-2">
+      <h1 class="text-2xl sm:text-3xl font-black text-white">Metodología de Cálculo y Fuentes Oficiales</h1>
+      <p class="text-slate-400">Transparencia sobre la procedencia de datos y fórmulas del curso 2026.</p>
     </header>
 
-    <section class="space-y-3">
-      <h2 class="text-base font-bold text-white font-mono uppercase tracking-wider text-amber-400">1. Origen Oficial de los Datos</h2>
+    <section class="space-y-4">
+      <h2 class="text-base font-bold text-amber-400 font-mono">1. Fuentes de Datos</h2>
       <p>
-        En <strong class="text-white">UniMatchCAT</strong> nos tomamos muy en serio la fiabilidad de la información académica. Todas las notas de corte, plazas ofertadas y titulaciones disponibles en nuestro catálogo proceden directamente de los listados oficiales publicados por el <strong class="text-white">Consell Interuniversitari de Catalunya</strong> a través de la <strong class="text-white">Oficina d'Accés a la Universitat</strong>.
+        Todos los datos de grados, ponderaciones y notas de corte de Cataluña provienen de los datos públicos y asignaciones oficiales publicadas por el <strong class="text-white">Canal Universitats de la Generalitat de Catalunya</strong>.
       </p>
     </section>
 
-    <section class="space-y-3">
-      <h2 class="text-base font-bold text-white font-mono uppercase tracking-wider text-amber-400">2. Proceso de Actualización</h2>
+    <section class="space-y-4">
+      <h2 class="text-base font-bold text-amber-400 font-mono">2. Algoritmo de Cálculo</h2>
       <p>
-        Los datos se actualizan conforme se publican las sucesivas fases de asignación de plazas (1ª asignación en julio, reasignaciones y llamamientos posteriores). Cada ficha de grado detalla la nota correspondiente al proceso oficial vigente, permitiendo al estudiante contrastar la evolución respecto a cursos anteriores.
+        El cálculo de la nota simulada sigue la normativa de acceso universitaria:
       </p>
+      <ul class="list-disc pl-5 space-y-1 text-slate-400">
+        <li><strong class="text-slate-200">Nota de Acceso (Hasta 10 pts):</strong> (Bachillerato × 0.6) + (Fase General PAU × 0.4). Requiere un mínimo de 4.0 en la Fase General.</li>
+        <li><strong class="text-slate-200">Nota de Admisión (Hasta 14 pts):</strong> Nota de Acceso + (Optativa 1 × Ponderación) + (Optativa 2 × Ponderación). Solo ponderan notas igual o superiores a 5.0.</li>
+      </ul>
     </section>
 
-    <section class="space-y-3">
-      <h2 class="text-base font-bold text-white font-mono uppercase tracking-wider text-amber-400">3. Simulador de la PAU</h2>
-      <p>
-        El cálculo de la nota de admisión se efectúa aplicando estrictamente la fórmula oficial de ponderaciones establecida por la Generalitat:
-      </p>
-      <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl font-mono text-amber-300 text-center">
-        Nota de Admisión = NPA + (a1 × M1) + (a2 × M2)
-      </div>
-      <p class="text-xs text-slate-400">
-        Donde NPA es la Nota de Acceso a la Universidad (media de Bachillerato y fase general de las PAU), y M1/M2 son las calificaciones de las materias de la fase específica multiplicadas por su respectiva ponderación (0.2 o 0.1).
+    <section class="space-y-4 border-t border-slate-800 pt-4">
+      <h2 class="text-base font-bold text-amber-400 font-mono">3. Exención de Responsabilidad</h2>
+      <p class="text-slate-400 text-xs">
+        UniMatchCAT es una herramienta informativa independiente. Los resultados son estimaciones y la asignación oficial depende en última instancia de la Oficina d'Accés a la Universitat.
       </p>
     </section>
   </div>
