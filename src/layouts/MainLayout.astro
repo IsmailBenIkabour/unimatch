@@ -26,6 +26,8 @@ const canonicalURL = new URL(Astro.url.pathname, site);
     <!-- Título y Descripción SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <meta name="google-site-verification" content="2eEkVifQgYEj1qJUf245lJSDtpFtUYvSxkOhF0IKaqE" />
     
     <!-- URL Canónica -->
     <link rel="canonical" href={canonicalURL.toString()} />
