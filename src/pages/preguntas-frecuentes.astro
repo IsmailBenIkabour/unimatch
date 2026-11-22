@@ -1,0 +1,22 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const faqs = [
+  {q:'¿Las notas de corte de UniMatchCAT garantizan que conseguiré plaza?',a:'No. Son referencias de asignaciones anteriores o de los datos mostrados. La nota de corte futura puede variar. La plaza se determina mediante el proceso oficial.'},
+  {q:'¿Cómo puedo calcular mi nota de admisión?',a:'Puedes utilizar la calculadora PAU de UniMatchCAT para simular un resultado con tus notas y ponderaciones. Comprueba que las ponderaciones y reglas correspondan a la convocatoria que te afecta.'},
+  {q:'¿Qué hago si no encuentro un grado?',a:'Prueba a buscar por una parte del nombre, revisa los filtros o consulta el catálogo oficial. Si detectas un grado que falta, puedes comunicarlo mediante la página de contacto.'},
+  {q:'¿Los datos son oficiales?',a:'UniMatchCAT es un proyecto independiente que recopila y organiza información de orientación. Consulta la metodología y verifica siempre los datos actuales en las fuentes oficiales antes de tomar decisiones.'},
+  {q:'¿Puedo comparar varias titulaciones?',a:'Sí. La herramienta Comparar permite revisar titulaciones seleccionadas y contrastar la información que esté disponible en el catálogo.'},
+  {q:'¿La calculadora PAU sustituye la preinscripción?',a:'No. Es una herramienta de simulación. No presenta solicitudes ni determina asignaciones de plaza.'},
+  {q:'¿Puedo proponer correcciones?',a:'Sí. Puedes escribir al contacto del proyecto indicando la página, el dato que consideras incorrecto y, si es posible, una fuente oficial que lo respalde.'},
+  {q:'¿Por qué una nota de corte puede cambiar?',a:'Puede variar por las plazas disponibles, las solicitudes y el orden de asignación. Por eso, los datos de años anteriores no son una garantía para futuras convocatorias.'}
+];
+---
+<MainLayout title="Preguntas frecuentes | UniMatchCAT" description="Respuestas a dudas frecuentes sobre notas de corte, grados, calculadora PAU y herramientas de UniMatchCAT.">
+  <section class="max-w-3xl mx-auto px-4 py-10 space-y-8 text-slate-300">
+    <header class="space-y-3 border-b border-slate-800 pb-6"><p class="text-amber-400 text-xs font-mono uppercase tracking-wider">Ayuda</p><h1 class="text-3xl sm:text-4xl font-black text-white">Preguntas frecuentes</h1><p class="text-slate-400">Respuestas sobre el catálogo, las notas de corte y las herramientas de orientación.</p></header>
+    <div class="space-y-4">
+      {faqs.map((item) => <details class="group rounded-xl border border-slate-800 bg-slate-900/50 p-4"><summary class="cursor-pointer font-semibold text-white marker:text-amber-400">{item.q}</summary><p class="mt-3 text-sm leading-relaxed text-slate-400">{item.a}</p></details>)}
+    </div>
+    <div class="rounded-xl border border-slate-800 p-5 space-y-3"><h2 class="text-lg font-bold text-white">¿No encuentras tu respuesta?</h2><p class="text-sm">Escríbenos si tienes dudas, sugerencias o has detectado un dato que necesita revisión.</p><a href="/contacto" class="inline-block text-amber-400 hover:underline">Contactar con UniMatchCAT →</a></div>
+  </section>
+</MainLayout>
