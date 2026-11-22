@@ -1,196 +1,42 @@
 ---
-// src/components/BuscadorGrados.astro
 import gradosData from '../data/grados.json';
-
-// Ordenar grados alfabéticamente de forma 100% segura (evita undefined)
-const gradosOrdenados = [...gradosData].sort((a, b) => {
-  const nombreA = a && a.nombre ? String(a.nombre) : '';
-  const nombreB = b && b.nombre ? String(b.nombre) : '';
-  return nombreA.localeCompare(nombreB);
-});
-
-// Extraer universidades únicas de Cataluña
-const universidades = [...new Set(gradosData.map(g => g && g.universidad).filter(Boolean))].sort();
+const gradosOrdenados = [...gradosData].filter(g => g?.nombre).sort((a,b)=>String(a.nombre).localeCompare(String(b.nombre),'ca',{sensitivity:'base'}));
+const universidades = [...new Set(gradosOrdenados.map(g=>g.universidad).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ca'));
+const ramas = [...new Set(gradosOrdenados.map(g=>g.rama).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ca'));
 ---
-
-<div class="space-y-6">
-  
-  <!-- BARRA DE FILTROS MINIMALISTA -->
-  <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-4 sm:p-6 backdrop-blur-sm grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-    
-    <!-- Filtro Texto -->
-    <div class="space-y-1">
-      <label for="searchInput" class="block text-[11px] font-semibold text-slate-400">Buscar titulación o ciudad</label>
-      <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Ej. Medicina, Barcelona..." 
-        class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-white outline-none transition"
-      />
-    </div>
-
-    <!-- Filtro Nota Máxima -->
-    <div class="space-y-1">
-      <label for="maxNotaInput" class="block text-[11px] font-semibold text-slate-400">Tu Nota Máxima</label>
-      <input 
-        type="number" 
-        step="0.01" 
-        id="maxNotaInput" 
-        min="5" 
-        max="14" 
-        placeholder="Ej. 11.50" 
-        class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs font-bold text-amber-400 outline-none transition"
-      />
-    </div>
-
-    <!-- Filtro Tipo -->
-    <div class="space-y-1">
-      <label for="tipoSelect" class="block text-[11px] font-semibold text-slate-400">Tipo de Centro</label>
-      <select 
-        id="tipoSelect" 
-        class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-slate-200 outline-none transition"
-      >
-        <option value="">Todas las universidades</option>
-        <option value="Pública">Públicas</option>
-        <option value="Privada">Privadas</option>
-      </select>
-    </div>
-
-    <!-- Filtro Universidad de Cataluña -->
-    <div class="space-y-1">
-      <label for="universidadSelect" class="block text-[11px] font-semibold text-slate-400">Universidad (Cataluña)</label>
-      <select 
-        id="universidadSelect" 
-        class="w-full bg-slate-950 border border-slate-800 focus:border-amber-400 rounded-xl px-3 py-2.5 text-xs text-slate-200 outline-none transition"
-      >
-        <option value="">Todas de Cataluña</option>
-        {universidades.map(uni => (
-          <option value={uni}>{uni}</option>
-        ))}
-      </select>
-    </div>
-
+<div class="space-y-5">
+  <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+    <div class="space-y-1"><label for="searchInput" class="block text-xs font-semibold text-slate-400">Grado, universidad o ciudad</label><input id="searchInput" type="search" placeholder="Ej. Medicina, Girona..." class="filter-input" /></div>
+    <div class="space-y-1"><label for="maxNotaInput" class="block text-xs font-semibold text-slate-400">Nota máxima</label><input id="maxNotaInput" type="number" step="0.01" min="5" max="14" placeholder="Ej. 11,50" class="filter-input" /></div>
+    <div class="space-y-1"><label for="tipoSelect" class="block text-xs font-semibold text-slate-400">Centro</label><select id="tipoSelect" class="filter-input"><option value="">Todos</option><option value="Pública">Público</option><option value="Privada">Privado</option></select></div>
+    <div class="space-y-1"><label for="universidadSelect" class="block text-xs font-semibold text-slate-400">Universidad</label><select id="universidadSelect" class="filter-input"><option value="">Todas</option>{universidades.map(uni=><option value={uni}>{uni}</option>)}</select></div>
+    <div class="space-y-1"><label for="ramaSelect" class="block text-xs font-semibold text-slate-400">Ámbito</label><select id="ramaSelect" class="filter-input"><option value="">Todos</option>{ramas.map(r=><option value={r}>{r}</option>)}</select></div>
+    <button id="limpiarFiltros" type="button" class="sm:col-span-2 lg:col-span-5 text-xs text-amber-400 hover:text-amber-300 font-semibold text-left">Limpiar filtros</button>
   </div>
-
-  <!-- CONTADOR DE RESULTADOS -->
-  <div class="flex justify-between items-center px-1">
-    <span id="contadorResultados" class="text-xs text-slate-400 font-mono">
-      {gradosOrdenados.length} titulaciones encontradas
-    </span>
-  </div>
-
-  <!-- LISTADO DE TARJETAS (Renderizado estático directo de Astro) -->
+  <div class="flex flex-wrap justify-between items-center gap-2 px-1"><span id="contadorResultados" class="text-sm text-slate-400">{gradosOrdenados.length} titulaciones</span><span class="text-xs text-slate-500">Las notas no disponibles no se excluyen al filtrar por nota máxima.</span></div>
   <div id="gradosContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {gradosOrdenados.map(g => {
-      if (!g || !g.nombre) return null;
-      const idTarget = g.id || g.slug || '';
-      const notaFormateada = typeof g.notaCorte2026 === 'number' ? g.notaCorte2026.toFixed(3) : (g.notaCorte2026 || '0.000');
-
-      return (
-        <a 
-          href={`/grados/${idTarget}`} 
-          data-nombre={String(g.nombre).toLowerCase()}
-          data-ciudad={String(g.ciudad || '').toLowerCase()}
-          data-universidad={g.universidad || ''}
-          data-nota={g.notaCorte2026 || 0}
-          data-tipo={g.tipo || 'Pública'}
-          class="grado-card group bg-slate-900/60 hover:bg-slate-900 border border-slate-800/80 hover:border-amber-400/50 rounded-2xl p-5 transition-all duration-300 flex flex-col justify-between space-y-4"
-        >
-          <div class="space-y-2">
-            <div class="flex justify-between items-start gap-2">
-              <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">
-                {g.rama || 'Grado'}
-              </span>
-              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">
-                Corte: {notaFormateada}
-              </span>
-            </div>
-
-            <div>
-              <h3 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors leading-snug">
-                {g.nombre}
-              </h3>
-              <p class="text-xs text-slate-400 mt-1">{g.universidad}</p>
-            </div>
-          </div>
-
-          <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
-            <span>📍 {g.ciudad || 'Cataluña'} ({g.comunidad || 'Cataluña'})</span>
-            <span class="font-semibold text-slate-300 group-hover:translate-x-0.5 transition-transform">Ver ficha →</span>
-          </div>
-        </a>
-      );
+    {gradosOrdenados.map(g=>{
+      const idTarget=g.slug||g.id||''; const nota=typeof g.notaCorte2026==='number'?g.notaCorte2026:null;
+      return <a href={`/grados/${idTarget}`} data-nombre={String(g.nombre).toLocaleLowerCase()} data-ciudad={String(g.ciudad||'').toLocaleLowerCase()} data-universidad={g.universidad||''} data-nota={nota===null?'':nota} data-tipo={g.tipo||''} data-rama={g.rama||''} class="grado-card group bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-amber-400/50 rounded-2xl p-5 transition flex flex-col justify-between gap-4">
+        <div class="space-y-2"><div class="flex justify-between items-start gap-2"><span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300">{g.rama||'Grado'}</span><span class="text-xs font-mono font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">{nota===null?'Nota N/D':`Corte: ${nota.toFixed(3)}`}</span></div><h3 class="text-sm font-bold text-white group-hover:text-amber-400 leading-snug">{g.nombre}</h3><p class="text-xs text-slate-400">{g.universidad||'Universidad no indicada'}</p></div>
+        <div class="pt-3 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400"><span>📍 {g.ciudad||'Ubicación N/D'}</span><span class="font-semibold">Ver ficha →</span></div>
+      </a>;
     })}
   </div>
-
-  <!-- MENSAJE DE NO RESULTADOS -->
-  <div id="noResultados" class="hidden py-12 text-center bg-slate-900/40 border border-slate-800 rounded-2xl space-y-2">
-    <p class="text-sm font-semibold text-slate-300">No se han encontrado titulaciones con estos filtros.</p>
-    <p class="text-xs text-slate-500">Prueba a subir tu nota máxima o limpiar los filtros de búsqueda.</p>
-  </div>
-
+  <div id="noResultados" class="hidden py-12 text-center bg-slate-900/40 border border-slate-800 rounded-xl"><p class="text-sm font-semibold text-slate-300">No hay titulaciones que coincidan.</p><p class="text-xs text-slate-500 mt-2">Prueba a modificar los filtros.</p></div>
 </div>
-
-<!-- SCRIPT DE FILTRADO CLIENTE -->
+<style>
+.filter-input{width:100%;background:#020617;border:1px solid #1e293b;border-radius:.75rem;padding:.65rem .75rem;font-size:.8rem;color:#e2e8f0;outline:none}.filter-input:focus{border-color:#fbbf24}
+</style>
 <script>
-  function setupFiltros() {
-    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-    const maxNotaInput = document.getElementById('maxNotaInput') as HTMLInputElement;
-    const tipoSelect = document.getElementById('tipoSelect') as HTMLSelectElement;
-    const universidadSelect = document.getElementById('universidadSelect') as HTMLSelectElement;
-    
-    const cards = document.querySelectorAll('.grado-card');
-    const contador = document.getElementById('contadorResultados');
-    const noResultados = document.getElementById('noResultados');
-
-    if (!cards.length) return;
-
-    function filtrar() {
-      const texto = searchInput?.value.toLowerCase().trim() || '';
-      const notaMaxVal = maxNotaInput?.value.replace(',', '.') || '';
-      const notaMax = notaMaxVal ? parseFloat(notaMaxVal) : null;
-      const tipo = tipoSelect?.value || '';
-      const universidad = universidadSelect?.value || '';
-
-      let visibles = 0;
-
-      cards.forEach(card => {
-        const el = card as HTMLElement;
-        const nombre = el.dataset.nombre || '';
-        const ciudad = el.dataset.ciudad || '';
-        const uniCard = el.dataset.universidad || '';
-        const tipoCard = el.dataset.tipo || '';
-        const notaCard = parseFloat(el.dataset.nota || '0');
-
-        const coincideTexto = !texto || nombre.includes(texto) || ciudad.includes(texto) || uniCard.toLowerCase().includes(texto);
-        const coincideNota = notaMax === null || isNaN(notaMax) || notaCard <= notaMax;
-        const coincideTipo = !tipo || tipoCard.toLowerCase().includes(tipo.toLowerCase());
-        const coincideUni = !universidad || uniCard === universidad;
-
-        if (coincideTexto && coincideNota && coincideTipo && coincideUni) {
-          el.style.display = 'flex';
-          visibles++;
-        } else {
-          el.style.display = 'none';
-        }
-      });
-
-      if (contador) {
-        contador.innerText = `${visibles} titulaciones encontradas`;
-      }
-
-      if (noResultados) {
-        noResultados.style.display = visibles === 0 ? 'block' : 'none';
-      }
-    }
-
-    searchInput?.addEventListener('input', filtrar);
-    maxNotaInput?.addEventListener('input', filtrar);
-    tipoSelect?.addEventListener('change', filtrar);
-    universidadSelect?.addEventListener('change', filtrar);
-  }
-
-  document.addEventListener('DOMContentLoaded', setupFiltros);
-  document.addEventListener('astro:page-load', setupFiltros);
-  setupFiltros();
+function setupFilters(){
+ const search=document.getElementById('searchInput') as HTMLInputElement|null, max=document.getElementById('maxNotaInput') as HTMLInputElement|null, tipo=document.getElementById('tipoSelect') as HTMLSelectElement|null, uni=document.getElementById('universidadSelect') as HTMLSelectElement|null, rama=document.getElementById('ramaSelect') as HTMLSelectElement|null, clear=document.getElementById('limpiarFiltros'), count=document.getElementById('contadorResultados'), empty=document.getElementById('noResultados');
+ const cards=document.querySelectorAll('.grado-card'); if(!cards.length)return;
+ const filter=()=>{const q=(search?.value||'').trim().toLocaleLowerCase(), raw=(max?.value||'').replace(',','.'), maxVal=raw===''?null:Number(raw), t=tipo?.value||'', u=uni?.value||'', r=rama?.value||'';let shown=0;
+ cards.forEach(card=>{const e=card as HTMLElement, name=e.dataset.nombre||'', city=e.dataset.ciudad||'', un=e.dataset.universidad||'', typ=e.dataset.tipo||'', branch=e.dataset.rama||'', rawNote=e.dataset.nota||'', note=rawNote===''?null:Number(rawNote);
+ const qOk=!q||name.includes(q)||city.includes(q)||un.toLocaleLowerCase().includes(q), noteOk=maxVal===null||!Number.isFinite(maxVal)||note===null||note<=maxVal, typeOk=!t||typ===t, uniOk=!u||un===u, ramaOk=!r||branch===r;const ok=qOk&&noteOk&&typeOk&&uniOk&&ramaOk;e.style.display=ok?'flex':'none';if(ok)shown++;});
+ if(count)count.textContent=`${shown} titulaciones encontradas`;if(empty)empty.classList.toggle('hidden',shown!==0);};
+ [search,max].forEach(el=>el?.addEventListener('input',filter));[tipo,uni,rama].forEach(el=>el?.addEventListener('change',filter));clear?.addEventListener('click',()=>{if(search)search.value='';if(max)max.value='';if(tipo)tipo.value='';if(uni)uni.value='';if(rama)rama.value='';filter();});filter();
+}
+document.addEventListener('DOMContentLoaded',setupFilters);document.addEventListener('astro:page-load',setupFilters);
 </script>

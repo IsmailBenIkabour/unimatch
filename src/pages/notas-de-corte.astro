@@ -1,63 +1,20 @@
 ---
-// src/pages/notas-de-corte.astro
 import MainLayout from '../layouts/MainLayout.astro';
 import gradosData from '../data/grados.json';
-
-// Ordenar grados alfabéticamente por el nombre de la titulación
-const gradosOrdenados = [...gradosData].sort((a, b) => {
-  const nombreA = a?.nombre || '';
-  const nombreB = b?.nombre || '';
-  return nombreA.localeCompare(nombreB, 'ca', { sensitivity: 'accent' });
-});
+const gradosOrdenados=[...gradosData].filter(g=>g?.nombre).sort((a,b)=>String(a.nombre).localeCompare(String(b.nombre),'ca',{sensitivity:'base'}));
+const universidades=[...new Set(gradosOrdenados.map(g=>g.universidad).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ca'));
 ---
-
-<MainLayout 
-  title="Tabla Oficial de Notas de Corte Cataluña 2026 | UniMatch"
-  description="Listado completo y ordenado alfabéticamente de notas de corte de la 2ª asignación para las universidades de Cataluña."
->
-  <div class="space-y-8 py-8 max-w-5xl mx-auto px-4">
-    <header class="text-center space-y-3 max-w-2xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-medium tracking-wide">
-        Oficina d'Accés a la Universitat
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
-        Notas de Corte <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Cataluña 2026</span>
-      </h1>
-      <p class="text-xs sm:text-sm text-slate-400">
-        Listado alfabético correspondiente a la 2ª asignación de plazas (julio 2026).
-      </p>
-    </header>
-
-    <div class="overflow-x-auto bg-slate-900/60 border border-slate-800/80 rounded-2xl p-2 backdrop-blur-sm">
-      <table class="w-full text-left text-xs text-slate-300">
-        <thead class="bg-slate-950 text-slate-400 font-mono text-[11px] uppercase border-b border-slate-800">
-          <tr>
-            <th class="p-3.5">Titulación</th>
-            <th class="p-3.5">Universidad</th>
-            <th class="p-3.5">Ciudad</th>
-            <th class="p-3.5 text-right">Nota Corte 2026</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-800/50">
-          {gradosOrdenados.map(g => {
-            if (!g || !g.nombre) return null;
-            const notaFormateada = typeof g.notaCorte2026 === 'number' 
-              ? g.notaCorte2026.toFixed(3) 
-              : (g.notaCorte2026 || '0.000');
-
-            return (
-              <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="p-3.5 font-bold text-white">{g.nombre}</td>
-                <td class="p-3.5 text-slate-400">{g.universidad || 'N/A'}</td>
-                <td class="p-3.5 text-slate-400">{g.ciudad || 'Cataluña'}</td>
-                <td class="p-3.5 text-right font-mono font-bold text-amber-400">
-                  {notaFormateada}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-  </div>
+<MainLayout title="Notas de Corte de Cataluña | UniMatchCAT" description="Consulta y filtra notas de corte de grados universitarios de Cataluña. Comprueba la asignación y el año de los datos antes de tomar decisiones.">
+<div class="max-w-6xl mx-auto px-4 py-8 space-y-6">
+<header class="text-center space-y-3"><span class="text-xs text-amber-400">Consulta orientativa · Datos del catálogo</span><h1 class="text-3xl sm:text-5xl font-black text-white">Notas de Corte <span class="text-amber-400">Cataluña</span></h1><p class="text-sm text-slate-400 max-w-3xl mx-auto">Filtra por titulación o universidad. Comprueba siempre la convocatoria, asignación y fuente oficial antes de utilizar una nota como referencia de admisión.</p></header>
+<div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 grid grid-cols-1 sm:grid-cols-3 gap-3"><div><label for="notaSearch" class="text-xs text-slate-400 block mb-1">Buscar grado o ciudad</label><input id="notaSearch" class="field" placeholder="Ej. Medicina, Tarragona" /></div><div><label for="notaUni" class="text-xs text-slate-400 block mb-1">Universidad</label><select id="notaUni" class="field"><option value="">Todas</option>{universidades.map(u=><option value={u}>{u}</option>)}</select></div><div><label for="notaSort" class="text-xs text-slate-400 block mb-1">Ordenar</label><select id="notaSort" class="field"><option value="alpha">Alfabéticamente</option><option value="high">Nota: mayor a menor</option><option value="low">Nota: menor a mayor</option></select></div></div>
+<div class="text-sm text-slate-400" id="notaCount">{gradosOrdenados.length} titulaciones</div>
+<div class="overflow-x-auto bg-slate-900/60 border border-slate-800 rounded-2xl"><table class="w-full text-left text-sm"><thead class="bg-slate-950 text-slate-400 text-xs uppercase"><tr><th class="p-3">Titulación</th><th class="p-3">Universidad</th><th class="p-3">Ciudad</th><th class="p-3 text-right">Nota</th></tr></thead><tbody id="notaRows" class="divide-y divide-slate-800">{gradosOrdenados.map(g=><tr class="nota-row hover:bg-slate-800/40" data-nombre={String(g.nombre).toLocaleLowerCase()} data-ciudad={String(g.ciudad||'').toLocaleLowerCase()} data-uni={g.universidad||''} data-nota={typeof g.notaCorte2026==='number'?g.notaCorte2026:''}><td class="p-3"><a class="font-semibold text-white hover:text-amber-400" href={`/grados/${g.slug||g.id}`}>{g.nombre}</a></td><td class="p-3 text-slate-400">{g.universidad||'N/D'}</td><td class="p-3 text-slate-400">{g.ciudad||'N/D'}</td><td class="p-3 text-right font-mono text-amber-400">{typeof g.notaCorte2026==='number'?g.notaCorte2026.toFixed(3):'N/D'}</td></tr>)}</tbody></table></div><div id="notaEmpty" class="hidden text-center p-8 text-slate-400">No se encontraron resultados.</div>
+<div class="text-xs text-slate-500">UniMatchCAT es un recurso informativo independiente. La admisión y las notas definitivas dependen de la información oficial de cada convocatoria.</div>
+</div>
+<style>.field{width:100%;background:#020617;border:1px solid #1e293b;border-radius:.75rem;padding:.65rem;color:#e2e8f0;font-size:.8rem;outline:none}.field:focus{border-color:#fbbf24}</style>
+<script>
+function setupNotaFilters(){const q=document.getElementById('notaSearch') as HTMLInputElement|null, u=document.getElementById('notaUni') as HTMLSelectElement|null, sort=document.getElementById('notaSort') as HTMLSelectElement|null, count=document.getElementById('notaCount'), empty=document.getElementById('notaEmpty');const rows=[...document.querySelectorAll('.nota-row')] as HTMLElement[];if(!rows.length)return;const update=()=>{const query=(q?.value||'').toLocaleLowerCase().trim(), university=u?.value||'';let visible=rows.filter(r=>(!query||(r.dataset.nombre||'').includes(query)||(r.dataset.ciudad||'').includes(query))&&(!university||r.dataset.uni===university));const mode=sort?.value||'alpha';visible.sort((a,b)=>{if(mode==='alpha')return(a.dataset.nombre||'').localeCompare(b.dataset.nombre||'','ca');const na=a.dataset.nota===''?null:Number(a.dataset.nota),nb=b.dataset.nota===''?null:Number(b.dataset.nota);if(na===null)return 1;if(nb===null)return-1;return mode==='high'?nb-na:na-nb;});rows.forEach(r=>r.style.display='none');visible.forEach(r=>{r.style.display='table-row';r.parentElement?.appendChild(r);});if(count)count.textContent=`${visible.length} titulaciones`;if(empty)empty.classList.toggle('hidden',visible.length>0);};q?.addEventListener('input',update);u?.addEventListener('change',update);sort?.addEventListener('change',update);update();}
+document.addEventListener('DOMContentLoaded',setupNotaFilters);document.addEventListener('astro:page-load',setupNotaFilters);
+</script>
 </MainLayout>
