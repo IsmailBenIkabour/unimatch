@@ -10,11 +10,12 @@ export async function getStaticPaths() {
     { nombre: "Universitat Pompeu Fabra (UPF)", busqueda: "pompeu", slug: "upf", ciudad: "Barcelona", tipo: "Pública", web: "https://www.upf.edu", desc: "Consulta el catálogo de titulaciones de la Universitat Pompeu Fabra y accede a las fichas de grado disponibles en UniMatchCAT." },
     { nombre: "Universitat Rovira i Virgili (URV)", busqueda: "rovira", slug: "urv", ciudad: "Tarragona / Reus", tipo: "Pública", web: "https://www.urv.cat", desc: "Explora los grados registrados de la Universitat Rovira i Virgili. Usa los enlaces oficiales para confirmar requisitos, planes de estudio y datos de admisión." },
     { nombre: "Universitat de Lleida (UdL)", busqueda: "lleida", slug: "udl", ciudad: "Lleida", tipo: "Pública", web: "https://www.udl.cat", desc: "Encuentra titulaciones de la Universitat de Lleida incluidas en el catálogo y consulta las fichas individuales para la información disponible." },
-    { nombre: "Universitat de Girona (UdG)", busqueda: "girona", slug: "udg", ciudad: "Girona", tipo: "Pública", web: "https://www.udg.edu", desc: "Explora las titulaciones de la Universitat de Girona que recoge el catálogo de UniMatchCAT y consulta los canales oficiales para información actualizada." }
+    { nombre: "Universitat de Girona (UdG)", busqueda: "girona", slug: "udg", ciudad: "Girona", tipo: "Pública", web: "https://www.udg.edu", desc: "Explora las titulaciones de la Universitat de Girona que recoge el catálogo de UniMatchCAT y consulta los canales oficiales para información actualizada." },
+    { nombre: "Universitat de Vic - Universitat Central de Catalunya (UVic-UCC)", busqueda: "vic", slug: "uvic", ciudad: "Vic", tipo: "Privada", web: "https://www.uvic.cat", desc: "Consulta las titulaciones de UVic-UCC incluidas en UniMatchCAT y verifica horarios, precios y acceso en la universidad." }
   ];
 
   return universidades.map(uni => {
-    const gradosUni = gradosData.filter(g => g?.universidad && g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase()));
+    const gradosUni = gradosData.filter(g => g?.universidadSlug === uni.slug || (g?.universidad && g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase())));
     return { params: { slug: uni.slug }, props: { universidad: uni, grados: gradosUni } };
   });
 }

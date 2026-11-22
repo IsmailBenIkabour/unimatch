@@ -2,49 +2,1513 @@
   "bioinformatica-upc-ub-uab-upf": {
     "busqueda": "Grau en Bioinformàtica a Catalunya",
     "intro": "La bioinformática combina programación, estadística y ciencias de la vida para analizar datos biológicos. Es una opción para quien quiere trabajar con datos y biología, no solamente con experimentos de laboratorio.",
-    "aprender": ["Programación y manejo de datos para preguntas biológicas", "Estadística y análisis de secuencias o conjuntos de datos", "Fundamentos de biología molecular y genética"],
+    "aprender": [
+      "Programación y manejo de datos para preguntas biológicas",
+      "Estadística y análisis de secuencias o conjuntos de datos",
+      "Fundamentos de biología molecular y genética"
+    ],
     "diferencias": "No es lo mismo que Biología: en Bioinformática tienen mucho peso la programación y las matemáticas. Tampoco es exactamente Informática: los problemas y datos que se estudian provienen de las ciencias de la vida.",
-    "antes": ["¿Qué asignaturas de programación se cursan desde primero?", "¿Cuál es el idioma real de cada asignatura?", "¿Cómo se reparten docencia y prácticas entre las universidades participantes?"],
-    "relacionados": ["genetica-uab", "enginyeria-informatica-ub"]
+    "antes": [
+      "¿Qué asignaturas de programación se cursan desde primero?",
+      "¿Cuál es el idioma real de cada asignatura?",
+      "¿Cómo se reparten docencia y prácticas entre las universidades participantes?"
+    ],
+    "relacionados": [
+      "genetica-uab",
+      "enginyeria-informatica-ub"
+    ]
   },
   "publicitat-relacions-publiques-upf": {
     "busqueda": "Grau en Publicitat i Relacions Públiques",
     "intro": "Publicidad y relaciones públicas estudia cómo se construyen mensajes, campañas y relaciones entre organizaciones y sus públicos. Incluye creatividad, estrategia y análisis de audiencias.",
-    "aprender": ["Diseño y planificación de campañas de comunicación", "Investigación de públicos y evaluación de mensajes", "Comunicación de marca y reputación"],
+    "aprender": [
+      "Diseño y planificación de campañas de comunicación",
+      "Investigación de públicos y evaluación de mensajes",
+      "Comunicación de marca y reputación"
+    ],
     "diferencias": "Publicidad suele centrarse en campañas y mensajes de marca; las relaciones públicas se enfocan más en la comunicación con públicos y la reputación. Dentro de un grado pueden convivir ambas perspectivas.",
-    "antes": ["¿Cuánto trabajo práctico se hace con campañas y proyectos?", "¿Qué opciones de prácticas y convenios existen?", "¿Qué peso tienen estrategia, creatividad y análisis de datos?"],
-    "relacionados": ["relacions-internacionals-uab"]
+    "antes": [
+      "¿Cuánto trabajo práctico se hace con campañas y proyectos?",
+      "¿Qué opciones de prácticas y convenios existen?",
+      "¿Qué peso tienen estrategia, creatividad y análisis de datos?"
+    ],
+    "relacionados": [
+      "relacions-internacionals-uab"
+    ]
   },
   "genetica-uab": {
     "busqueda": "Grau en Genètica a la UAB",
     "intro": "La genética estudia la herencia y la variación biológica. Combina conocimientos de biología celular, moléculas, técnicas de laboratorio y análisis de datos.",
-    "aprender": ["Bases de genética molecular y herencia", "Diseño e interpretación de experimentos biológicos", "Lectura crítica de resultados científicos"],
+    "aprender": [
+      "Bases de genética molecular y herencia",
+      "Diseño e interpretación de experimentos biológicos",
+      "Lectura crítica de resultados científicos"
+    ],
     "diferencias": "Frente a Bioinformática, un grado de Genética suele dar mayor protagonismo a las bases biológicas y al trabajo experimental. Conviene mirar el plan docente para conocer el peso concreto de informática y estadística.",
-    "antes": ["¿Cuántas horas de laboratorio tiene el plan?", "¿Qué optativas o itinerarios hay en los últimos cursos?", "¿Qué oportunidades existen para iniciarse en investigación?"],
-    "relacionados": ["bioinformatica-upc-ub-uab-upf"]
+    "antes": [
+      "¿Cuántas horas de laboratorio tiene el plan?",
+      "¿Qué optativas o itinerarios hay en los últimos cursos?",
+      "¿Qué oportunidades existen para iniciarse en investigación?"
+    ],
+    "relacionados": [
+      "bioinformatica-upc-ub-uab-upf"
+    ]
   },
   "enginyeria-mecanica-upc": {
     "busqueda": "Grau en Enginyeria Mecànica a Catalunya",
     "intro": "La ingeniería mecánica aplica matemáticas, física y diseño al estudio de máquinas, estructuras, energía y sistemas de fabricación.",
-    "aprender": ["Mecánica, resistencia de materiales y diseño", "Termodinámica y aplicaciones energéticas", "Procesos de fabricación y resolución de problemas técnicos"],
+    "aprender": [
+      "Mecánica, resistencia de materiales y diseño",
+      "Termodinámica y aplicaciones energéticas",
+      "Procesos de fabricación y resolución de problemas técnicos"
+    ],
     "diferencias": "No se centra solo en reparar vehículos. El grado estudia el diseño y análisis de sistemas mecánicos muy diversos, desde componentes hasta procesos industriales.",
-    "antes": ["¿Qué software técnico se utiliza en las prácticas?", "¿Cómo se distribuyen laboratorios y proyectos?", "¿Qué especializaciones y optativas ofrece el centro?"],
-    "relacionados": ["arquitectura-tecnica-edificacio-upc"]
+    "antes": [
+      "¿Qué software técnico se utiliza en las prácticas?",
+      "¿Cómo se distribuyen laboratorios y proyectos?",
+      "¿Qué especializaciones y optativas ofrece el centro?"
+    ],
+    "relacionados": [
+      "arquitectura-tecnica-edificacio-upc"
+    ]
   },
   "arquitectura-tecnica-edificacio-upc": {
     "busqueda": "Grau en Arquitectura Tècnica i Edificació",
     "intro": "Arquitectura técnica y edificación se centra en el proceso constructivo: materiales, ejecución de obra, organización, costes, seguridad y control técnico de edificios.",
-    "aprender": ["Materiales y sistemas de construcción", "Mediciones, presupuestos y planificación de obras", "Control técnico, calidad y seguridad en edificación"],
+    "aprender": [
+      "Materiales y sistemas de construcción",
+      "Mediciones, presupuestos y planificación de obras",
+      "Control técnico, calidad y seguridad en edificación"
+    ],
     "diferencias": "Arquitectura técnica no es idéntica a Arquitectura: su enfoque suele orientarse más a la gestión y ejecución técnica de la edificación. Las atribuciones profesionales concretas deben consultarse en la información oficial del título.",
-    "antes": ["¿Qué prácticas se hacen en obra o laboratorio?", "¿Qué herramientas de presupuestos y modelado se usan?", "¿Cómo se conecta el título con el ejercicio profesional?"],
-    "relacionados": ["enginyeria-mecanica-upc"]
+    "antes": [
+      "¿Qué prácticas se hacen en obra o laboratorio?",
+      "¿Qué herramientas de presupuestos y modelado se usan?",
+      "¿Cómo se conecta el título con el ejercicio profesional?"
+    ],
+    "relacionados": [
+      "enginyeria-mecanica-upc"
+    ]
   },
   "enginyeria-informatica-upc-fib": {
     "busqueda": "Grau en Enginyeria Informàtica a la FIB (UPC)",
     "intro": "El grado de Ingeniería Informática de la FIB se orienta al diseño, desarrollo y comprensión de sistemas informáticos. Combina programación con fundamentos matemáticos y otras áreas de la computación.",
-    "aprender": ["Programación, algoritmos y estructuras de datos", "Arquitectura, sistemas y funcionamiento de ordenadores", "Diseño y desarrollo de soluciones informáticas"],
+    "aprender": [
+      "Programación, algoritmos y estructuras de datos",
+      "Arquitectura, sistemas y funcionamiento de ordenadores",
+      "Diseño y desarrollo de soluciones informáticas"
+    ],
     "diferencias": "Para comparar la FIB con otros grados de Informática, revisa asignaturas obligatorias, especializaciones, ubicación del campus, idiomas y metodología de evaluación, no solo la nota de corte.",
-    "antes": ["¿Qué carga de programación y matemáticas hay en primero?", "¿Qué especialidades se pueden escoger?", "¿Cómo se organizan prácticas, proyectos y evaluación?"],
-    "relacionados": ["enginyeria-informatica-ub", "bioinformatica-upc-ub-uab-upf"]
+    "antes": [
+      "¿Qué carga de programación y matemáticas hay en primero?",
+      "¿Qué especialidades se pueden escoger?",
+      "¿Cómo se organizan prácticas, proyectos y evaluación?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "bioinformatica-upc-ub-uab-upf"
+    ]
+  },
+  "enginyeria-informatica-ub": {
+    "busqueda": "Enginyeria Informàtica en Universitat de Barcelona",
+    "intro": "Si te interesa Enginyeria Informàtica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cálculo, física y resolución de problemas técnicos. Entre los ámbitos que conviene explorar están desarrollo de software y sistemas inteligentes. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cálculo, física y resolución de problemas técnicos",
+      "Analizar y diseñar soluciones técnicas en su especialidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Informàtica en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba menciones, laboratorios y atribuciones profesionales del título. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba menciones, laboratorios y atribuciones profesionales del título?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-upc-fib",
+      "enginyeria-informatica-udg",
+      "enginyeria-fisica-upc",
+      "ciencia-enginyeria-dades-upc"
+    ]
+  },
+  "medicina-ub-clinic": {
+    "busqueda": "Medicina (Campus Clínic) en Universitat de Barcelona",
+    "intro": "Si te interesa Medicina (Campus Clínic), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye ciencias biomédicas, razonamiento clínico y salud humana. Entre los ámbitos que conviene explorar están especialidad mir y investigación biomédica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con ciencias biomédicas, razonamiento clínico y salud humana",
+      "Entender el cuerpo humano y formarse para la atención médica",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Medicina (Campus Clínic) en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: investiga la organización de prácticas clínicas y el acceso a formación especializada. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Investiga la organización de prácticas clínicas y el acceso a formación especializada?"
+    ],
+    "relacionados": [
+      "medicina-upf",
+      "medicina-udl",
+      "biomedicina-upf",
+      "psicologia-ub"
+    ]
+  },
+  "medicina-upf": {
+    "busqueda": "Medicina en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Medicina, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye ciencias biomédicas, razonamiento clínico y salud humana. Entre los ámbitos que conviene explorar están mir y biomedicina clínica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con ciencias biomédicas, razonamiento clínico y salud humana",
+      "Entender el cuerpo humano y formarse para la atención médica",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Medicina en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: investiga la organización de prácticas clínicas y el acceso a formación especializada. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Investiga la organización de prácticas clínicas y el acceso a formación especializada?"
+    ],
+    "relacionados": [
+      "medicina-ub-clinic",
+      "medicina-udl",
+      "biomedicina-upf",
+      "psicologia-ub"
+    ]
+  },
+  "fisica-matematicas-uab": {
+    "busqueda": "Física / Matemàtiques (simultaneïtat) en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Física / Matemàtiques (simultaneïtat), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye álgebra, análisis, demostración y modelización. Entre los ámbitos que conviene explorar están física cuántica y investigación avanzada. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con álgebra, análisis, demostración y modelización",
+      "Razonar sobre estructuras matemáticas y modelos cuantitativos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Física / Matemàtiques (simultaneïtat) en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba cuánta teoría hay y qué opciones de computación o estadística ofrece. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba cuánta teoría hay y qué opciones de computación o estadística ofrece?"
+    ],
+    "relacionados": [
+      "matematicas-upc",
+      "matematicas-ub"
+    ]
+  },
+  "enginyeria-fisica-upc": {
+    "busqueda": "Enginyeria Física en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria Física, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye mecánica, electromagnetismo, cálculo y pensamiento experimental. Entre los ámbitos que conviene explorar están nanotecnología y fotónica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con mecánica, electromagnetismo, cálculo y pensamiento experimental",
+      "Comprender fenómenos físicos con modelos y medidas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Física en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: consulta la carga de laboratorio, programación y matemáticas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta la carga de laboratorio, programación y matemáticas?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "ciencia-enginyeria-dades-upc": {
+    "busqueda": "Ciència i Enginyeria de Dades en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Ciència i Enginyeria de Dades, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cálculo, física y resolución de problemas técnicos. Entre los ámbitos que conviene explorar están big data architect y machine learning engineer. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cálculo, física y resolución de problemas técnicos",
+      "Analizar y diseñar soluciones técnicas en su especialidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Ciència i Enginyeria de Dades en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: comprueba menciones, laboratorios y atribuciones profesionales del título. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba menciones, laboratorios y atribuciones profesionales del título?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-aeroespacial-upc-eetac": {
+    "busqueda": "Enginyeria de Sistemes Aeroespacials en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria de Sistemes Aeroespacials, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cálculo, física y resolución de problemas técnicos. Entre los ámbitos que conviene explorar están navegación aérea y sistemas espaciales. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cálculo, física y resolución de problemas técnicos",
+      "Analizar y diseñar soluciones técnicas en su especialidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria de Sistemes Aeroespacials en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: comprueba menciones, laboratorios y atribuciones profesionales del título. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba menciones, laboratorios y atribuciones profesionales del título?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-biomedica-ub": {
+    "busqueda": "Enginyeria Biomèdica en Universitat de Barcelona",
+    "intro": "Si te interesa Enginyeria Biomèdica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cálculo, física y resolución de problemas técnicos. Entre los ámbitos que conviene explorar están tecnología médica y procesamiento de imagen biomédica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cálculo, física y resolución de problemas técnicos",
+      "Analizar y diseñar soluciones técnicas en su especialidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Biomèdica en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba menciones, laboratorios y atribuciones profesionales del título. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba menciones, laboratorios y atribuciones profesionales del título?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "biomedicina-upf": {
+    "busqueda": "Biomedicina en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Biomedicina, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye ciencias biomédicas, razonamiento clínico y salud humana. Entre los ámbitos que conviene explorar están industria farmacéutica y genómica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con ciencias biomédicas, razonamiento clínico y salud humana",
+      "Entender el cuerpo humano y formarse para la atención médica",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Biomedicina en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: investiga la organización de prácticas clínicas y el acceso a formación especializada. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Investiga la organización de prácticas clínicas y el acceso a formación especializada?"
+    ],
+    "relacionados": [
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "dret-upf": {
+    "busqueda": "Dret en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Dret, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye normativa, instituciones y argumentación jurídica. Entre los ámbitos que conviene explorar están abogacía y judicatura. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con normativa, instituciones y argumentación jurídica",
+      "Interpretar textos legales y razonar casos jurídicos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Dret en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: consulta el papel de prácticas y qué formación adicional exige cada profesión. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta el papel de prácticas y qué formación adicional exige cada profesión?"
+    ],
+    "relacionados": [
+      "dret-ub",
+      "dret-uab",
+      "administracio-direccio-empreses-ub",
+      "administracio-direccio-empreses-upf"
+    ]
+  },
+  "dret-ub": {
+    "busqueda": "Dret en Universitat de Barcelona",
+    "intro": "Si te interesa Dret, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye normativa, instituciones y argumentación jurídica. Entre los ámbitos que conviene explorar están abogacía y función pública. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con normativa, instituciones y argumentación jurídica",
+      "Interpretar textos legales y razonar casos jurídicos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Dret en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: consulta el papel de prácticas y qué formación adicional exige cada profesión. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta el papel de prácticas y qué formación adicional exige cada profesión?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-uab",
+      "administracio-direccio-empreses-ub",
+      "administracio-direccio-empreses-upf"
+    ]
+  },
+  "psicologia-ub": {
+    "busqueda": "Psicologia en Universitat de Barcelona",
+    "intro": "Si te interesa Psicologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye conducta, procesos mentales y metodología científica. Entre los ámbitos que conviene explorar están psicología clínica (pir) y recursos humanos. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con conducta, procesos mentales y metodología científica",
+      "Estudiar el comportamiento y analizar evidencias psicológicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Psicologia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: no confundas el grado con una habilitación automática para todas las especialidades sanitarias. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "No confundas el grado con una habilitación automática para todas las especialidades sanitarias?"
+    ],
+    "relacionados": [
+      "psicologia-udg",
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "ciberseguretat-enti-ub": {
+    "busqueda": "Ciberseguretat \"ENTI\" en Universitat de Barcelona",
+    "intro": "Si te interesa Ciberseguretat \"ENTI\", conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye protección de sistemas, redes y fundamentos de seguridad digital. Entre los ámbitos que conviene explorar están auditoría de seguridad y ethical hacking. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con protección de sistemas, redes y fundamentos de seguridad digital",
+      "Analizar riesgos tecnológicos y comprender cómo se protegen sistemas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Ciberseguretat \"ENTI\" en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: verifica que el título, el centro y la naturaleza oficial estén claramente identificados. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Verifica que el título, el centro y la naturaleza oficial estén claramente identificados?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "matematicas-upc": {
+    "busqueda": "Matemàtiques en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Matemàtiques, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye álgebra, análisis, demostración y modelización. Entre los ámbitos que conviene explorar están finanzas cuantitativas y inteligencia artificial. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con álgebra, análisis, demostración y modelización",
+      "Razonar sobre estructuras matemáticas y modelos cuantitativos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Matemàtiques en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: comprueba cuánta teoría hay y qué opciones de computación o estadística ofrece. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba cuánta teoría hay y qué opciones de computación o estadística ofrece?"
+    ],
+    "relacionados": [
+      "matematicas-ub",
+      "fisica-matematicas-uab",
+      "fisica-ub"
+    ]
+  },
+  "matematicas-ub": {
+    "busqueda": "Matemàtiques en Universitat de Barcelona",
+    "intro": "Si te interesa Matemàtiques, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye álgebra, análisis, demostración y modelización. Entre los ámbitos que conviene explorar están modelado matemático y análisis estadístico. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con álgebra, análisis, demostración y modelización",
+      "Razonar sobre estructuras matemáticas y modelos cuantitativos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Matemàtiques en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba cuánta teoría hay y qué opciones de computación o estadística ofrece. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba cuánta teoría hay y qué opciones de computación o estadística ofrece?"
+    ],
+    "relacionados": [
+      "matematicas-upc",
+      "fisica-matematicas-uab",
+      "fisica-ub"
+    ]
+  },
+  "fisica-ub": {
+    "busqueda": "Física en Universitat de Barcelona",
+    "intro": "Si te interesa Física, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye mecánica, electromagnetismo, cálculo y pensamiento experimental. Entre los ámbitos que conviene explorar están investigación cuántica y física médica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con mecánica, electromagnetismo, cálculo y pensamiento experimental",
+      "Comprender fenómenos físicos con modelos y medidas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Física en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: consulta la carga de laboratorio, programación y matemáticas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta la carga de laboratorio, programación y matemáticas?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "biologia-ub": {
+    "busqueda": "Biologia en Universitat de Barcelona",
+    "intro": "Si te interesa Biologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye organismos, evolución y sistemas vivos. Entre los ámbitos que conviene explorar están investigación genética y laboratorios sanitarios. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con organismos, evolución y sistemas vivos",
+      "Estudiar seres vivos desde la célula hasta los ecosistemas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Biologia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba las opciones de laboratorio, campo y especialización. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba las opciones de laboratorio, campo y especialización?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "bioquimica-ub": {
+    "busqueda": "Bioquímica en Universitat de Barcelona",
+    "intro": "Si te interesa Bioquímica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye química experimental, cálculo y procesos materiales. Entre los ámbitos que conviene explorar están industria farmacéutica y biomedicina molecular. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con química experimental, cálculo y procesos materiales",
+      "Analizar sustancias y transformaciones químicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Bioquímica en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: distingue química científica de ingeniería química y consulta las prácticas de laboratorio. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue química científica de ingeniería química y consulta las prácticas de laboratorio?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "intel-ligencia-artificial-upc": {
+    "busqueda": "Intel·ligència Artificial en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Intel·ligència Artificial, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye modelos de aprendizaje automático, matemáticas y tratamiento de datos. Entre los ámbitos que conviene explorar están machine learning y procesamiento de lenguaje natural. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con modelos de aprendizaje automático, matemáticas y tratamiento de datos",
+      "Diseñar y evaluar sistemas que aprenden de datos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Intel·ligència Artificial en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: pregunta cuánto se estudia de estadística, fundamentos de informática y ética. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta cuánto se estudia de estadística, fundamentos de informática y ética?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-civil-upc": {
+    "busqueda": "Enginyeria Civil en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria Civil, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye estructuras, hidráulica e infraestructuras. Entre los ámbitos que conviene explorar están infraestructuras de transporte y gestión de recursos hídricos. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con estructuras, hidráulica e infraestructuras",
+      "Proyectar soluciones para transporte y obra civil",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Civil en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: distingue construcción de edificios de infraestructuras y consulta atribuciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue construcción de edificios de infraestructuras y consulta atribuciones?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-de-materials-upc": {
+    "busqueda": "Enginyeria de Materials en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria de Materials, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye propiedades, selección y procesamiento de materiales. Entre los ámbitos que conviene explorar están desarrollo de nanomateriales y industria aeroespacial y automoción. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con propiedades, selección y procesamiento de materiales",
+      "Elegir materiales para distintas aplicaciones tecnológicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria de Materials en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: consulta laboratorios y relación con química y física. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta laboratorios y relación con química y física?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-de-satellits-upc": {
+    "busqueda": "Enginyeria de Satèl·lits en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria de Satèl·lits, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye sistemas espaciales, electrónica y comunicaciones. Entre los ámbitos que conviene explorar están diseño de nanosatélites y comunicaciones espaciales. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con sistemas espaciales, electrónica y comunicaciones",
+      "Entender los subsistemas que forman un satélite",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria de Satèl·lits en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: revisa la base en ingeniería y los requisitos específicos de acceso. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa la base en ingeniería y los requisitos específicos de acceso?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "administracio-direccio-empreses-ub": {
+    "busqueda": "Administració i Direcció d'Empreses (ADE) en Universitat de Barcelona",
+    "intro": "Si te interesa Administració i Direcció d'Empreses (ADE), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye contabilidad, finanzas, gestión y estrategia empresarial. Entre los ámbitos que conviene explorar están dirección financiera y consultoría de negocios. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con contabilidad, finanzas, gestión y estrategia empresarial",
+      "Comprender cómo se organizan y gestionan empresas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Administració i Direcció d'Empreses (ADE) en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: compara idiomas, especializaciones y experiencia práctica. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Compara idiomas, especializaciones y experiencia práctica?"
+    ],
+    "relacionados": [
+      "administracio-direccio-empreses-upf",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "administracio-direccio-empreses-upf": {
+    "busqueda": "Administració i Direcció d'Empreses (ADE) en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Administració i Direcció d'Empreses (ADE), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye contabilidad, finanzas, gestión y estrategia empresarial. Entre los ámbitos que conviene explorar están banca de inversión y consultoría estratégica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con contabilidad, finanzas, gestión y estrategia empresarial",
+      "Comprender cómo se organizan y gestionan empresas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Administració i Direcció d'Empreses (ADE) en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: compara idiomas, especializaciones y experiencia práctica. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Compara idiomas, especializaciones y experiencia práctica?"
+    ],
+    "relacionados": [
+      "administracio-direccio-empreses-ub",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "economia-upf": {
+    "busqueda": "Economia en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Economia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye microeconomía, macroeconomía y análisis cuantitativo. Entre los ámbitos que conviene explorar están análisis económico y banca central. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con microeconomía, macroeconomía y análisis cuantitativo",
+      "Interpretar decisiones y fenómenos económicos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Economia en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: comprueba la carga de matemáticas, estadística y análisis de datos. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba la carga de matemáticas, estadística y análisis de datos?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "relacions-internacionals-uab": {
+    "busqueda": "Relacions Internacionals en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Relacions Internacionals, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye política mundial, instituciones y relaciones entre países. Entre los ámbitos que conviene explorar están cuerpo diplomático y organizaciones no gubernamentales. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con política mundial, instituciones y relaciones entre países",
+      "Analizar procesos internacionales y sus consecuencias",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Relacions Internacionals en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: consulta idiomas exigidos, movilidad y orientación profesional. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta idiomas exigidos, movilidad y orientación profesional?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "comunicacio-audiovisual-ub": {
+    "busqueda": "Comunicació Audiovisual en Universitat de Barcelona",
+    "intro": "Si te interesa Comunicació Audiovisual, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye lenguaje audiovisual, producción y medios digitales. Entre los ámbitos que conviene explorar están realización de televisión y cine y creación de contenido digital. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con lenguaje audiovisual, producción y medios digitales",
+      "Planificar piezas de vídeo y relatos audiovisuales",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Comunicació Audiovisual en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: revisa equipamiento, prácticas y trabajo en equipo. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa equipamiento, prácticas y trabajo en equipo?"
+    ],
+    "relacionados": [
+      "comunicacio-audiovisual-upf",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "periodisme-uab": {
+    "busqueda": "Periodisme en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Periodisme, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye investigación informativa, redacción y medios. Entre los ámbitos que conviene explorar están redacciones de medios y periodismo de investigación. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con investigación informativa, redacción y medios",
+      "Elaborar información y verificar fuentes",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Periodisme en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: consulta proyectos, medios universitarios y prácticas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta proyectos, medios universitarios y prácticas?"
+    ],
+    "relacionados": [
+      "periodisme-upf",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "traduccio-interpretacio-upf": {
+    "busqueda": "Traducció i Interpretació (Anglès) en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Traducció i Interpretació (Anglès), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye lenguas, traducción y comunicación intercultural. Entre los ámbitos que conviene explorar están traducción especializada y interpretación simultánea. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con lenguas, traducción y comunicación intercultural",
+      "Transferir significados entre idiomas y contextos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Traducció i Interpretació (Anglès) en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: comprueba combinaciones lingüísticas y especialidades. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba combinaciones lingüísticas y especialidades?"
+    ],
+    "relacionados": [
+      "belles-arts-ub",
+      "disseny-ub"
+    ]
+  },
+  "belles-arts-ub": {
+    "busqueda": "Belles Arts en Universitat de Barcelona",
+    "intro": "Si te interesa Belles Arts, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye creación artística, técnicas y reflexión crítica. Entre los ámbitos que conviene explorar están creación artística y dirección de arte. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con creación artística, técnicas y reflexión crítica",
+      "Desarrollar proyectos artísticos propios",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Belles Arts en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: investiga talleres y costes de material. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Investiga talleres y costes de material?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "disseny-ub"
+    ]
+  },
+  "disseny-ub": {
+    "busqueda": "Disseny en Universitat de Barcelona",
+    "intro": "Si te interesa Disseny, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye proyectos visuales, forma y comunicación. Entre los ámbitos que conviene explorar están diseño gráfico y ux/ui y diseño de producto. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con proyectos visuales, forma y comunicación",
+      "Resolver problemas por medio del diseño",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Disseny en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: pregunta por herramientas, talleres y portfolio. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por herramientas, talleres y portfolio?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "historia-ub": {
+    "busqueda": "Història en Universitat de Barcelona",
+    "intro": "Si te interesa Història, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye fuentes históricas, períodos y métodos de investigación. Entre los ámbitos que conviene explorar están docencia y archivos y bibliotecas. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con fuentes históricas, períodos y métodos de investigación",
+      "Comprender procesos históricos a partir de evidencias",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Història en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba métodos de archivo, idiomas y optativas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba métodos de archivo, idiomas y optativas?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "historia-art-ub": {
+    "busqueda": "Història de l'Art en Universitat de Barcelona",
+    "intro": "Si te interesa Història de l'Art, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye arte, patrimonio y contexto histórico. Entre los ámbitos que conviene explorar están comisariado de exposiciones y museografía. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con arte, patrimonio y contexto histórico",
+      "Interpretar obras, estilos y patrimonio cultural",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Història de l'Art en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: pregunta por visitas, archivo y conservación. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por visitas, archivo y conservación?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "humanitats-upf": {
+    "busqueda": "Humanitats en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Humanitats, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye historia, filosofía y cultura desde varias disciplinas. Entre los ámbitos que conviene explorar están gestión cultural y industria editorial. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con historia, filosofía y cultura desde varias disciplinas",
+      "Interpretar sociedades y expresiones culturales",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Humanitats en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: comprueba optativas y profundidad de cada disciplina. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba optativas y profundidad de cada disciplina?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "filosofia-política-economia-upf-uab": {
+    "busqueda": "Filosofia, Política i Economia en UPF / UAB / UAM / UC3M",
+    "intro": "Si te interesa Filosofia, Política i Economia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye microeconomía, macroeconomía y análisis cuantitativo. Entre los ámbitos que conviene explorar están análisis de politicas públicas y organismos internacionales. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con microeconomía, macroeconomía y análisis cuantitativo",
+      "Interpretar decisiones y fenómenos económicos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Filosofia, Política i Economia en UPF / UAB / UAM / UC3M con opciones similares, no te fijes solamente en la nota: comprueba la carga de matemáticas, estadística y análisis de datos. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba la carga de matemáticas, estadística y análisis de datos?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "veterinaria-uab": {
+    "busqueda": "Veterinària en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Veterinària, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye salud animal, biología y prevención. Entre los ámbitos que conviene explorar están medicina clínica animal y seguridad alimentaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con salud animal, biología y prevención",
+      "Relacionar el bienestar animal con procesos de diagnóstico y atención",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Veterinària en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: consulta las prácticas con animales y los distintos ámbitos profesionales. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta las prácticas con animales y los distintos ámbitos profesionales?"
+    ],
+    "relacionados": [
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "farmacia-ub": {
+    "busqueda": "Farmàcia en Universitat de Barcelona",
+    "intro": "Si te interesa Farmàcia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye medicamentos, química y ciencias de la salud. Entre los ámbitos que conviene explorar están oficina de farmacia y farmacia hospitalaria (fir). Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con medicamentos, química y ciencias de la salud",
+      "Entender principios activos y su uso responsable en diferentes entornos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Farmàcia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba laboratorios, prácticas y condiciones profesionales posteriores. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba laboratorios, prácticas y condiciones profesionales posteriores?"
+    ],
+    "relacionados": [
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "infermeria-ub-clinic": {
+    "busqueda": "Infermeria (Campus Clínic) en Universitat de Barcelona",
+    "intro": "Si te interesa Infermeria (Campus Clínic), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cuidados de salud, anatomía y atención a personas. Entre los ámbitos que conviene explorar están atención hospitalaria y atención primaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cuidados de salud, anatomía y atención a personas",
+      "Cuidar a pacientes con criterios científicos y trabajo en equipo",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Infermeria (Campus Clínic) en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba sedes hospitalarias, turnos de prácticas y requisitos sanitarios. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba sedes hospitalarias, turnos de prácticas y requisitos sanitarios?"
+    ],
+    "relacionados": [
+      "infermeria-urv",
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "odontologia-ub": {
+    "busqueda": "Odontologia en Universitat de Barcelona",
+    "intro": "Si te interesa Odontologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye salud bucodental, biología y habilidades clínicas. Entre los ámbitos que conviene explorar están clínica odontológica y cirugía maxilofacial y bucal. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con salud bucodental, biología y habilidades clínicas",
+      "Estudiar prevención, diagnóstico y tratamiento odontológico",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Odontologia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: pregunta por la práctica preclínica y clínica y sus costes materiales. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por la práctica preclínica y clínica y sus costes materiales?"
+    ],
+    "relacionados": [
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "fisioterapia-uab": {
+    "busqueda": "Fisioteràpia en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Fisioteràpia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye movimiento humano, anatomía y recuperación funcional. Entre los ámbitos que conviene explorar están fisioterapia deportiva y rehabilitación neurológica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con movimiento humano, anatomía y recuperación funcional",
+      "Valorar problemas de movimiento y estudiar intervenciones de fisioterapia",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Fisioteràpia en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: pregunta por horas de práctica clínica, centros colaboradores y material. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por horas de práctica clínica, centros colaboradores y material?"
+    ],
+    "relacionados": [
+      "fisioterapia-uvic",
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "quimica-ub": {
+    "busqueda": "Química en Universitat de Barcelona",
+    "intro": "Si te interesa Química, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye química experimental, cálculo y procesos materiales. Entre los ámbitos que conviene explorar están industria química y farmacéutica y control de calidad. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con química experimental, cálculo y procesos materiales",
+      "Analizar sustancias y transformaciones químicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Química en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: distingue química científica de ingeniería química y consulta las prácticas de laboratorio. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue química científica de ingeniería química y consulta las prácticas de laboratorio?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "ciencies-ambientals-ub": {
+    "busqueda": "Ciències Ambientals en Universitat de Barcelona",
+    "intro": "Si te interesa Ciències Ambientals, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye ecosistemas, contaminación y herramientas de sostenibilidad. Entre los ámbitos que conviene explorar están consultoría ambiental y gestión de residuos y agua. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con ecosistemas, contaminación y herramientas de sostenibilidad",
+      "Analizar impactos ambientales y posibles soluciones",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Ciències Ambientals en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: revisa cuánto campo, química y análisis de datos se cursa. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa cuánto campo, química y análisis de datos se cursa?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "biotecnologia-ub": {
+    "busqueda": "Biotecnologia en Universitat de Barcelona",
+    "intro": "Si te interesa Biotecnologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye biología, tecnología y aplicaciones de organismos y células. Entre los ámbitos que conviene explorar están biotecnología industrial y desarrollo farmacéutico. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con biología, tecnología y aplicaciones de organismos y células",
+      "Estudiar aplicaciones biológicas en industria y salud",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Biotecnologia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: revisa las prácticas experimentales y el peso de la ingeniería. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa las prácticas experimentales y el peso de la ingeniería?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "microbiologia-uab": {
+    "busqueda": "Microbiologia en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Microbiologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye organismos, evolución y sistemas vivos. Entre los ámbitos que conviene explorar están microbiología clínica y seguridad alimentaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con organismos, evolución y sistemas vivos",
+      "Estudiar seres vivos desde la célula hasta los ecosistemas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Microbiologia en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: comprueba las opciones de laboratorio, campo y especialización. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba las opciones de laboratorio, campo y especialización?"
+    ],
+    "relacionados": [
+      "fisica-matematicas-uab",
+      "matematicas-upc"
+    ]
+  },
+  "enginyeria-tecnologies-industrials-upc": {
+    "busqueda": "Enginyeria en Tecnologies Industrials en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria en Tecnologies Industrials, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cálculo, física y resolución de problemas técnicos. Entre los ámbitos que conviene explorar están dirección industrial y gestión energética. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cálculo, física y resolución de problemas técnicos",
+      "Analizar y diseñar soluciones técnicas en su especialidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria en Tecnologies Industrials en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: comprueba menciones, laboratorios y atribuciones profesionales del título. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba menciones, laboratorios y atribuciones profesionales del título?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-electronica-industrial-automatica-upc": {
+    "busqueda": "Enginyeria Electrònica Industrial i Automàtica en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria Electrònica Industrial i Automàtica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye electrónica, automatización y control. Entre los ámbitos que conviene explorar están automatización de fábricas y robótica industrial. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con electrónica, automatización y control",
+      "Diseñar y estudiar sistemas de automatización",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Electrònica Industrial i Automàtica en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: distingue electrónica industrial de ingeniería eléctrica y telecomunicaciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue electrónica industrial de ingeniería eléctrica y telecomunicaciones?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-electrica-upc": {
+    "busqueda": "Enginyeria Elèctrica en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Enginyeria Elèctrica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye circuitos, instalaciones y sistemas eléctricos. Entre los ámbitos que conviene explorar están redes eléctricas y energías renovables. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con circuitos, instalaciones y sistemas eléctricos",
+      "Analizar aplicaciones de energía y electricidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Elèctrica en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: pregunta por laboratorios, normativas y proyectos de instalaciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por laboratorios, normativas y proyectos de instalaciones?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "enginyeria-quimica-ub": {
+    "busqueda": "Enginyeria Química en Universitat de Barcelona",
+    "intro": "Si te interesa Enginyeria Química, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye química experimental, cálculo y procesos materiales. Entre los ámbitos que conviene explorar están diseño de plantas químicas y refinerías y petroquímica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con química experimental, cálculo y procesos materiales",
+      "Analizar sustancias y transformaciones químicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Química en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: distingue química científica de ingeniería química y consulta las prácticas de laboratorio. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue química científica de ingeniería química y consulta las prácticas de laboratorio?"
+    ],
+    "relacionados": [
+      "enginyeria-quimica-urv",
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "arquitectura-upc-etsab": {
+    "busqueda": "Estudis d'Arquitectura (ETSAB) en Universitat Politècnica de Catalunya",
+    "intro": "Si te interesa Estudis d'Arquitectura (ETSAB), conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye diseño espacial, construcción y técnica arquitectónica. Entre los ámbitos que conviene explorar están diseño arquitectónico y urbanismo. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con diseño espacial, construcción y técnica arquitectónica",
+      "Concebir proyectos de espacios y edificios",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Estudis d'Arquitectura (ETSAB) en Universitat Politècnica de Catalunya con opciones similares, no te fijes solamente en la nota: consulta talleres de proyectos, material requerido y requisitos de habilitación. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta talleres de proyectos, material requerido y requisitos de habilitación?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "dret-uab": {
+    "busqueda": "Dret en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Dret, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye normativa, instituciones y argumentación jurídica. Entre los ámbitos que conviene explorar están abogacía y judicatura y fiscalía. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con normativa, instituciones y argumentación jurídica",
+      "Interpretar textos legales y razonar casos jurídicos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Dret en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: consulta el papel de prácticas y qué formación adicional exige cada profesión. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta el papel de prácticas y qué formación adicional exige cada profesión?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub",
+      "administracio-direccio-empreses-ub",
+      "administracio-direccio-empreses-upf"
+    ]
+  },
+  "criminologia-ub": {
+    "busqueda": "Criminologia en Universitat de Barcelona",
+    "intro": "Si te interesa Criminologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye estudio del delito, sociedad y sistemas de justicia. Entre los ámbitos que conviene explorar están peritaje criminológico y seguridad pública y policial. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con estudio del delito, sociedad y sistemas de justicia",
+      "Analizar factores relacionados con el delito y la prevención",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Criminologia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: verifica las salidas laborales reales y distingue el grado de oposiciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Verifica las salidas laborales reales y distingue el grado de oposiciones?"
+    ],
+    "relacionados": [
+      "criminologia-uab",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "criminologia-uab": {
+    "busqueda": "Criminologia en Universitat Autònoma de Barcelona",
+    "intro": "Si te interesa Criminologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye estudio del delito, sociedad y sistemas de justicia. Entre los ámbitos que conviene explorar están análisis de polítícas de prevención y criminología forense. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con estudio del delito, sociedad y sistemas de justicia",
+      "Analizar factores relacionados con el delito y la prevención",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Criminologia en Universitat Autònoma de Barcelona con opciones similares, no te fijes solamente en la nota: verifica las salidas laborales reales y distingue el grado de oposiciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Verifica las salidas laborales reales y distingue el grado de oposiciones?"
+    ],
+    "relacionados": [
+      "criminologia-ub",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "ciencia-politica-administració-upf": {
+    "busqueda": "Ciència Política i de l'Administració en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Ciència Política i de l'Administració, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye contabilidad, finanzas, gestión y estrategia empresarial. Entre los ámbitos que conviene explorar están consultoría polítíca y análisis de opinión pública. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con contabilidad, finanzas, gestión y estrategia empresarial",
+      "Comprender cómo se organizan y gestionan empresas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Ciència Política i de l'Administració en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: compara idiomas, especializaciones y experiencia práctica. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Compara idiomas, especializaciones y experiencia práctica?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "sociologia-ub": {
+    "busqueda": "Sociologia en Universitat de Barcelona",
+    "intro": "Si te interesa Sociologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye grupos sociales, métodos de encuesta y desigualdades. Entre los ámbitos que conviene explorar están estudios de mercado y sondeos y investigación social. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con grupos sociales, métodos de encuesta y desigualdades",
+      "Investigar fenómenos sociales usando datos y teoría",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Sociologia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: pregunta por métodos cuantitativos y cualitativos. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por métodos cuantitativos y cualitativos?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "educacio-infantil-ub": {
+    "busqueda": "Educació Infantil en Universitat de Barcelona",
+    "intro": "Si te interesa Educació Infantil, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye desarrollo infantil y diseño de actividades educativas. Entre los ámbitos que conviene explorar están escuelas de educación infantil (0-6 años) y ludotecas. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con desarrollo infantil y diseño de actividades educativas",
+      "Comprender el aprendizaje en la primera infancia",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Educació Infantil en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: consulta prácticas escolares y posibles menciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta prácticas escolares y posibles menciones?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "educacio-primaria-ub": {
+    "busqueda": "Educació Primària en Universitat de Barcelona",
+    "intro": "Si te interesa Educació Primària, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye didáctica, aprendizaje y organización del aula. Entre los ámbitos que conviene explorar están maestro/a de primaria (6-12 años) y menciones en inglés, ef, música, nee. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con didáctica, aprendizaje y organización del aula",
+      "Diseñar experiencias educativas para primaria",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Educació Primària en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: consulta calendario de prácticas y menciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta calendario de prácticas y menciones?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "educacio-social-ub": {
+    "busqueda": "Educació Social en Universitat de Barcelona",
+    "intro": "Si te interesa Educació Social, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye intervención socioeducativa y trabajo comunitario. Entre los ámbitos que conviene explorar están centros de menores y inclusión social y dependencia. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con intervención socioeducativa y trabajo comunitario",
+      "Diseñar acciones educativas fuera del aula escolar",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Educació Social en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: investiga las entidades y contextos de prácticas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Investiga las entidades y contextos de prácticas?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "pedagogia-ub": {
+    "busqueda": "Pedagogia en Universitat de Barcelona",
+    "intro": "Si te interesa Pedagogia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye teorías educativas, diseño y evaluación del aprendizaje. Entre los ámbitos que conviene explorar están diseño de planes de formación y orientación educativa. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con teorías educativas, diseño y evaluación del aprendizaje",
+      "Analizar cómo mejorar procesos de enseñanza",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Pedagogia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: distingue orientación y gestión educativa de la docencia habilitante. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue orientación y gestión educativa de la docencia habilitante?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "comunicacio-audiovisual-upf": {
+    "busqueda": "Comunicació Audiovisual en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Comunicació Audiovisual, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye lenguaje audiovisual, producción y medios digitales. Entre los ámbitos que conviene explorar están guionismo y dirección cinematográfica y producción de series y tv. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con lenguaje audiovisual, producción y medios digitales",
+      "Planificar piezas de vídeo y relatos audiovisuales",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Comunicació Audiovisual en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: revisa equipamiento, prácticas y trabajo en equipo. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa equipamiento, prácticas y trabajo en equipo?"
+    ],
+    "relacionados": [
+      "comunicacio-audiovisual-ub",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "periodisme-upf": {
+    "busqueda": "Periodisme en Universitat Pompeu Fabra",
+    "intro": "Si te interesa Periodisme, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye investigación informativa, redacción y medios. Entre los ámbitos que conviene explorar están medios de comunicación y periodismo de datos. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con investigación informativa, redacción y medios",
+      "Elaborar información y verificar fuentes",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Periodisme en Universitat Pompeu Fabra con opciones similares, no te fijes solamente en la nota: consulta proyectos, medios universitarios y prácticas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta proyectos, medios universitarios y prácticas?"
+    ],
+    "relacionados": [
+      "periodisme-uab",
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "estudis-literaris-ub": {
+    "busqueda": "Estudis Literaris en Universitat de Barcelona",
+    "intro": "Si te interesa Estudis Literaris, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye lectura crítica, historia literaria e interpretación de textos. Entre los ámbitos que conviene explorar están edición y corrección de textos y crítica literaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con lectura crítica, historia literaria e interpretación de textos",
+      "Estudiar obras y movimientos literarios",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Estudis Literaris en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: revisa las lenguas de lectura y optativas. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa las lenguas de lectura y optativas?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "filosofia-ub": {
+    "busqueda": "Filosofia en Universitat de Barcelona",
+    "intro": "Si te interesa Filosofia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye argumentación, ética y teoría del conocimiento. Entre los ámbitos que conviene explorar están docencia e investigación y consultoría ética e inteligencia artificial. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con argumentación, ética y teoría del conocimiento",
+      "Analizar ideas y construir argumentos rigurosos",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Filosofia en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: revisa autores, asignaturas de lógica y posibles itinerarios. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Revisa autores, asignaturas de lógica y posibles itinerarios?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "filologia-hispánica-ub": {
+    "busqueda": "Filologia Hispànica en Universitat de Barcelona",
+    "intro": "Si te interesa Filologia Hispànica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye lengua, literatura y análisis textual. Entre los ámbitos que conviene explorar están docencia de lengua y literatura y enseñanza de español para extranjeros (ele). Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con lengua, literatura y análisis textual",
+      "Analizar el uso y la historia de una lengua",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Filologia Hispànica en Universitat de Barcelona con opciones similares, no te fijes solamente en la nota: consulta itinerarios lingüísticos y docentes. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta itinerarios lingüísticos y docentes?"
+    ],
+    "relacionados": [
+      "traduccio-interpretacio-upf",
+      "belles-arts-ub"
+    ]
+  },
+  "enginyeria-informatica-udg": {
+    "busqueda": "Enginyeria Informàtica en Universitat de Girona",
+    "intro": "Si te interesa Enginyeria Informàtica, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cálculo, física y resolución de problemas técnicos. Entre los ámbitos que conviene explorar están programación y sistemas informáticos. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cálculo, física y resolución de problemas técnicos",
+      "Analizar y diseñar soluciones técnicas en su especialidad",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Informàtica en Universitat de Girona con opciones similares, no te fijes solamente en la nota: comprueba menciones, laboratorios y atribuciones profesionales del título. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba menciones, laboratorios y atribuciones profesionales del título?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib",
+      "enginyeria-fisica-upc",
+      "ciencia-enginyeria-dades-upc"
+    ]
+  },
+  "psicologia-udg": {
+    "busqueda": "Psicologia en Universitat de Girona",
+    "intro": "Si te interesa Psicologia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye conducta, procesos mentales y metodología científica. Entre los ámbitos que conviene explorar están investigación psicológica y intervención psicológica. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con conducta, procesos mentales y metodología científica",
+      "Estudiar el comportamiento y analizar evidencias psicológicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Psicologia en Universitat de Girona con opciones similares, no te fijes solamente en la nota: no confundas el grado con una habilitación automática para todas las especialidades sanitarias. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "No confundas el grado con una habilitación automática para todas las especialidades sanitarias?"
+    ],
+    "relacionados": [
+      "psicologia-ub",
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "turisme-udg": {
+    "busqueda": "Turisme en Universitat de Girona",
+    "intro": "Si te interesa Turisme, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye gestión de destinos, empresas turísticas y patrimonio. Entre los ámbitos que conviene explorar están gestión turística y planificación de destinos. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con gestión de destinos, empresas turísticas y patrimonio",
+      "Comprender la experiencia turística y sus servicios",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Turisme en Universitat de Girona con opciones similares, no te fijes solamente en la nota: consulta idiomas, prácticas y estacionalidad laboral. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta idiomas, prácticas y estacionalidad laboral?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
+  },
+  "medicina-udl": {
+    "busqueda": "Medicina en Universitat de Lleida",
+    "intro": "Si te interesa Medicina, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye ciencias biomédicas, razonamiento clínico y salud humana. Entre los ámbitos que conviene explorar están formación clínica y atención sanitaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con ciencias biomédicas, razonamiento clínico y salud humana",
+      "Entender el cuerpo humano y formarse para la atención médica",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Medicina en Universitat de Lleida con opciones similares, no te fijes solamente en la nota: investiga la organización de prácticas clínicas y el acceso a formación especializada. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Investiga la organización de prácticas clínicas y el acceso a formación especializada?"
+    ],
+    "relacionados": [
+      "medicina-ub-clinic",
+      "medicina-upf",
+      "biomedicina-upf",
+      "psicologia-ub"
+    ]
+  },
+  "enginyeria-agraria-alimentaria-udl": {
+    "busqueda": "Enginyeria Agrària i Alimentària en Universitat de Lleida",
+    "intro": "Si te interesa Enginyeria Agrària i Alimentària, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye producción agrícola, tecnología alimentaria y entorno rural. Entre los ámbitos que conviene explorar están producción agraria y tecnología agroalimentaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con producción agrícola, tecnología alimentaria y entorno rural",
+      "Aplicar ingeniería a sistemas agroalimentarios",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Agrària i Alimentària en Universitat de Lleida con opciones similares, no te fijes solamente en la nota: consulta menciones, prácticas de campo y posibles atribuciones profesionales. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta menciones, prácticas de campo y posibles atribuciones profesionales?"
+    ],
+    "relacionados": [
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "infermeria-urv": {
+    "busqueda": "Infermeria en Universitat Rovira i Virgili",
+    "intro": "Si te interesa Infermeria, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye cuidados de salud, anatomía y atención a personas. Entre los ámbitos que conviene explorar están cuidados de enfermería y salud comunitaria. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con cuidados de salud, anatomía y atención a personas",
+      "Cuidar a pacientes con criterios científicos y trabajo en equipo",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Infermeria en Universitat Rovira i Virgili con opciones similares, no te fijes solamente en la nota: comprueba sedes hospitalarias, turnos de prácticas y requisitos sanitarios. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Comprueba sedes hospitalarias, turnos de prácticas y requisitos sanitarios?"
+    ],
+    "relacionados": [
+      "infermeria-ub-clinic",
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "enginyeria-quimica-urv": {
+    "busqueda": "Enginyeria Química en Universitat Rovira i Virgili",
+    "intro": "Si te interesa Enginyeria Química, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye química experimental, cálculo y procesos materiales. Entre los ámbitos que conviene explorar están procesos químicos y ingeniería de instalaciones. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con química experimental, cálculo y procesos materiales",
+      "Analizar sustancias y transformaciones químicas",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Enginyeria Química en Universitat Rovira i Virgili con opciones similares, no te fijes solamente en la nota: distingue química científica de ingeniería química y consulta las prácticas de laboratorio. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Distingue química científica de ingeniería química y consulta las prácticas de laboratorio?"
+    ],
+    "relacionados": [
+      "enginyeria-quimica-ub",
+      "enginyeria-informatica-ub",
+      "enginyeria-informatica-upc-fib"
+    ]
+  },
+  "fisioterapia-uvic": {
+    "busqueda": "Fisioteràpia en Universitat de Vic - Universitat Central de Catalunya",
+    "intro": "Si te interesa Fisioteràpia, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye movimiento humano, anatomía y recuperación funcional. Entre los ámbitos que conviene explorar están rehabilitación y movimiento humano. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con movimiento humano, anatomía y recuperación funcional",
+      "Valorar problemas de movimiento y estudiar intervenciones de fisioterapia",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Fisioteràpia en Universitat de Vic - Universitat Central de Catalunya con opciones similares, no te fijes solamente en la nota: pregunta por horas de práctica clínica, centros colaboradores y material. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Pregunta por horas de práctica clínica, centros colaboradores y material?"
+    ],
+    "relacionados": [
+      "fisioterapia-uab",
+      "medicina-ub-clinic",
+      "medicina-upf"
+    ]
+  },
+  "educacio-primaria-uvic": {
+    "busqueda": "Mestre d’Educació Primària en Universitat de Vic - Universitat Central de Catalunya",
+    "intro": "Si te interesa Mestre d’Educació Primària, conviene entender primero qué tipo de problemas aborda. La orientación general de esta disciplina incluye didáctica, aprendizaje y organización del aula. Entre los ámbitos que conviene explorar están docencia escolar y diseño didáctico. Esta guía te ayuda a valorar si el enfoque encaja contigo; no sustituye el plan docente del centro.",
+    "aprender": [
+      "Fundamentos relacionados con didáctica, aprendizaje y organización del aula",
+      "Diseñar experiencias educativas para primaria",
+      "Buscar información, interpretar resultados y presentar proyectos del ámbito"
+    ],
+    "diferencias": "Al comparar Mestre d’Educació Primària en Universitat de Vic - Universitat Central de Catalunya con opciones similares, no te fijes solamente en la nota: consulta calendario de prácticas y menciones. Los planes y recursos pueden cambiar según la universidad.",
+    "antes": [
+      "¿Qué asignaturas y prácticas aparecen en el plan oficial?",
+      "¿Qué idiomas, horarios y campus tiene este curso?",
+      "Consulta calendario de prácticas y menciones?"
+    ],
+    "relacionados": [
+      "dret-upf",
+      "dret-ub"
+    ]
   }
 }

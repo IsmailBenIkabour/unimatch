@@ -18,9 +18,10 @@ export async function getStaticPaths() {
 
 const { grado } = Astro.props;
 const enfoque = (fichasDestacadas as Record<string, any>)[grado.id];
-const similares = enfoque ? gradosData.filter(g => enfoque.relacionados.includes(g.id)) : [];
+const similares = enfoque ? gradosData.filter(g => (enfoque.relacionados || []).includes(g.id)) : [];
 const pageTitle = enfoque ? `${enfoque.busqueda} | Asignaturas y orientación | UniMatchCAT` : `${grado.nombre} en ${grado.universidad} | UniMatchCAT`;
-const pageDescription = enfoque ? `${enfoque.intro} Compara el grado, la universidad y los aspectos que conviene revisar antes de matricularte.` : `Consulta el grado de ${grado.nombre} de ${grado.universidad}: características, nota de referencia, asignaturas y alternativas.`;
+const pageDescription = enfoque ? `${enfoque.intro} Información orientativa, preguntas útiles y enlaces para verificar el plan de estudios.` : `Consulta el grado de ${grado.nombre} de ${grado.universidad}: características, nota de referencia, asignaturas y alternativas.`;
+const fuenteOficial = typeof grado.fuenteOficial === 'string' && grado.fuenteOficial.startsWith('https://') ? grado.fuenteOficial : null;
 const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.toFixed(3) : (grado.notaCorte2026 || 'N/D');
 ---
 
@@ -93,13 +94,17 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
       </div>
     </header>
 
+    {fuenteOficial && <aside class="rounded-2xl border border-sky-400/25 bg-sky-400/5 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div><h2 class="font-bold text-white">Ficha de la universidad</h2><p class="text-sm text-slate-300">Enlace oficial para verificar el grado, sus asignaturas y la información de acceso.</p></div>
+      <a href={fuenteOficial} target="_blank" rel="noopener noreferrer" class="shrink-0 inline-block rounded-lg bg-sky-400/10 px-4 py-2 text-sm font-semibold text-sky-200 border border-sky-400/30 hover:bg-sky-400/20">Consultar fuente oficial ↗</a>
+    </aside>}
     <!-- RESUMEN INFORMATIVO DE ACCESO -->
     <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
       <h2 class="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
         <span>📋</span> Información de acceso y admisión
       </h2>
       <p>
-        La nota guardada en este catálogo para <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es <strong class="text-amber-400">{nota2026}</strong>. Las notas de corte son referencias del proceso de asignación y pueden cambiar entre convocatorias. Consulta siempre la fuente oficial antes de tomar decisiones.
+        Para <strong class="text-white">{grado.nombre}</strong> en <strong class="text-white">{grado.universidad}</strong>, la nota registrada es <strong class="text-amber-400">{nota2026}</strong>. {nota2026 === 'N/D' ? 'Todavía no tenemos una nota contrastada para esta ficha.' : 'Las notas pueden cambiar entre asignaciones y cursos.'} Comprueba la convocatoria, el campus y los datos de admisión en fuentes oficiales.
       </p>
     </section>
 
@@ -122,7 +127,7 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
         </div>
         <div class="grid md:grid-cols-2 gap-5">
           <div class="rounded-xl bg-slate-950/60 border border-slate-800 p-5 space-y-3">
-            <h3 class="font-semibold text-white">Qué aprenderás a grandes rasgos</h3>
+            <h3 class="font-semibold text-white">Áreas de aprendizaje a explorar</h3>
             <ul class="text-sm text-slate-300 space-y-2 list-disc pl-5">{enfoque.aprender.map((t: string) => <li>{t}</li>)}</ul>
           </div>
           <div class="rounded-xl bg-slate-950/60 border border-slate-800 p-5 space-y-3">

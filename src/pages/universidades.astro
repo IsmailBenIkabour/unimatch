@@ -61,13 +61,18 @@ const universidadesInfo = [
     slug: "udg",
     descripcion: "Comprometida con la excelencia docente y la integración en el entorno histórico y natural de Girona."
   }
-];
+,
+  {
+    nombre: "Universitat de Vic - Universitat Central de Catalunya (UVic-UCC)",
+    busqueda: "vic", tipo: "Privada", ciudad: "Vic", slug: "uvic",
+    descripcion: "Universidad con estudios en salud, educación y otras disciplinas; consulta sus programas y precios en su web oficial."
+  }];
 
 // Filtrado robusto de los grados asociados a cada universidad
 const universidadesConDatos = universidadesInfo.map(uni => {
   const gradosUni = gradosData.filter(g => {
     if (!g || !g.universidad) return false;
-    return g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase());
+    return g.universidadSlug === uni.slug || g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase());
   });
 
   return {

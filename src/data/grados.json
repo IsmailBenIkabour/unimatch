@@ -14,11 +14,24 @@
     "plazas": 180,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)", "Tecnología Industrial II (0.2)"],
-    "salidas": ["Desarrollo de Software", "Sistemas Inteligentes", "Arquitectura de Datos", "Ciberseguridad"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)",
+      "Tecnología Industrial II (0.2)"
+    ],
+    "salidas": [
+      "Desarrollo de Software",
+      "Sistemas Inteligentes",
+      "Arquitectura de Datos",
+      "Ciberseguridad"
+    ],
     "perfilRecomendado": "Estudiantes con capacidad analítica, lógica matemática y pasión por el diseño de sistemas informáticos y algoritmos.",
     "porQueEstudiarlo": [
       "Ubicación céntrica e histórica en la Facultat de Matemàtiques e Informàtica en Plaça Universitat.",
@@ -41,11 +54,24 @@
     "plazas": 400,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.1,
-    "ponderaciones": ["Matemáticas II (0.2)", "Tecnología Industrial II (0.2)", "Física (0.2)"],
-    "salidas": ["Desarrollo Software", "Ciberseguridad", "Arquitectura Cloud", "Inteligencia Artificial"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Tecnología Industrial II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Desarrollo Software",
+      "Ciberseguridad",
+      "Arquitectura Cloud",
+      "Inteligencia Artificial"
+    ],
     "perfilRecomendado": "Estudiantes con visión analítica, resolución de problemas lógicos y pasión por las ciencias de la computación.",
     "porQueEstudiarlo": [
       "Escuela de referencia (FIB) en la ingeniería informática nacional e internacional.",
@@ -64,15 +90,25 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Hospital Clínic",
-    "notaCorte2026": 12.520,
+    "notaCorte2026": 12.52,
     "plazas": 175,
     "duracion": "6 años (360 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 98.2,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Especialidad MIR", "Investigación Biomédica", "Gestión Sanitaria"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Especialidad MIR",
+      "Investigación Biomédica",
+      "Gestión Sanitaria"
+    ],
     "perfilRecomendado": "Fuerte vocación científica, empatía por la salud humana y rendimiento alto en asignaturas de biología y química.",
     "porQueEstudiarlo": [
       "Formación práctica hospitalaria en el Hospital Clínic de Barcelona.",
@@ -95,11 +131,22 @@
     "plazas": 60,
     "duracion": "6 años (360 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["MIR", "Biomedicina Clínica", "Investigación Sanitaria"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "MIR",
+      "Biomedicina Clínica",
+      "Investigación Sanitaria"
+    ],
     "perfilRecomendado": "Interés por la medicina de vanguardia, trabajo asistencial en grupos reducidos y formación orientada a la investigación.",
     "porQueEstudiarlo": [
       "Ubicado en el Parque de Investigación Biomédica de Barcelona (PRBB).",
@@ -122,11 +169,22 @@
     "plazas": 20,
     "duracion": "5 años (390 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.5,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Física Cuántica", "Investigación Avanzada", "Modelado de Datos", "Finanzas Cuantitativas"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Física Cuántica",
+      "Investigación Avanzada",
+      "Modelado de Datos",
+      "Finanzas Cuantitativas"
+    ],
     "perfilRecomendado": "Expediente académico sobresaliente, capacidad de razonamiento abstracto exigente y dedicación completa a las ciencias puras.",
     "porQueEstudiarlo": [
       "Doble grado histórico con la nota de corte más alta de Cataluña.",
@@ -149,11 +207,23 @@
     "plazas": 40,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 97.4,
-    "ponderaciones": ["Física (0.2)", "Matemáticas II (0.2)"],
-    "salidas": ["Nanotecnología", "Fotónica", "R&D Industrial", "Computación Cuántica"],
+    "ponderaciones": [
+      "Física (0.2)",
+      "Matemáticas II (0.2)"
+    ],
+    "salidas": [
+      "Nanotecnología",
+      "Fotónica",
+      "R&D Industrial",
+      "Computación Cuántica"
+    ],
     "perfilRecomendado": "Interés por las leyes físicas fundamentales y su aplicación tecnológica al desarrollo de nuevos materiales e innovaciones.",
     "porQueEstudiarlo": [
       "Combinación rigurosa de física teórica e ingeniería avanzada.",
@@ -176,11 +246,23 @@
     "plazas": 50,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.2,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Big Data Architect", "Machine Learning Engineer", "Data Scientist", "Consultoría Analítica"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Big Data Architect",
+      "Machine Learning Engineer",
+      "Data Scientist",
+      "Consultoría Analítica"
+    ],
     "perfilRecomendado": "Aptitudes estadísticas, visión analítica y pasión por el procesamiento de grandes volúmenes de datos mediante algoritmos.",
     "porQueEstudiarlo": [
       "Grado interfacultativo (FIB, FME, ETSETB) que une informática, matemáticas y telecomunicaciones.",
@@ -203,11 +285,23 @@
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 96.5,
-    "ponderaciones": ["Física (0.2)", "Matemáticas II (0.2)"],
-    "salidas": ["Navegación Aérea", "Sistemas Espaciales", "Mantenimiento Aeronáutico", "Aeropuertos"],
+    "ponderaciones": [
+      "Física (0.2)",
+      "Matemáticas II (0.2)"
+    ],
+    "salidas": [
+      "Navegación Aérea",
+      "Sistemas Espaciales",
+      "Mantenimiento Aeronáutico",
+      "Aeropuertos"
+    ],
     "perfilRecomendado": "Pasión por la aeronáutica, la navegación aérea y el diseño de la infraestructura de transporte aeroespacial.",
     "porQueEstudiarlo": [
       "Instalaciones modernas en el Parque Tecnológico de Castelldefels.",
@@ -230,11 +324,23 @@
     "plazas": 50,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 96.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Biología (0.2)", "Física (0.2)"],
-    "salidas": ["Tecnología Médica", "Procesamiento de Imagen Biomédica", "Diseño de Prótesis", "I+D Sanitario"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Biología (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Tecnología Médica",
+      "Procesamiento de Imagen Biomédica",
+      "Diseño de Prótesis",
+      "I+D Sanitario"
+    ],
     "perfilRecomendado": "Vocación científica híbrida entre la física, las matemáticas y su aplicación al cuerpo humano y la medicina.",
     "porQueEstudiarlo": [
       "Interconexión con la Facultat de Medicina y los principales hospitales universitarios de Barcelona.",
@@ -257,11 +363,23 @@
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 94.1,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Industria Farmacéutica", "Genómica", "Biotecnología Médica", "Investigación Cáncer"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Industria Farmacéutica",
+      "Genómica",
+      "Biotecnología Médica",
+      "Investigación Cáncer"
+    ],
     "perfilRecomendado": "Jóvenes interesados en investigar los mecanismos moleculares y genéticos de las patologías humanas.",
     "porQueEstudiarlo": [
       "Entorno investigador de primer nivel mundial en el PRBB.",
@@ -280,15 +398,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus de la Ciutadella",
-    "notaCorte2026": 10.920,
+    "notaCorte2026": 10.92,
     "plazas": 300,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 94.5,
-    "ponderaciones": ["Matemáticas aplicadas a las CCSS (0.2)", "Economía de Empresa (0.2)"],
-    "salidas": ["Abogacía", "Judicatura", "Asesoría Corporativa", "Notarías"],
+    "ponderaciones": [
+      "Matemáticas aplicadas a las CCSS (0.2)",
+      "Economía de Empresa (0.2)"
+    ],
+    "salidas": [
+      "Abogacía",
+      "Judicatura",
+      "Asesoría Corporativa",
+      "Notarías"
+    ],
     "perfilRecomendado": "Capacidad de oratoria, rigurosidad en la lectura, pensamiento crítico y análisis ético-jurídico.",
     "porQueEstudiarlo": [
       "Enfoque práctico mediante el método del caso y simulación de juicios.",
@@ -311,11 +441,22 @@
     "plazas": 450,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 92.0,
-    "ponderaciones": ["Matemáticas aplicadas a las CCSS (0.2)", "Economía de Empresa (0.2)"],
-    "salidas": ["Abogacía", "Función Pública", "Derecho Internacional", "Asesoría Fiscal"],
+    "ponderaciones": [
+      "Matemáticas aplicadas a las CCSS (0.2)",
+      "Economía de Empresa (0.2)"
+    ],
+    "salidas": [
+      "Abogacía",
+      "Función Pública",
+      "Derecho Internacional",
+      "Asesoría Fiscal"
+    ],
     "perfilRecomendado": "Estudiantes con interés por las leyes, la justicia social, el marco normativo y la gestión de conflictos.",
     "porQueEstudiarlo": [
       "La facultad de Derecho histórica y con mayor número de alumnos e instalaciones de Cataluña.",
@@ -338,11 +479,22 @@
     "plazas": 480,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 89.0,
-    "ponderaciones": ["Biología (0.2)", "Matemáticas aplicadas a las CCSS (0.2)"],
-    "salidas": ["Psicología Clínica (PIR)", "Recursos Humanos", "Psicología Educativa", "Neuropsicología"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Matemáticas aplicadas a las CCSS (0.2)"
+    ],
+    "salidas": [
+      "Psicología Clínica (PIR)",
+      "Recursos Humanos",
+      "Psicología Educativa",
+      "Neuropsicología"
+    ],
     "perfilRecomendado": "Interés por comprender la mente humana, las relaciones interpersonales, la conducta y la salud mental.",
     "porQueEstudiarlo": [
       "Facultad referente en investigación científica del comportamiento.",
@@ -361,15 +513,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus ENTI Barcelona",
-    "notaCorte2026": 5.420,
+    "notaCorte2026": 5.42,
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 85.0,
     "empleabilidad": 99.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Tecnología Industrial II (0.2)"],
-    "salidas": ["Auditoría de Seguridad", "Ethical Hacking", "Protección de Datos", "SOC Analyst"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Tecnología Industrial II (0.2)"
+    ],
+    "salidas": [
+      "Auditoría de Seguridad",
+      "Ethical Hacking",
+      "Protección de Datos",
+      "SOC Analyst"
+    ],
     "perfilRecomendado": "Inquietud por la seguridad en redes, la protección de infraestructuras críticas y el análisis informático.",
     "porQueEstudiarlo": [
       "Grado especializado al 100% en ciberseguridad sin rodeos.",
@@ -392,11 +556,22 @@
     "plazas": 100,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Finanzas Cuantitativas", "Inteligencia Artificial", "Criptografía", "Consultoría Analítica"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Finanzas Cuantitativas",
+      "Inteligencia Artificial",
+      "Criptografía",
+      "Consultoría Analítica"
+    ],
     "perfilRecomendado": "Estudiantes con excelente capacidad de abstracción, pensamiento lógico-deductivo exigente y vocación por las ciencias exactas.",
     "porQueEstudiarlo": [
       "Facultat de Matemàtiques i Estadística (FME) de referencia en el ámbito técnico.",
@@ -419,11 +594,22 @@
     "plazas": 150,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 98.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Modelado Matemático", "Análisis Estadístico", "Investigación Teórica", "Desarrollo Algorítmico"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Modelado Matemático",
+      "Análisis Estadístico",
+      "Investigación Teórica",
+      "Desarrollo Algorítmico"
+    ],
     "perfilRecomendado": "Jóvenes apasionados por la resolución de problemas abstractos y la formulación rigurosa de teorías matemáticas.",
     "porQueEstudiarlo": [
       "Ubicación histórica en el centro de Barcelona con profesorado de alto nivel investigador.",
@@ -446,11 +632,22 @@
     "plazas": 160,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 94.5,
-    "ponderaciones": ["Física (0.2)", "Matemáticas II (0.2)"],
-    "salidas": ["Investigación Cuántica", "Física Médica", "Astrofísica", "Consultoría Tecnológica"],
+    "ponderaciones": [
+      "Física (0.2)",
+      "Matemáticas II (0.2)"
+    ],
+    "salidas": [
+      "Investigación Cuántica",
+      "Física Médica",
+      "Astrofísica",
+      "Consultoría Tecnológica"
+    ],
     "perfilRecomendado": "Curiosidad por comprender los principios físicos del universo, dominio de las matemáticas y disciplina en el laboratorio.",
     "porQueEstudiarlo": [
       "Facultad con mayor producción científica e investigación en física de la región.",
@@ -469,15 +666,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Pedralbes",
-    "notaCorte2026": 10.600,
+    "notaCorte2026": 10.6,
     "plazas": 250,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 88.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Investigación Genética", "Laboratorios Sanitarios", "Gestión Ambiental", "Biotecnología"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Investigación Genética",
+      "Laboratorios Sanitarios",
+      "Gestión Ambiental",
+      "Biotecnología"
+    ],
     "perfilRecomendado": "Pasión por los organismos vivos, el método científico experimental y la investigación celular y ecológica.",
     "porQueEstudiarlo": [
       "Gran tradición en la formación de biólogos y científicos en Cataluña.",
@@ -496,15 +704,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Pedralbes",
-    "notaCorte2026": 11.040,
+    "notaCorte2026": 11.04,
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 93.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Industria Farmacéutica", "Biomedicina Molecular", "Diagnóstico Clínico", "I+D Enzimático"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Industria Farmacéutica",
+      "Biomedicina Molecular",
+      "Diagnóstico Clínico",
+      "I+D Enzimático"
+    ],
     "perfilRecomendado": "Perfil analítico atraído por las reacciones químicas a nivel molecular en los seres vivos.",
     "porQueEstudiarlo": [
       "Formación rigurosa en el cruce entre la química analítica y la biología celular.",
@@ -527,11 +746,22 @@
     "plazas": 50,
     "duracion": "3 años (180 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Inglés (100%)"],
+    "idiomas": [
+      "Inglés (100%)"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 98.5,
-    "ponderaciones": ["Matemáticas II (0.2)", "Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Secuenciación Genómica", "Diseño Computacional de Fármacos", "Biología de Sistemas", "Big Data Biológico"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Secuenciación Genómica",
+      "Diseño Computacional de Fármacos",
+      "Biología de Sistemas",
+      "Big Data Biológico"
+    ],
     "perfilRecomendado": "Interés multidisciplinar por la programación, la estadística de datos masivos y la biotecnología médica.",
     "porQueEstudiarlo": [
       "Título interuniversitario respaldado por las 4 grandes universidades públicas de Barcelona.",
@@ -554,11 +784,23 @@
     "plazas": 50,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.5,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Machine Learning", "Procesamiento de Lenguaje Natural", "Visión por Computador", "Robótica Autónoma"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Machine Learning",
+      "Procesamiento de Lenguaje Natural",
+      "Visión por Computador",
+      "Robótica Autónoma"
+    ],
     "perfilRecomendado": "Mente lógica, inclinación por las matemáticas aplicadas y pasión por los sistemas inteligentes autónomos.",
     "porQueEstudiarlo": [
       "Grado pionero enfocado en exclusiva a la IA desde el primer curso.",
@@ -581,11 +823,23 @@
     "plazas": 120,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 95.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Infraestructuras de Transporte", "Gestión de Recursos Hídricos", "Estructuras y Puentes", "Urbanismo Sostenible"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Infraestructuras de Transporte",
+      "Gestión de Recursos Hídricos",
+      "Estructuras y Puentes",
+      "Urbanismo Sostenible"
+    ],
     "perfilRecomendado": "Estudiantes con sólida base en física y matemáticas, orientados al cálculo de infraestructuras y la gestión del territorio.",
     "porQueEstudiarlo": [
       "La Escola de Camins (UPC) es una referencia europea en la ingeniería civil.",
@@ -608,11 +862,23 @@
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 93.2,
-    "ponderaciones": ["Física (0.2)", "Química (0.2)", "Matemáticas II (0.2)"],
-    "salidas": ["Desarrollo de Nanomateriales", "Industria Aeroespacial y Automoción", "Reciclaje de Materiales", "Biomateriales"],
+    "ponderaciones": [
+      "Física (0.2)",
+      "Química (0.2)",
+      "Matemáticas II (0.2)"
+    ],
+    "salidas": [
+      "Desarrollo de Nanomateriales",
+      "Industria Aeroespacial y Automoción",
+      "Reciclaje de Materiales",
+      "Biomateriales"
+    ],
     "perfilRecomendado": "Perfil científico-técnico interesado en la estructura interna de la materia y la creación de nuevos componentes industriales.",
     "porQueEstudiarlo": [
       "Instalaciones de investigación de última generación en el campus EEBE.",
@@ -635,11 +901,23 @@
     "plazas": 40,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 97.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Diseño de Nanosatélites", "Comunicaciones Espaciales", "Observación de la Tierra", "Software para Misiones Espaciales"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Diseño de Nanosatélites",
+      "Comunicaciones Espaciales",
+      "Observación de la Tierra",
+      "Software para Misiones Espaciales"
+    ],
     "perfilRecomendado": "Apasionados por la industria 'New Space', el diseño de cargas útiles satelitales y la ingeniería de telecomunicación espacial.",
     "porQueEstudiarlo": [
       "Titulación pionera alineada con la Estrategia NewSpace de Cataluña.",
@@ -662,11 +940,23 @@
     "plazas": 800,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 91.5,
-    "ponderaciones": ["Matemáticas aplicadas a las CCSS (0.2)", "Economía de Empresa (0.2)"],
-    "salidas": ["Dirección Financiera", "Consultoría de Negocios", "Marketing Corporativo", "Emprendimiento"],
+    "ponderaciones": [
+      "Matemáticas aplicadas a las CCSS (0.2)",
+      "Economía de Empresa (0.2)"
+    ],
+    "salidas": [
+      "Dirección Financiera",
+      "Consultoría de Negocios",
+      "Marketing Corporativo",
+      "Emprendimiento"
+    ],
     "perfilRecomendado": "Iniciativa emprendedora, capacidad de liderazgo, visión de mercado y aptitudes para la gestión estratégica.",
     "porQueEstudiarlo": [
       "La mayor facultad de economía y empresa de Cataluña con una red de empresas asociada masiva.",
@@ -689,11 +979,24 @@
     "plazas": 320,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 95.8,
-    "ponderaciones": ["Matemáticas II (0.2)", "Economía de Empresa (0.2)", "Matemáticas aplicadas a las CCSS (0.2)"],
-    "salidas": ["Banca de Inversión", "Consultoría Estratégica", "Auditoría", "Gestión Internacional"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Economía de Empresa (0.2)",
+      "Matemáticas aplicadas a las CCSS (0.2)"
+    ],
+    "salidas": [
+      "Banca de Inversión",
+      "Consultoría Estratégica",
+      "Auditoría",
+      "Gestión Internacional"
+    ],
     "perfilRecomendado": "Jóvenes con perfil analítico, rendimiento académico exigente e interés por las finanzas y la dirección de empresas.",
     "porQueEstudiarlo": [
       "Prestigio acreditado internacionalmente en estudios de economía y empresa.",
@@ -716,11 +1019,23 @@
     "plazas": 150,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 94.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Economía de Empresa (0.2)"],
-    "salidas": ["Análisis Económico", "Banca Central", "Políticas Públicas", "Consultoría Financiera"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Economía de Empresa (0.2)"
+    ],
+    "salidas": [
+      "Análisis Económico",
+      "Banca Central",
+      "Políticas Públicas",
+      "Consultoría Financiera"
+    ],
     "perfilRecomendado": "Inquietud por entender los mercados financieros, el comportamiento macroeconómico y el análisis de datos.",
     "porQueEstudiarlo": [
       "Departamento de Economía y Empresa reconocido mundialmente.",
@@ -743,11 +1058,23 @@
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 91.0,
-    "ponderaciones": ["Economía de Empresa (0.2)", "Geografía (0.2)"],
-    "salidas": ["Cuerpo Diplomático", "Organizaciones No Gubernamentales", "Comercio Exterior", "Análisis Político Global"],
+    "ponderaciones": [
+      "Economía de Empresa (0.2)",
+      "Geografía (0.2)"
+    ],
+    "salidas": [
+      "Cuerpo Diplomático",
+      "Organizaciones No Gubernamentales",
+      "Comercio Exterior",
+      "Análisis Político Global"
+    ],
     "perfilRecomendado": "Dominio de varios idiomas, interés en la geopolítica, el derecho internacional y la resolución de conflictos global.",
     "porQueEstudiarlo": [
       "Facultat de Ciències Polítiques i Sociologia de la UAB pionera en el ámbito.",
@@ -770,11 +1097,22 @@
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 87.0,
-    "ponderaciones": ["Cultura Audiovisual (0.2)", "Historia del Arte (0.2)"],
-    "salidas": ["Realización de Televisión y Cine", "Creación de Contenido Digital", "Edición y Postproducción", "Gestión de Proyectos Multimedia"],
+    "ponderaciones": [
+      "Cultura Audiovisual (0.2)",
+      "Historia del Arte (0.2)"
+    ],
+    "salidas": [
+      "Realización de Televisión y Cine",
+      "Creación de Contenido Digital",
+      "Edición y Postproducción",
+      "Gestión de Proyectos Multimedia"
+    ],
     "perfilRecomendado": "Creatividad narrativa, visión estética, interés por la producción de vídeo y las nuevas tendencias digitales.",
     "porQueEstudiarlo": [
       "Estudios de plató, sonido y montajes equipados con tecnología del sector.",
@@ -797,11 +1135,22 @@
     "plazas": 200,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 86.5,
-    "ponderaciones": ["Lengua Castellana (0.2)", "Lengua Catalana (0.2)"],
-    "salidas": ["Redacciones de Medios", "Periodismo de Investigación", "Gabinetes de Comunicación", "Pódcast y Medios Digitales"],
+    "ponderaciones": [
+      "Lengua Castellana (0.2)",
+      "Lengua Catalana (0.2)"
+    ],
+    "salidas": [
+      "Redacciones de Medios",
+      "Periodismo de Investigación",
+      "Gabinetes de Comunicación",
+      "Pódcast y Medios Digitales"
+    ],
     "perfilRecomendado": "Curiosidad por la actualidad, capacidad crítica, hábito lector y vocación por el rigor informativo.",
     "porQueEstudiarlo": [
       "La Facultat de Ciències de la Comunicació de la UAB es la más emblemática de Cataluña.",
@@ -824,11 +1173,23 @@
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 92.0,
-    "ponderaciones": ["Economía de Empresa (0.2)", "Cultura Audiovisual (0.2)"],
-    "salidas": ["Dirección de Arte", "Estrategia de Marca", "Marketing Digital", "Comunicación Institucional"],
+    "ponderaciones": [
+      "Economía de Empresa (0.2)",
+      "Cultura Audiovisual (0.2)"
+    ],
+    "salidas": [
+      "Dirección de Arte",
+      "Estrategia de Marca",
+      "Marketing Digital",
+      "Comunicación Institucional"
+    ],
     "perfilRecomendado": "Pensamiento creativo, habilidades de comunicación persuasive y sensibilidad por las estrategias de marketing.",
     "porQueEstudiarlo": [
       "Ubicado en el entorno creativo del Poblenou (distrito 22@).",
@@ -847,15 +1208,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus del Poblenou",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 90,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 88.0,
-    "ponderaciones": ["Lengua Castellana (0.2)", "Lengua Catalana (0.2)"],
-    "salidas": ["Traducción Especializada", "Interpretación Simultánea", "Localización de Videojuegos", "Asesoría Lingüística"],
+    "ponderaciones": [
+      "Lengua Castellana (0.2)",
+      "Lengua Catalana (0.2)"
+    ],
+    "salidas": [
+      "Traducción Especializada",
+      "Interpretación Simultánea",
+      "Localización de Videojuegos",
+      "Asesoría Lingüística"
+    ],
     "perfilRecomendado": "Excelencia en el dominio de las lenguas materna y extranjeras, interés por las culturas e interpretación oral.",
     "porQueEstudiarlo": [
       "Aulas equipadas con cabinas de interpretación simuladas.",
@@ -878,11 +1251,22 @@
     "plazas": 250,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 78.5,
-    "ponderaciones": ["Dibujo Artístico (0.2)", "Historia del Arte (0.2)"],
-    "salidas": ["Creación Artística", "Dirección de Arte", "Gestión de Galerías", "Ilustración y Diseño Cultural"],
+    "ponderaciones": [
+      "Dibujo Artístico (0.2)",
+      "Historia del Arte (0.2)"
+    ],
+    "salidas": [
+      "Creación Artística",
+      "Dirección de Arte",
+      "Gestión de Galerías",
+      "Ilustración y Diseño Cultural"
+    ],
     "perfilRecomendado": "Inquietud plástica y conceptual, dominio de técnicas artísticas y actitud abierta a la innovación visual.",
     "porQueEstudiarlo": [
       "La única facultad pública de Bellas Artes en Cataluña.",
@@ -901,15 +1285,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Pedralbes (Facultat de Belles Arts)",
-    "notaCorte2026": 10.420,
+    "notaCorte2026": 10.42,
     "plazas": 90,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 89.0,
-    "ponderaciones": ["Dibujo Técnico II (0.2)", "Diseño (0.2)", "Cultura Audiovisual (0.2)"],
-    "salidas": ["Diseño Gráfico y UX/UI", "Diseño de Producto", "Diseño de Espacios", "Dirección Creativa"],
+    "ponderaciones": [
+      "Dibujo Técnico II (0.2)",
+      "Diseño (0.2)",
+      "Cultura Audiovisual (0.2)"
+    ],
+    "salidas": [
+      "Diseño Gráfico y UX/UI",
+      "Diseño de Producto",
+      "Diseño de Espacios",
+      "Dirección Creativa"
+    ],
     "perfilRecomendado": "Creatividad aplicada a la resolución de problemas funcionales, pensamiento visual e interés por el diseño interactivo.",
     "porQueEstudiarlo": [
       "Título público oficial en diseño en el entorno artístico de la UB.",
@@ -928,15 +1324,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus del Raval (Facultat de Geografia i Història)",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 300,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 78.0,
-    "ponderaciones": ["Historia de España (0.2)", "Historia del Arte (0.2)"],
-    "salidas": ["Docencia", "Archivos y Bibliotecas", "Divulgación Histórica", "Gestión del Patrimonio"],
+    "ponderaciones": [
+      "Historia de España (0.2)",
+      "Historia del Arte (0.2)"
+    ],
+    "salidas": [
+      "Docencia",
+      "Archivos y Bibliotecas",
+      "Divulgación Histórica",
+      "Gestión del Patrimonio"
+    ],
     "perfilRecomendado": "Capacidad crítica, interés por la evolución social y política de la humanidad y metodología investigadora.",
     "porQueEstudiarlo": [
       "Ubicado en el Raval, en el centro cultural y museístico de Barcelona.",
@@ -955,15 +1362,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus del Raval",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 200,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 75.0,
-    "ponderaciones": ["Historia del Arte (0.2)", "Cultura Audiovisual (0.2)"],
-    "salidas": ["Comisariado de Exposiciones", "Museografía", "Mercado del Arte", "Conservación de Patrimonio"],
+    "ponderaciones": [
+      "Historia del Arte (0.2)",
+      "Cultura Audiovisual (0.2)"
+    ],
+    "salidas": [
+      "Comisariado de Exposiciones",
+      "Museografía",
+      "Mercado del Arte",
+      "Conservación de Patrimonio"
+    ],
     "perfilRecomendado": "Sensibilidad por las artes plásticas, el patrimonio cultural, la arquitectura y el análisis estilístico.",
     "porQueEstudiarlo": [
       "Cercanía directa con los grandes museos de la ciudad (MNAC, MACBA, Museo Picasso).",
@@ -982,15 +1400,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus de la Ciutadella",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 120,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 80.0,
-    "ponderaciones": ["Historia de la Filosofía (0.2)", "Historia del Arte (0.2)"],
-    "salidas": ["Gestión Cultural", "Industria Editorial", "Pensamiento Crítico y Análisis Social", "Medios de Comunicación"],
+    "ponderaciones": [
+      "Historia de la Filosofía (0.2)",
+      "Historia del Arte (0.2)"
+    ],
+    "salidas": [
+      "Gestión Cultural",
+      "Industria Editorial",
+      "Pensamiento Crítico y Análisis Social",
+      "Medios de Comunicación"
+    ],
     "perfilRecomendado": "Interés transversal por la literatura, la filosofía, el arte y la historia desde un enfoque multidisciplinar.",
     "porQueEstudiarlo": [
       "Modelo de formación transversal pionero en la universidad española.",
@@ -1013,11 +1443,23 @@
     "plazas": 30,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 96.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Matemáticas aplicadas a las CCSS (0.2)"],
-    "salidas": ["Análisis de Politicas Públicas", "Organismos Internacionales", "Liderazgo Político", "Consultoría Geopolítica"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Matemáticas aplicadas a las CCSS (0.2)"
+    ],
+    "salidas": [
+      "Análisis de Politicas Públicas",
+      "Organismos Internacionales",
+      "Liderazgo Político",
+      "Consultoría Geopolítica"
+    ],
     "perfilRecomendado": "Perfil de alto rendimiento, interés global por la ética pública, la gobernanza y los modelos económicos.",
     "porQueEstudiarlo": [
       "El prestigioso grado PPE de la tradición anglosajona impartido en alianza interuniversitaria.",
@@ -1040,11 +1482,23 @@
     "plazas": 200,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 93.0,
-    "ponderaciones": ["Dibujo Técnico II (0.2)", "Física (0.2)", "Matemáticas II (0.2)"],
-    "salidas": ["Dirección de Obras", "Gestión de Proyectos (BIM)", "Seguridad en Construcción", "Rehabilitación Energética"],
+    "ponderaciones": [
+      "Dibujo Técnico II (0.2)",
+      "Física (0.2)",
+      "Matemáticas II (0.2)"
+    ],
+    "salidas": [
+      "Dirección de Obras",
+      "Gestión de Proyectos (BIM)",
+      "Seguridad en Construcción",
+      "Rehabilitación Energética"
+    ],
     "perfilRecomendado": "Gusto por la construcción, la ejecución técnica de obras de edificación y la gestión económica de proyectos.",
     "porQueEstudiarlo": [
       "Atribución profesional regulada de Arquitecto Técnico / Aparejador.",
@@ -1067,11 +1521,22 @@
     "plazas": 115,
     "duracion": "5 años (300 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 96.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Medicina Clínica Animal", "Seguridad Alimentaria", "Investigación Biomédica", "Salud Pública"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Medicina Clínica Animal",
+      "Seguridad Alimentaria",
+      "Investigación Biomédica",
+      "Salud Pública"
+    ],
     "perfilRecomendado": "Fuerte vocación por el bienestar animal, la medicina, la biología y la salud pública.",
     "porQueEstudiarlo": [
       "Facultad con Hospital Clínico Veterinario propio dentro del mismo campus.",
@@ -1094,11 +1559,22 @@
     "plazas": 360,
     "duracion": "5 años (300 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 94.2,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Oficina de Farmacia", "Farmacia Hospitalaria (FIR)", "Industria Farmacéutica", "Análisis Clínicos"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Oficina de Farmacia",
+      "Farmacia Hospitalaria (FIR)",
+      "Industria Farmacéutica",
+      "Análisis Clínicos"
+    ],
     "perfilRecomendado": "Interés por las ciencias químicas, el medicamento, la atención sanitaria al paciente y la salud comunitaria.",
     "porQueEstudiarlo": [
       "Facultad histórica de referencia en Cataluña.",
@@ -1121,11 +1597,22 @@
     "plazas": 100,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 99.5,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Atención Hospitalaria", "Atención Primaria", "Especialidad EIR", "Gestión de Cuidados"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Atención Hospitalaria",
+      "Atención Primaria",
+      "Especialidad EIR",
+      "Gestión de Cuidados"
+    ],
     "perfilRecomendado": "Gran empatía humana, capacidad asistencial, templanza en situaciones críticas y vocación por la salud.",
     "porQueEstudiarlo": [
       "Prácticas desde el primer ciclo en el Hospital Clínic de Barcelona.",
@@ -1148,11 +1635,22 @@
     "plazas": 110,
     "duracion": "5 años (300 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 95.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Clínica Odontológica", "Cirugía Maxilofacial y Bucal", "Ortodoncia", "Implantología"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Clínica Odontológica",
+      "Cirugía Maxilofacial y Bucal",
+      "Ortodoncia",
+      "Implantología"
+    ],
     "perfilRecomendado": "Habilidad manual precisa, interés por la salud bucodental y destreza en técnicas asistenciales.",
     "porQueEstudiarlo": [
       "Hospital Odontológico propio en el Campus de Bellvitge con atención a pacientes reales.",
@@ -1175,11 +1673,22 @@
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 93.8,
-    "ponderaciones": ["Biología (0.2)", "Física (0.2)"],
-    "salidas": ["Fisioterapia Deportiva", "Rehabilitación Neurológica", "Hospitales y Mutuas", "Consulta Privada"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Fisioterapia Deportiva",
+      "Rehabilitación Neurológica",
+      "Hospitales y Mutuas",
+      "Consulta Privada"
+    ],
     "perfilRecomendado": "Interés por la anatomía humana, el movimiento, el tratamiento del dolor y el bienestar físico.",
     "porQueEstudiarlo": [
       "Instalaciones con aulas de simulación práctica avanzada.",
@@ -1202,11 +1711,23 @@
     "plazas": 200,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 91.0,
-    "ponderaciones": ["Química (0.2)", "Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Industria Química y Farmacéutica", "Control de Calidad", "I+D de Materiales", "Medio Ambiente"],
+    "ponderaciones": [
+      "Química (0.2)",
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Industria Química y Farmacéutica",
+      "Control de Calidad",
+      "I+D de Materiales",
+      "Medio Ambiente"
+    ],
     "perfilRecomendado": "Rigor científico, gusto por el trabajo de laboratorio y comprensión de la materia a nivel molecular.",
     "porQueEstudiarlo": [
       "Facultad referente a nivel estatal e internacional en química.",
@@ -1229,11 +1750,23 @@
     "plazas": 100,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 86.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)", "Geología (0.2)"],
-    "salidas": ["Consultoría Ambiental", "Gestión de Residuos y Agua", "Transición Energética", "Educación Ambiental"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)",
+      "Geología (0.2)"
+    ],
+    "salidas": [
+      "Consultoría Ambiental",
+      "Gestión de Residuos y Agua",
+      "Transición Energética",
+      "Educación Ambiental"
+    ],
     "perfilRecomendado": "Sensibilidad ecológica, preocupación por el cambio climático e interés multidisciplinar por la biología y la geología.",
     "porQueEstudiarlo": [
       "Formación orientada a la sostenibilidad y la economía circular.",
@@ -1252,15 +1785,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Pedralbes",
-    "notaCorte2026": 11.380,
+    "notaCorte2026": 11.38,
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 94.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Biotecnología Industrial", "Desarrollo Farmacéutico", "Mejora Genética Vegetal", "I+D Agroalimentario"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Biotecnología Industrial",
+      "Desarrollo Farmacéutico",
+      "Mejora Genética Vegetal",
+      "I+D Agroalimentario"
+    ],
     "perfilRecomendado": "Inquietud por aplicar la ingeniería y la tecnología a los procesos biológicos y celulares.",
     "porQueEstudiarlo": [
       "Nota de corte exigente que refleja su alta demanda académica.",
@@ -1279,15 +1823,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Cerdanyola del Vallès",
     "campus": "Campus UAB Bellaterra",
-    "notaCorte2026": 11.040,
+    "notaCorte2026": 11.04,
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 92.5,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Genética Médica", "Asesoramiento Genético", "Terapia Génica", "Secuenciación de ADN"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Genética Médica",
+      "Asesoramiento Genético",
+      "Terapia Génica",
+      "Secuenciación de ADN"
+    ],
     "perfilRecomendado": "Apasionados por el código genético, la biología molecular, la herencia biológica y las enfermedades hereditarias.",
     "porQueEstudiarlo": [
       "Único grado específico de Genética ofertado en toda la universidad pública española.",
@@ -1310,11 +1865,22 @@
     "plazas": 60,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 91.0,
-    "ponderaciones": ["Biología (0.2)", "Química (0.2)"],
-    "salidas": ["Microbiología Clínica", "Seguridad Alimentaria", "Fermentaciones Industriales", "Virología"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Química (0.2)"
+    ],
+    "salidas": [
+      "Microbiología Clínica",
+      "Seguridad Alimentaria",
+      "Fermentaciones Industriales",
+      "Virología"
+    ],
     "perfilRecomendado": "Interés por los microorganismos (bacterias, virus, hongos), el control de infecciones y la biotecnología microbiana.",
     "porQueEstudiarlo": [
       "Titulación pionera y exclusiva en el mapa universitario catalán.",
@@ -1337,11 +1903,23 @@
     "plazas": 400,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 98.8,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Dirección Industrial", "Gestión Energética", "Robótica e Automatización", "Consultoría Técnica"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Dirección Industrial",
+      "Gestión Energética",
+      "Robótica e Automatización",
+      "Consultoría Técnica"
+    ],
     "perfilRecomendado": "Visión multidisciplinar de la ingeniería, capacidad de liderazgo técnico y destreza analítica avanzada.",
     "porQueEstudiarlo": [
       "La mítica 'ETSEIB', la escuela de ingenieros industriales con más peso de Barcelona.",
@@ -1360,15 +1938,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Diagonal-Besòs (EEBE)",
-    "notaCorte2026": 9.830,
+    "notaCorte2026": 9.83,
     "plazas": 150,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 96.5,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Diseño de Maquinaria", "Industria Automovilística", "Estructuras Mecánicas", "Climatización y Energía"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Diseño de Maquinaria",
+      "Industria Automovilística",
+      "Estructuras Mecánicas",
+      "Climatización y Energía"
+    ],
     "perfilRecomendado": "Inclinación por la física aplicada, la mecánica de fluidos, la termodinámica y el cálculo de máquinas.",
     "porQueEstudiarlo": [
       "Nuevos laboratorios y talleres mecánicos en el campus de Diagonal-Besòs.",
@@ -1391,11 +1980,23 @@
     "plazas": 120,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 97.2,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)", "Electrotecnia (0.2)"],
-    "salidas": ["Automatización de Fábricas", "Robótica Industrial", "Sistemas de Control", "Sistemas Embebidos"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)",
+      "Electrotecnia (0.2)"
+    ],
+    "salidas": [
+      "Automatización de Fábricas",
+      "Robótica Industrial",
+      "Sistemas de Control",
+      "Sistemas Embebidos"
+    ],
     "perfilRecomendado": "Atracción por la electrónica, la programación de autómatas, el control de procesos e Industria 4.0.",
     "porQueEstudiarlo": [
       "Perfil crítico para la digitalización y automatización de las plantas de producción.",
@@ -1418,11 +2019,23 @@
     "plazas": 90,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 98.0,
-    "ponderaciones": ["Matemáticas II (0.2)", "Física (0.2)", "Electrotecnia (0.2)"],
-    "salidas": ["Redes Eléctricas", "Energías Renovables", "Movilidad Eléctrica", "Instalaciones de Alta Tensión"],
+    "ponderaciones": [
+      "Matemáticas II (0.2)",
+      "Física (0.2)",
+      "Electrotecnia (0.2)"
+    ],
+    "salidas": [
+      "Redes Eléctricas",
+      "Energías Renovables",
+      "Movilidad Eléctrica",
+      "Instalaciones de Alta Tensión"
+    ],
     "perfilRecomendado": "Jóvenes interesados en la generación energética, las Smart Grids y la electrificación del transporte.",
     "porQueEstudiarlo": [
       "Especialidad clave en la transición hacia las energías limpias y la descarbonización.",
@@ -1441,15 +2054,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Pedralbes",
-    "notaCorte2026": 9.910,
+    "notaCorte2026": 9.91,
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 95.0,
-    "ponderaciones": ["Química (0.2)", "Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Diseño de Plantas Químicas", "Refinerías y Petroquímica", "Tratamiento de Aguas", "Sostenibilidad de Procesos"],
+    "ponderaciones": [
+      "Química (0.2)",
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Diseño de Plantas Químicas",
+      "Refinerías y Petroquímica",
+      "Tratamiento de Aguas",
+      "Sostenibilidad de Procesos"
+    ],
     "perfilRecomendado": "Mente analítica que combine el dominio de las reacciones químicas con la visión física e industrial del proceso a gran escala.",
     "porQueEstudiarlo": [
       "Impartido en la prestigiosa Facultat de Química de la UB.",
@@ -1472,11 +2097,23 @@
     "plazas": 300,
     "duracion": "5 años (300 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 89.0,
-    "ponderaciones": ["Dibujo Técnico II (0.2)", "Matemáticas II (0.2)", "Física (0.2)"],
-    "salidas": ["Diseño Arquitectónico", "Urbanismo", "Gestión del Territorio", "Diseño de Interiores y Paisajismo"],
+    "ponderaciones": [
+      "Dibujo Técnico II (0.2)",
+      "Matemáticas II (0.2)",
+      "Física (0.2)"
+    ],
+    "salidas": [
+      "Diseño Arquitectónico",
+      "Urbanismo",
+      "Gestión del Territorio",
+      "Diseño de Interiores y Paisajismo"
+    ],
     "perfilRecomendado": "Sensibilidad artística y espacial combinada con capacidad para el cálculo de estructuras e instalaciones.",
     "porQueEstudiarlo": [
       "La ETSAB es una de las escuelas de arquitectura con mayor reconocimiento de Europa.",
@@ -1499,11 +2136,22 @@
     "plazas": 300,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 91.0,
-    "ponderaciones": ["Matemáticas aplicadas a las CCSS (0.2)", "Economía de Empresa (0.2)"],
-    "salidas": ["Abogacía", "Judicatura y Fiscalía", "Administración Pública", "Asesoramiento Jurídico Empresarial"],
+    "ponderaciones": [
+      "Matemáticas aplicadas a las CCSS (0.2)",
+      "Economía de Empresa (0.2)"
+    ],
+    "salidas": [
+      "Abogacía",
+      "Judicatura y Fiscalía",
+      "Administración Pública",
+      "Asesoramiento Jurídico Empresarial"
+    ],
     "perfilRecomendado": "Capacidad de razonamiento lógico-jurídico, oratoria, espíritu crítico e interés por la justicia social.",
     "porQueEstudiarlo": [
       "Facultad con Sala de Vistas propia para realizar simulaciones de juicios.",
@@ -1526,11 +2174,22 @@
     "plazas": 140,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 85.0,
-    "ponderaciones": ["Biología (0.2)", "Matemáticas aplicadas a las CCSS (0.2)"],
-    "salidas": ["Peritaje Criminológico", "Seguridad Pública y Policial", "Mediación Penal", "Victimología y Reinserción"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Matemáticas aplicadas a las CCSS (0.2)"
+    ],
+    "salidas": [
+      "Peritaje Criminológico",
+      "Seguridad Pública y Policial",
+      "Mediación Penal",
+      "Victimología y Reinserción"
+    ],
     "perfilRecomendado": "Interés por analizar las causas de la delincuencia, el comportamiento antisocial y el sistema de justicia penal.",
     "porQueEstudiarlo": [
       "Impartido en la Facultat de Dret de la UB con profesorado multidisciplinar.",
@@ -1553,11 +2212,22 @@
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 86.2,
-    "ponderaciones": ["Biología (0.2)", "Matemáticas aplicadas a las CCSS (0.2)"],
-    "salidas": ["Análisis de Polítícas de Prevención", "Criminología Forense", "Ciberseguridad y Prevención", "Prisiones"],
+    "ponderaciones": [
+      "Biología (0.2)",
+      "Matemáticas aplicadas a las CCSS (0.2)"
+    ],
+    "salidas": [
+      "Análisis de Polítícas de Prevención",
+      "Criminología Forense",
+      "Ciberseguridad y Prevención",
+      "Prisiones"
+    ],
     "perfilRecomendado": "Vocación investigadora del fenómeno criminal, capacidad deductiva y sensibilidad por los derechos humanos.",
     "porQueEstudiarlo": [
       "La UAB fue la pionera en introducir los estudios oficiales de criminología en España.",
@@ -1576,15 +2246,28 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus de la Ciutadella",
-    "notaCorte2026": 9.290,
+    "notaCorte2026": 9.29,
     "plazas": 100,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 88.0,
-    "ponderaciones": ["Economía de Empresa (0.2)", "Geografía (0.2)", "Historia de la Filosofía (0.2)"],
-    "salidas": ["Consultoría Polítíca", "Análisis de Opinión Pública", "Gestión de Organismos Públicos", "Relaciones Institucionales"],
+    "ponderaciones": [
+      "Economía de Empresa (0.2)",
+      "Geografía (0.2)",
+      "Historia de la Filosofía (0.2)"
+    ],
+    "salidas": [
+      "Consultoría Polítíca",
+      "Análisis de Opinión Pública",
+      "Gestión de Organismos Públicos",
+      "Relaciones Institucionales"
+    ],
     "perfilRecomendado": "Perfil con afán por el análisis institucional, la gobernanza, las políticas públicas y el comportamiento electoral.",
     "porQueEstudiarlo": [
       "Uno de los departamentos politológicos de mayor proyección en Europa.",
@@ -1607,11 +2290,22 @@
     "plazas": 150,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 84.0,
-    "ponderaciones": ["Matemáticas aplicadas a las CCSS (0.2)", "Economía de Empresa (0.2)"],
-    "salidas": ["Estudios de Mercado y Sondeos", "Investigación Social", "Planificación de Políticas Sociales", "Gestión de la Diversidad"],
+    "ponderaciones": [
+      "Matemáticas aplicadas a las CCSS (0.2)",
+      "Economía de Empresa (0.2)"
+    ],
+    "salidas": [
+      "Estudios de Mercado y Sondeos",
+      "Investigación Social",
+      "Planificación de Políticas Sociales",
+      "Gestión de la Diversidad"
+    ],
     "perfilRecomendado": "Curiosidad por comprender la estructura de la sociedad, las desigualdades, la cultura y las dinámicas de grupo.",
     "porQueEstudiarlo": [
       "Formación con marcado acento metodológico (técnicas cualitativas y cuantitativas).",
@@ -1634,11 +2328,22 @@
     "plazas": 200,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 92.0,
-    "ponderaciones": ["Lengua Catalana (0.2)", "Lengua Castellana (0.2)"],
-    "salidas": ["Escuelas de Educación Infantil (0-6 años)", "Ludotecas", "Servicios de Atención a la Infancia", "Elaboración de Material Didáctico"],
+    "ponderaciones": [
+      "Lengua Catalana (0.2)",
+      "Lengua Castellana (0.2)"
+    ],
+    "salidas": [
+      "Escuelas de Educación Infantil (0-6 años)",
+      "Ludotecas",
+      "Servicios de Atención a la Infancia",
+      "Elaboración de Material Didáctico"
+    ],
     "perfilRecomendado": "Sensibilidad e interés por el desarrollo cognitivo y emocional temprano de los niños y las niñas.",
     "porQueEstudiarlo": [
       "Campus Mundet, rodeado de naturaleza y con instalaciones idóneas para la docencia.",
@@ -1657,15 +2362,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Mundet",
-    "notaCorte2026": 8.870,
+    "notaCorte2026": 8.87,
     "plazas": 300,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 93.5,
-    "ponderaciones": ["Lengua Catalana (0.2)", "Lengua Castellana (0.2)"],
-    "salidas": ["Maestro/a de Primaria (6-12 años)", "Menciones en Inglés, EF, Música, NEE", "Aulas Hospitalarias", "Asesoría Pedagógica"],
+    "ponderaciones": [
+      "Lengua Catalana (0.2)",
+      "Lengua Castellana (0.2)"
+    ],
+    "salidas": [
+      "Maestro/a de Primaria (6-12 años)",
+      "Menciones en Inglés, EF, Música, NEE",
+      "Aulas Hospitalarias",
+      "Asesoría Pedagógica"
+    ],
     "perfilRecomendado": "Vocación por la enseñanza, habilidades de comunicación, paciencia y capacidad para liderar grupos infantiles.",
     "porQueEstudiarlo": [
       "Ofrece múltiples menciones de especialización oficial en la etapa de primaria.",
@@ -1688,11 +2404,22 @@
     "plazas": 140,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 89.0,
-    "ponderaciones": ["Lengua Catalana (0.2)", "Lengua Castellana (0.2)"],
-    "salidas": ["Centros de Menores", "Inclusión Social y Dependencia", "Centros Penitenciarios", "Desarrollo Comunitario"],
+    "ponderaciones": [
+      "Lengua Catalana (0.2)",
+      "Lengua Castellana (0.2)"
+    ],
+    "salidas": [
+      "Centros de Menores",
+      "Inclusión Social y Dependencia",
+      "Centros Penitenciarios",
+      "Desarrollo Comunitario"
+    ],
     "perfilRecomendado": "Compromiso social, empatía hacia colectivos vulnerables y motivación para la intervención comunitaria.",
     "porQueEstudiarlo": [
       "Grado orientado a la transformación social y la igualdad de oportunidades.",
@@ -1711,15 +2438,26 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus Mundet",
-    "notaCorte2026": 8.280,
+    "notaCorte2026": 8.28,
     "plazas": 160,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 85.5,
-    "ponderaciones": ["Lengua Catalana (0.2)", "Lengua Castellana (0.2)"],
-    "salidas": ["Diseño de Planes de Formación", "Orientación Educativa", "Tecnología Educativa (EdTech)", "Asesoramiento Institucional"],
+    "ponderaciones": [
+      "Lengua Catalana (0.2)",
+      "Lengua Castellana (0.2)"
+    ],
+    "salidas": [
+      "Diseño de Planes de Formación",
+      "Orientación Educativa",
+      "Tecnología Educativa (EdTech)",
+      "Asesoramiento Institucional"
+    ],
     "perfilRecomendado": "Interés por los sistemas educativos, el diseño de metodologías de aprendizaje e innovación pedagógica.",
     "porQueEstudiarlo": [
       "Estudio global de la educación más allá del aula escolar tradicional.",
@@ -1738,15 +2476,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus del Poblenou",
-    "notaCorte2026": 11.670,
+    "notaCorte2026": 11.67,
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 91.5,
-    "ponderaciones": ["Cultura Audiovisual (0.2)", "Historia del Arte (0.2)"],
-    "salidas": ["Guionismo y Dirección Cinematográfica", "Producción de Series y TV", "Dirección de Fotografía", "Contenidos Digitales"],
+    "ponderaciones": [
+      "Cultura Audiovisual (0.2)",
+      "Historia del Arte (0.2)"
+    ],
+    "salidas": [
+      "Guionismo y Dirección Cinematográfica",
+      "Producción de Series y TV",
+      "Dirección de Fotografía",
+      "Contenidos Digitales"
+    ],
     "perfilRecomendado": "Creatividad narrativa exigente, pasión por la imagen en movimiento, el cine y las nuevas formas de lenguaje digital.",
     "porQueEstudiarlo": [
       "La titulación de comunicación audiovisual con la nota de corte más alta y solicitada de Cataluña.",
@@ -1769,11 +2519,23 @@
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano", "Inglés"],
+    "idiomas": [
+      "Catalán",
+      "Castellano",
+      "Inglés"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 89.0,
-    "ponderaciones": ["Lengua Castellana (0.2)", "Lengua Catalana (0.2)"],
-    "salidas": ["Medios de Comunicación", "Periodismo de Datos", "Correspondencias Internacionales", "Gestión de Medios"],
+    "ponderaciones": [
+      "Lengua Castellana (0.2)",
+      "Lengua Catalana (0.2)"
+    ],
+    "salidas": [
+      "Medios de Comunicación",
+      "Periodismo de Datos",
+      "Correspondencias Internacionales",
+      "Gestión de Medios"
+    ],
     "perfilRecomendado": "Capacidad analítica, pasión por la actualidad, excelencia en la escritura y ética informativa.",
     "porQueEstudiarlo": [
       "Modelo pedagógico con fuerte entrenamiento práctico en talleres periodísticos digitales y de radio/TV.",
@@ -1792,15 +2554,27 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus de Plaça Universitat",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 80,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 79.0,
-    "ponderaciones": ["Literatura Dramática (0.2)", "Lengua Castellana (0.2)", "Lengua Catalana (0.2)"],
-    "salidas": ["Edición y Corrección de Textos", "Crítica Literaria", "Gestión Cultural y Ferias del Libro", "Creación Literaria"],
+    "ponderaciones": [
+      "Literatura Dramática (0.2)",
+      "Lengua Castellana (0.2)",
+      "Lengua Catalana (0.2)"
+    ],
+    "salidas": [
+      "Edición y Corrección de Textos",
+      "Crítica Literaria",
+      "Gestión Cultural y Ferias del Libro",
+      "Creación Literaria"
+    ],
     "perfilRecomendado": "Hábito de lectura compulsivo, afición por la teoría de la literatura, la escritura comparada y la cultura.",
     "porQueEstudiarlo": [
       "Edificio histórico de Plaça Universitat con una biblioteca de filología impresionante.",
@@ -1819,15 +2593,25 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus del Raval",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 150,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Catalán", "Castellano"],
+    "idiomas": [
+      "Catalán",
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 78.5,
-    "ponderaciones": ["Historia de la Filosofía (0.2)"],
-    "salidas": ["Docencia e Investigación", "Consultoría Ética e Inteligencia Artificial", "Gestión Cultural", "Análisis Editorial"],
+    "ponderaciones": [
+      "Historia de la Filosofía (0.2)"
+    ],
+    "salidas": [
+      "Docencia e Investigación",
+      "Consultoría Ética e Inteligencia Artificial",
+      "Gestión Cultural",
+      "Análisis Editorial"
+    ],
     "perfilRecomendado": "Pensamiento crítico, hábito reflexivo, lectura rigurosa de textos clásicos e interés por la ética y la lógica.",
     "porQueEstudiarlo": [
       "Facultad con amplísimo debate filosófico y seminarios abiertos en el centro del Raval.",
@@ -1846,20 +2630,281 @@
     "comunidad": "Cataluña",
     "ciudad": "Barcelona",
     "campus": "Campus de Plaça Universitat",
-    "notaCorte2026": 5.000,
+    "notaCorte2026": 5.0,
     "plazas": 100,
     "duracion": "4 años (240 ECTS)",
     "modalidad": "Presencial",
-    "idiomas": ["Castellano"],
+    "idiomas": [
+      "Castellano"
+    ],
     "precioCredito": 18.46,
     "empleabilidad": 82.0,
-    "ponderaciones": ["Lengua Castellana (0.2)"],
-    "salidas": ["Docencia de Lengua y Literatura", "Enseñanza de Español para Extranjeros (ELE)", "Corrección de Estilo", "Asesoría Lingüística"],
+    "ponderaciones": [
+      "Lengua Castellana (0.2)"
+    ],
+    "salidas": [
+      "Docencia de Lengua y Literatura",
+      "Enseñanza de Español para Extranjeros (ELE)",
+      "Corrección de Estilo",
+      "Asesoría Lingüística"
+    ],
     "perfilRecomendado": "Dominio de la gramática castellana, interés por la lingüística aplicada y la historia de la literatura en español.",
     "porQueEstudiarlo": [
       "Formación con gran tradición en el centro histórico de la UB.",
       "Demanda sostenida del perfil para la docencia en educación secundaria y centros ELE.",
       "Especialización en lingüística sincrónica y diacrónica."
     ]
+  },
+  {
+    "id": "enginyeria-informatica-udg",
+    "slug": "enginyeria-informatica-udg",
+    "nombre": "Enginyeria Informàtica",
+    "rama": "Ingeniería y Arquitectura",
+    "universidad": "Universitat de Girona",
+    "universidadSlug": "udg",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Girona",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Programación",
+      "Sistemas informáticos",
+      "Ingeniería del software"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://www.udg.edu/ca/estudia/Oferta-formativa/Graus/Fitxes/IDE/504/ID/3105G0710"
+  },
+  {
+    "id": "psicologia-udg",
+    "slug": "psicologia-udg",
+    "nombre": "Psicologia",
+    "rama": "Ciencias de la Salud",
+    "universidad": "Universitat de Girona",
+    "universidadSlug": "udg",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Girona",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Investigación psicológica",
+      "Intervención psicológica",
+      "Psicología educativa"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://www.udg.edu/ca/estudia/Oferta-formativa/Graus/Fitxes/ID/3101G0109/IDE/483"
+  },
+  {
+    "id": "turisme-udg",
+    "slug": "turisme-udg",
+    "nombre": "Turisme",
+    "rama": "Ciencias Sociales y Jurídicas",
+    "universidad": "Universitat de Girona",
+    "universidadSlug": "udg",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Girona",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Gestión turística",
+      "Planificación de destinos",
+      "Servicios turísticos"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://www.udg.edu/ca/estudia/oferta-formativa/graus/fitxes/id/3108g0109/ide/472"
+  },
+  {
+    "id": "medicina-udl",
+    "slug": "medicina-udl",
+    "nombre": "Medicina",
+    "rama": "Ciencias de la Salud",
+    "universidad": "Universitat de Lleida",
+    "universidadSlug": "udl",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Lleida",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Formación clínica",
+      "Atención sanitaria",
+      "Investigación biomédica"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://graumedicina.udl.cat/es/"
+  },
+  {
+    "id": "enginyeria-agraria-alimentaria-udl",
+    "slug": "enginyeria-agraria-alimentaria-udl",
+    "nombre": "Enginyeria Agrària i Alimentària",
+    "rama": "Ingeniería y Arquitectura",
+    "universidad": "Universitat de Lleida",
+    "universidadSlug": "udl",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Lleida",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Producción agraria",
+      "Tecnología agroalimentaria",
+      "Ingeniería rural"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://geaa.udl.cat/ca/index.html"
+  },
+  {
+    "id": "infermeria-urv",
+    "slug": "infermeria-urv",
+    "nombre": "Infermeria",
+    "rama": "Ciencias de la Salud",
+    "universidad": "Universitat Rovira i Virgili",
+    "universidadSlug": "urv",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Tarragona / Reus",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Cuidados de enfermería",
+      "Salud comunitaria",
+      "Atención hospitalaria"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://catalegestudis.urv.cat/es/grau/grado-en-enfermeria/"
+  },
+  {
+    "id": "enginyeria-quimica-urv",
+    "slug": "enginyeria-quimica-urv",
+    "nombre": "Enginyeria Química",
+    "rama": "Ingeniería y Arquitectura",
+    "universidad": "Universitat Rovira i Virgili",
+    "universidadSlug": "urv",
+    "tipo": "Pública",
+    "comunidad": "Cataluña",
+    "ciudad": "Tarragona",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Procesos químicos",
+      "Ingeniería de instalaciones",
+      "Control de procesos"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://catalegestudis.urv.cat/grau/grau-denginyeria-quimica/"
+  },
+  {
+    "id": "fisioterapia-uvic",
+    "slug": "fisioterapia-uvic",
+    "nombre": "Fisioteràpia",
+    "rama": "Ciencias de la Salud",
+    "universidad": "Universitat de Vic - Universitat Central de Catalunya",
+    "universidadSlug": "uvic",
+    "tipo": "Privada",
+    "comunidad": "Cataluña",
+    "ciudad": "Vic",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Rehabilitación",
+      "Movimiento humano",
+      "Atención fisioterapéutica"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://www.uvic.cat/es/grado/fisioterapia"
+  },
+  {
+    "id": "educacio-primaria-uvic",
+    "slug": "educacio-primaria-uvic",
+    "nombre": "Mestre d’Educació Primària",
+    "rama": "Ciencias Sociales y Jurídicas",
+    "universidad": "Universitat de Vic - Universitat Central de Catalunya",
+    "universidadSlug": "uvic",
+    "tipo": "Privada",
+    "comunidad": "Cataluña",
+    "ciudad": "Vic",
+    "campus": null,
+    "notaCorte2026": null,
+    "plazas": null,
+    "duracion": null,
+    "modalidad": null,
+    "idiomas": [],
+    "precioCredito": null,
+    "empleabilidad": null,
+    "ponderaciones": [],
+    "salidas": [
+      "Docencia escolar",
+      "Diseño didáctico",
+      "Educación inclusiva"
+    ],
+    "perfilRecomendado": null,
+    "porQueEstudiarlo": [],
+    "fuenteOficial": "https://www.uvic.cat/grau/mestre-deducacio-primaria"
   }
 ]
