@@ -183,6 +183,15 @@
 
   </div>
 
+  <div id="pauScenarioPanel" class="hidden mt-5 space-y-4 border-t border-slate-800 pt-5">
+    <div class="flex flex-col sm:flex-row gap-3">
+      <input id="scenarioName" maxlength="40" placeholder="Nombre del escenario (ej. Objetivo UB)" class="flex-1 bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white outline-none focus:border-amber-400" />
+      <button type="button" id="saveScenarioBtn" class="px-4 py-3 rounded-xl bg-amber-400 text-slate-950 font-bold text-sm">Guardar escenario</button>
+    </div>
+    <p class="text-xs text-slate-400">Los escenarios se guardan únicamente en este navegador y dispositivo.</p>
+    <div id="scenarioList" class="space-y-2"></div>
+  </div>
+
 </div>
 
 <!-- LÓGICA DE INTERACCIÓN Y CÁLCULO -->
@@ -210,11 +219,18 @@
     modoDesglosado.classList.add('hidden');
   });
 
-  function calcularNotaPAU() {
-    const rawNmb = document.getElementById('nmb').value.replace(',', '.');
-    const nmb = parseFloat(rawNmb) || 0;
+  function leerNota(id) {
+    const el = document.getElementById(id);
+    const raw = (el?.value ?? '').trim().replace(',', '.');
+    return raw === '' ? null : Number(raw);
+  }
 
-    if (nmb < 5 || nmb > 10) {
+  function notaValida(n, min, max) { return n !== null && Number.isFinite(n) && n >= min && n <= max; }
+
+  function calcularNotaPAU() {
+    const nmb = leerNota('nmb');
+
+    if (!notaValida(nmb, 5, 10)) {
       alert("Por favor, introduce una Nota de Bachillerato válida (entre 5.00 y 10.00).");
       return;
     }
@@ -222,19 +238,19 @@
     let pauGen = 0;
 
     if (esModoDirecto) {
-      pauGen = parseFloat(document.getElementById('pauGeneral').value.replace(',', '.')) || 0;
-      if (pauGen < 4) {
+      pauGen = leerNota('pauGeneral');
+      if (!notaValida(pauGen, 4, 10)) {
         alert("La nota media de la Fase General debe ser de al menos 4.00 para poder ponderar.");
         return;
       }
     } else {
-      const c1 = parseFloat(document.getElementById('fgCat').value.replace(',', '.')) || 0;
-      const c2 = parseFloat(document.getElementById('fgCast').value.replace(',', '.')) || 0;
-      const c3 = parseFloat(document.getElementById('fgAng').value.replace(',', '.')) || 0;
-      const c4 = parseFloat(document.getElementById('fgHist').value.replace(',', '.')) || 0;
-      const c5 = parseFloat(document.getElementById('fgMod').value.replace(',', '.')) || 0;
+      const c1 = leerNota('fgCat');
+      const c2 = leerNota('fgCast');
+      const c3 = leerNota('fgAng');
+      const c4 = leerNota('fgHist');
+      const c5 = leerNota('fgMod');
 
-      if ([c1, c2, c3, c4, c5].some(n => n === 0)) {
+      if ([c1, c2, c3, c4, c5].some(n => !notaValida(n, 0, 10))) {
         alert("Por favor, rellena las 5 asignaturas de la Fase General o cambia a la pestaña 'Nota Ya Calculada'.");
         return;
       }
@@ -242,7 +258,7 @@
       pauGen = (c1 + c2 + c3 + c4 + c5) / 5;
     }
 
-    if (pauGen < 4) {
+    if (!notaValida(pauGen, 4, 10)) {
       alert("La nota media de la Fase General debe ser igual o superior a 4.00.");
       return;
     }
@@ -253,13 +269,15 @@
     const notaBase = parteBach + partePau;
 
     // 2. Fase Específica
-    const opt1Nota = parseFloat(document.getElementById('opt1Nota').value.replace(',', '.')) || 0;
+    const opt1Nota = leerNota('opt1Nota');
     const opt1Pond = parseFloat(document.getElementById('opt1Pond').value) || 0;
-    const extra1 = opt1Nota >= 5 ? opt1Nota * opt1Pond : 0;
+    if (opt1Nota !== null && !notaValida(opt1Nota, 0, 10)) { alert('La nota de la asignatura específica 1 debe estar entre 0 y 10.'); return; }
+    const extra1 = opt1Nota !== null && opt1Nota >= 5 ? opt1Nota * opt1Pond : 0;
 
-    const opt2Nota = parseFloat(document.getElementById('opt2Nota').value.replace(',', '.')) || 0;
+    const opt2Nota = leerNota('opt2Nota');
     const opt2Pond = parseFloat(document.getElementById('opt2Pond').value) || 0;
-    const extra2 = opt2Nota >= 5 ? opt2Nota * opt2Pond : 0;
+    if (opt2Nota !== null && !notaValida(opt2Nota, 0, 10)) { alert('La nota de la asignatura específica 2 debe estar entre 0 y 10.'); return; }
+    const extra2 = opt2Nota !== null && opt2Nota >= 5 ? opt2Nota * opt2Pond : 0;
 
     // 3. Nota Final
     const extraTotal = extra1 + extra2;
@@ -275,6 +293,7 @@
     // Desplegar el bloque de resultados
     const resultadoBox = document.getElementById('resultadoBox');
     resultadoBox.classList.remove('hidden');
+    scenarioPanel?.classList.remove('hidden');
 
     // Animación de la barra
     setTimeout(() => {
@@ -291,4 +310,27 @@
     // SCROLL CENTRADO EN EL RESULTADO (Sin saltar directamente al buscador)
     resultadoBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+
+  const scenarioPanel = document.getElementById('pauScenarioPanel');
+  const scenarioList = document.getElementById('scenarioList');
+  const scenarioKey = 'unimatchcat-pau-scenarios-v1';
+  function readScenarios() { try { return JSON.parse(localStorage.getItem(scenarioKey) || '[]'); } catch { return []; } }
+  function renderScenarios() {
+    const items = readScenarios();
+    scenarioList.innerHTML = items.length ? items.map((item, i) => `<div class="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-slate-800 bg-slate-950/70 p-3"><div><strong class="text-white">${escapeScenarioText(item.name)}</strong><p class="text-xs text-slate-400">${item.score.toFixed(3)} / 14 · ${escapeScenarioText(item.date)}</p></div><button type="button" data-remove-scenario="${i}" class="text-xs font-bold text-rose-300 hover:text-rose-200">Eliminar</button></div>`).join('') : '<p class="text-sm text-slate-500">Aún no has guardado escenarios.</p>';
+    scenarioList.querySelectorAll('[data-remove-scenario]').forEach(btn => btn.addEventListener('click', () => { const updated=readScenarios(); updated.splice(Number(btn.dataset.removeScenario),1); localStorage.setItem(scenarioKey,JSON.stringify(updated)); renderScenarios(); }));
+  }
+  function escapeScenarioText(value) { return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[ch])); }
+  document.getElementById('saveScenarioBtn')?.addEventListener('click', () => {
+    const scoreText = document.getElementById('notaFinalDisplay')?.textContent?.trim();
+    const score = Number(scoreText);
+    if (!Number.isFinite(score) || score <= 0) { alert('Calcula primero tu nota para guardar un escenario.'); return; }
+    const name = document.getElementById('scenarioName')?.value?.trim() || `Escenario ${readScenarios().length + 1}`;
+    const items = readScenarios();
+    if (items.length >= 10) { alert('Puedes guardar hasta 10 escenarios. Elimina alguno para añadir otro.'); return; }
+    items.push({ name, score, date: new Date().toLocaleDateString('es-ES') });
+    localStorage.setItem(scenarioKey, JSON.stringify(items));
+    document.getElementById('scenarioName').value = ''; renderScenarios();
+  });
+  if (scenarioPanel) { scenarioPanel.classList.remove('hidden'); renderScenarios(); }
 </script>
