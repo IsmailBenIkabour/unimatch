@@ -1,115 +1,99 @@
 ---
-// src/pages/universidades/[slug].astro
 import MainLayout from '../../layouts/MainLayout.astro';
 import gradosData from '../../data/grados.json';
 
 export async function getStaticPaths() {
   const universidades = [
-    { nombre: "Universitat de Barcelona (UB)", busqueda: "barcelona", slug: "ub", ciudad: "Barcelona", tipo: "Pública", web: "https://www.ub.edu", desc: "Referente internacional en investigación y la universidad pública más antigua de Cataluña." },
-    { nombre: "Universitat Autònoma de Barcelona (UAB)", busqueda: "autònoma", slug: "uab", ciudad: "Cerdanyola del Vallès", tipo: "Pública", web: "https://www.uab.cat", desc: "Campus de excelencia internacional destacado por su investigación científica y gran campus integrado." },
-    { nombre: "Universitat Politècnica de Catalunya (UPC)", busqueda: "politècnica", slug: "upc", ciudad: "Barcelona / Cataluña", tipo: "Pública", web: "https://www.upc.edu", desc: "Universidad líder en los ámbitos de la ingeniería, arquitectura, ciencias y tecnología." },
-    { nombre: "Universitat Pompeu Fabra (UPF)", busqueda: "pompeu", slug: "upf", ciudad: "Barcelona", tipo: "Pública", web: "https://www.upf.edu", desc: "Institución altamente especializada en ciencias sociales, humanidades, comunicación y ciencias de la salud." },
-    { nombre: "Universitat Rovira i Virgili (URV)", busqueda: "rovira", slug: "urv", ciudad: "Tarragona / Reus", web: "https://www.urv.cat", desc: "Universidad pública del sur de Cataluña, con fuerte vinculación al tejido industrial y territorial." },
-    { nombre: "Universitat de Lleida (UdL)", busqueda: "lleida", slug: "udl", ciudad: "Lleida", tipo: "Pública", web: "https://www.udl.cat", desc: "Primera universidad moderna de Cataluña, referente en agronomía, biomedicina y letras." },
-    { nombre: "Universitat de Girona (UdG)", busqueda: "girona", slug: "udg", ciudad: "Girona", tipo: "Pública", desc: "Comprometida con la excelencia docente y la integración en el entorno histórico de Girona." }
+    { nombre: "Universitat de Barcelona (UB)", busqueda: "barcelona", slug: "ub", ciudad: "Barcelona", tipo: "Pública", web: "https://www.ub.edu", desc: "Consulta las titulaciones incluidas en el catálogo de UniMatchCAT asociadas a la Universitat de Barcelona. Comprueba siempre la información académica y de acceso en las fuentes oficiales." },
+    { nombre: "Universitat Autònoma de Barcelona (UAB)", busqueda: "autònoma", slug: "uab", ciudad: "Cerdanyola del Vallès", tipo: "Pública", web: "https://www.uab.cat", desc: "Explora los grados de la Universitat Autònoma de Barcelona registrados en UniMatchCAT y utiliza el catálogo como punto de partida para consultar la información oficial." },
+    { nombre: "Universitat Politècnica de Catalunya (UPC)", busqueda: "politècnica", slug: "upc", ciudad: "Barcelona / Cataluña", tipo: "Pública", web: "https://www.upc.edu", desc: "Encuentra titulaciones asociadas a la Universitat Politècnica de Catalunya y consulta las notas de corte disponibles. Verifica los datos en los canales oficiales." },
+    { nombre: "Universitat Pompeu Fabra (UPF)", busqueda: "pompeu", slug: "upf", ciudad: "Barcelona", tipo: "Pública", web: "https://www.upf.edu", desc: "Consulta el catálogo de titulaciones de la Universitat Pompeu Fabra y accede a las fichas de grado disponibles en UniMatchCAT." },
+    { nombre: "Universitat Rovira i Virgili (URV)", busqueda: "rovira", slug: "urv", ciudad: "Tarragona / Reus", tipo: "Pública", web: "https://www.urv.cat", desc: "Explora los grados registrados de la Universitat Rovira i Virgili. Usa los enlaces oficiales para confirmar requisitos, planes de estudio y datos de admisión." },
+    { nombre: "Universitat de Lleida (UdL)", busqueda: "lleida", slug: "udl", ciudad: "Lleida", tipo: "Pública", web: "https://www.udl.cat", desc: "Encuentra titulaciones de la Universitat de Lleida incluidas en el catálogo y consulta las fichas individuales para la información disponible." },
+    { nombre: "Universitat de Girona (UdG)", busqueda: "girona", slug: "udg", ciudad: "Girona", tipo: "Pública", web: "https://www.udg.edu", desc: "Explora las titulaciones de la Universitat de Girona que recoge el catálogo de UniMatchCAT y consulta los canales oficiales para información actualizada." }
   ];
 
   return universidades.map(uni => {
-    const gradosUni = gradosData.filter(g => {
-      if (!g || !g.universidad) return false;
-      return g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase());
-    });
-
-    return {
-      params: { slug: uni.slug },
-      props: { universidad: uni, grados: gradosUni }
-    };
+    const gradosUni = gradosData.filter(g => g?.universidad && g.universidad.toLowerCase().includes(uni.busqueda.toLowerCase()));
+    return { params: { slug: uni.slug }, props: { universidad: uni, grados: gradosUni } };
   });
 }
 
 const { universidad, grados } = Astro.props;
+const gradosConNota = grados.filter((g:any) => typeof g.notaCorte2026 === 'number' && Number.isFinite(g.notaCorte2026));
+const notaMedia = gradosConNota.length ? gradosConNota.reduce((sum:number,g:any) => sum + g.notaCorte2026,0) / gradosConNota.length : null;
+const ramas = [...new Set(grados.map((g:any) => g.rama).filter(Boolean))].sort();
+const gradosOrdenados = [...grados].sort((a:any,b:any) => a.nombre.localeCompare(b.nombre,'es'));
 ---
 
-<MainLayout 
-  title={`${universidad.nombre} - Grados y Notas de Corte | UniMatchCAT`}
-  description={`Consulta todos los grados, plazas y notas de corte oficiales de la ${universidad.nombre} en Cataluña.`}
->
+<MainLayout title={`${universidad.nombre} - Grados y Notas de Corte | UniMatchCAT`} description={`Explora ${grados.length} titulaciones registradas de ${universidad.nombre}, filtra por rama y consulta las notas disponibles.`}>
   <div class="space-y-8 py-8 max-w-5xl mx-auto px-4">
-    <!-- Cabecera de la Universidad -->
-    <header class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4 backdrop-blur-sm">
+    <header class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
       <div class="flex flex-wrap items-center justify-between gap-3">
-        <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20 uppercase tracking-wider">
-          {universidad.tipo} • {universidad.ciudad}
-        </span>
-        {universidad.web && (
-          <a 
-            href={universidad.web} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="text-xs font-mono text-amber-400 hover:underline flex items-center gap-1"
-          >
-            Sitio Web Oficial ↗
-          </a>
-        )}
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20 uppercase tracking-wider">{universidad.tipo} · {universidad.ciudad}</span>
+        {universidad.web && <a href={universidad.web} target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-400 hover:underline">Web oficial ↗</a>}
       </div>
-
-      <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-        {universidad.nombre}
-      </h1>
-
-      <p class="text-sm text-slate-300 max-w-3xl leading-relaxed">
-        {universidad.desc}
-      </p>
-
-      <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
-        <span>Total de grados impartidos: <strong class="text-amber-400">{grados.length}</strong></span>
-        <a href="/universidades" class="hover:text-white transition">← Volver a Universidades</a>
+      <h1 class="text-2xl sm:text-4xl font-black text-white tracking-tight">{universidad.nombre}</h1>
+      <p class="text-sm text-slate-300 max-w-3xl leading-relaxed">{universidad.desc}</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+        <div class="rounded-xl bg-slate-950/70 border border-slate-800 p-4"><span class="block text-xs text-slate-400">Grados en el catálogo</span><strong class="text-2xl text-amber-400">{grados.length}</strong></div>
+        <div class="rounded-xl bg-slate-950/70 border border-slate-800 p-4"><span class="block text-xs text-slate-400">Grados con nota registrada</span><strong class="text-2xl text-amber-400">{gradosConNota.length}</strong></div>
+        <div class="rounded-xl bg-slate-950/70 border border-slate-800 p-4"><span class="block text-xs text-slate-400">Media de notas registradas</span><strong class="text-2xl text-amber-400">{notaMedia === null ? 'N/D' : notaMedia.toFixed(3)}</strong><p class="text-[10px] text-slate-500 mt-1">No es una estadística oficial; media simple del catálogo.</p></div>
       </div>
+      <div class="pt-2"><a href="/universidades" class="text-xs text-slate-400 hover:text-white">← Todas las universidades</a></div>
     </header>
 
-    <!-- LISTADO DE GRADOS DE ESTA UNIVERSIDAD -->
-    <section class="space-y-4">
-      <h2 class="text-lg font-bold text-white font-mono uppercase tracking-wider">
-        Grados Disponibles y Notas de Corte
-      </h2>
-
-      {grados.length === 0 ? (
-        <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-8 text-center text-slate-400 text-xs">
-          No hay grados registrados actualmente para esta institución en el catálogo base.
-        </div>
-      ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {grados.map((grado: any) => (
-            <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between">
-              <div class="space-y-1.5">
-                <span class="text-[10px] font-mono text-slate-500 block">
-                  {grado.rama || "Grado Universitario"}
-                </span>
-                <h3 class="text-base font-bold text-white leading-snug">
-                  {grado.nombre}
-                </h3>
-              </div>
-
-              <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
-                <div>
-                  <span class="text-slate-500 block text-[10px]">Nota de Corte (2026)</span>
-                  <span class="text-amber-400 font-bold text-sm">
-                    {grado.notaCorte2026 !== undefined ? grado.notaCorte2026 : "N/D"}
-                  </span>
-                </div>
-                {grado.slug ? (
-                  <a 
-                    href={`/grados/${grado.slug}`}
-                    class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-200 hover:bg-amber-400 hover:text-slate-950 font-bold transition text-[11px]"
-                  >
-                    Ver Ficha →
-                  </a>
-                ) : null}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+    <section class="space-y-4" aria-labelledby="catalogo-title">
+      <div class="space-y-2"><h2 id="catalogo-title" class="text-xl font-bold">Grados y notas de corte</h2><p class="text-sm text-slate-400">Busca por nombre o campus, filtra por rama y ordena el catálogo.</p></div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-2xl bg-slate-900/60 border border-slate-800 p-4">
+        <label class="sm:col-span-1 text-xs text-slate-300">Buscar<input id="uni-search" type="search" placeholder="Nombre del grado o campus" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white" /></label>
+        <label class="text-xs text-slate-300">Rama<select id="uni-branch" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white"><option value="">Todas las ramas</option>{ramas.map(r => <option value={r}>{r}</option>)}</select></label>
+        <label class="text-xs text-slate-300">Ordenar<select id="uni-sort" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white"><option value="name">Nombre A–Z</option><option value="note-desc">Nota más alta</option><option value="note-asc">Nota más baja</option></select></label>
+      </div>
+      <p id="uni-count" class="text-xs text-slate-400" aria-live="polite">Mostrando {grados.length} grados</p>
+      <div id="uni-degree-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {gradosOrdenados.map((grado:any) => <article class="uni-degree bg-slate-900/50 border border-slate-800 rounded-xl p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between" data-name={grado.nombre} data-campus={grado.campus || ''} data-branch={grado.rama || ''} data-note={typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026 : ''}>
+          <div class="space-y-2"><span class="text-[10px] text-slate-500">{grado.rama || 'Rama no especificada'}</span><h3 class="text-base font-bold text-white">{grado.nombre}</h3>{grado.campus && <p class="text-xs text-slate-400">{grado.campus}</p>}</div>
+          <div class="pt-3 border-t border-slate-800/60 flex items-center justify-between gap-3"><div><span class="text-slate-500 block text-[10px]">Nota de corte (dato del catálogo)</span><span class="text-amber-400 font-bold">{typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.toFixed(3) : 'N/D'}</span></div>{grado.slug && <a href={`/grados/${grado.slug}`} class="px-3 py-2 rounded-lg bg-slate-800 text-slate-200 hover:bg-amber-400 hover:text-slate-950 font-bold text-xs">Ficha del grado →</a>}</div>
+        </article>)}
+      </div>
+      <p id="uni-empty" class="hidden rounded-xl border border-slate-800 bg-slate-900/40 p-6 text-center text-sm text-slate-400">No hay grados que coincidan con estos filtros.</p>
     </section>
+    <section class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 space-y-2"><h2 class="font-bold text-white">Sobre los datos</h2><p class="text-sm text-slate-400 leading-relaxed">Este catálogo es una herramienta orientativa. Los datos pueden estar incompletos o no reflejar la última actualización. Confirma notas de corte, plazas, requisitos, campus y planes de estudio en el sitio oficial de la universidad y en las fuentes del sistema de preinscripción.</p><a href="/metodologia" class="text-sm text-amber-400 hover:underline">Consultar metodología y fuentes →</a></section>
   </div>
 </MainLayout>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('#uni-search');
+  const branch = document.querySelector<HTMLSelectElement>('#uni-branch');
+  const sort = document.querySelector<HTMLSelectElement>('#uni-sort');
+  const list = document.querySelector<HTMLDivElement>('#uni-degree-list');
+  const count = document.querySelector<HTMLParagraphElement>('#uni-count');
+  const empty = document.querySelector<HTMLParagraphElement>('#uni-empty');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.uni-degree'));
+
+  function updateList() {
+    const term = (search?.value || '').trim().toLocaleLowerCase('es');
+    const selectedBranch = branch?.value || '';
+    const order = sort?.value || 'name';
+    const filtered = cards.filter(card => {
+      const text = `${card.dataset.name || ''} ${card.dataset.campus || ''}`.toLocaleLowerCase('es');
+      return text.includes(term) && (!selectedBranch || card.dataset.branch === selectedBranch);
+    });
+    filtered.sort((a,b) => {
+      if (order === 'note-desc' || order === 'note-asc') {
+        const na = a.dataset.note ? Number(a.dataset.note) : (order === 'note-desc' ? -Infinity : Infinity);
+        const nb = b.dataset.note ? Number(b.dataset.note) : (order === 'note-desc' ? -Infinity : Infinity);
+        return order === 'note-desc' ? nb - na : na - nb;
+      }
+      return (a.dataset.name || '').localeCompare(b.dataset.name || '', 'es');
+    });
+    cards.forEach(card => card.classList.add('hidden'));
+    filtered.forEach(card => { card.classList.remove('hidden'); list?.appendChild(card); });
+    if (count) count.textContent = `Mostrando ${filtered.length} de ${cards.length} grados`;
+    empty?.classList.toggle('hidden', filtered.length > 0);
+  }
+  search?.addEventListener('input', updateList);
+  branch?.addEventListener('change', updateList);
+  sort?.addEventListener('change', updateList);
+</script>
