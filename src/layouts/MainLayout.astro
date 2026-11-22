@@ -18,10 +18,11 @@ const canonicalURL = new URL(Astro.url.pathname, site);
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-950">
+<html lang="es" class="h-full bg-slate-950 scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020617" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     <!-- Título y Descripción SEO -->
@@ -50,28 +51,47 @@ const canonicalURL = new URL(Astro.url.pathname, site);
     <meta name="twitter:description" content={description} />
     <meta name="robots" content="index,follow,max-image-preview:large" />
   </head>
-  <body class="h-full font-sans text-slate-100 bg-slate-950 antialiased selection:bg-amber-400 selection:text-slate-950 flex flex-col min-h-screen">
+  <body class="site-body min-h-screen flex flex-col bg-slate-950 font-sans text-slate-100 antialiased selection:bg-amber-400 selection:text-slate-950">
     
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <header class="border-b border-slate-900 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-      <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="/" class="font-black text-white text-lg tracking-tight flex items-center gap-2">
-          UniMatch<span class="text-amber-400">CAT</span>
-        </a>
-        <nav class="flex items-center gap-3 sm:gap-5 text-xs font-semibold">
-          <a href="/grados" class="text-slate-300 hover:text-amber-400 transition">Grados</a>
-          <a href="/universidades" class="text-slate-300 hover:text-amber-400 transition">Universidades</a>
-          <a href="/notas-de-corte" class="text-slate-300 hover:text-amber-400 transition">Notas de Corte</a>
-          <a href="/comparar" class="text-slate-300 hover:text-amber-400 transition">Comparar</a>
-          <a href="/planificador" class="text-slate-300 hover:text-amber-400 transition hidden sm:inline-block">Planificador</a>
-          <a href="/metodologia" class="text-slate-300 hover:text-amber-400 transition hidden sm:inline-block">Metodología</a>
-          <a href="/contacto" class="text-slate-300 hover:text-amber-400 transition hidden sm:inline-block">Contacto</a>
-        </nav>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+    <header class="site-header sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex h-17 min-h-17 items-center justify-between gap-4">
+          <a href="/" aria-label="UniMatchCAT — inicio" class="brand-mark flex items-center gap-2.5 text-lg font-black tracking-tight text-white">
+            <span aria-hidden="true" class="brand-icon">U<span class="text-slate-950">+</span></span>
+            <span>UniMatch<span class="text-amber-400">CAT</span></span>
+          </a>
+          <nav aria-label="Navegación principal" class="hidden items-center gap-1 lg:flex text-sm font-semibold">
+            <a href="/calculadora-pau" class="nav-link">Calculadora PAU</a>
+            <a href="/grados" class="nav-link">Grados</a>
+            <a href="/notas-de-corte" class="nav-link">Notas de corte</a>
+            <a href="/universidades" class="nav-link">Universidades</a>
+            <a href="/comparar" class="nav-link">Comparar</a>
+            <a href="/como-elegir-grado" class="nav-link">Guías</a>
+          </nav>
+          <details class="mobile-nav relative lg:hidden">
+            <summary class="flex cursor-pointer select-none items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-sm font-semibold text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400">
+              <span>Menú</span><span aria-hidden="true">☰</span>
+            </summary>
+            <nav aria-label="Navegación móvil" class="absolute right-0 top-full mt-2 w-[min(85vw,300px)] max-h-[75vh] overflow-y-auto rounded-2xl border border-slate-700 bg-slate-900 p-2 shadow-2xl">
+              <a href="/calculadora-pau" class="mobile-link">Calculadora PAU</a>
+              <a href="/grados" class="mobile-link">Buscar grados</a>
+              <a href="/notas-de-corte" class="mobile-link">Notas de corte</a>
+              <a href="/universidades" class="mobile-link">Universidades</a>
+              <a href="/comparar" class="mobile-link">Comparador</a>
+              <a href="/explorar-por-rama" class="mobile-link">Grados por rama</a>
+              <a href="/como-elegir-grado" class="mobile-link">Cómo elegir grado</a>
+              <a href="/planificador" class="mobile-link">Planificador</a>
+              <a href="/metodologia" class="mobile-link">Metodología</a>
+              <a href="/contacto" class="mobile-link">Contacto</a>
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
 
     <!-- Contenido Principal -->
-    <main class="flex-grow">
+    <main id="contenido" class="flex-grow">
       <slot />
     </main>
 

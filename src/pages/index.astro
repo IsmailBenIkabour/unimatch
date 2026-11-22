@@ -12,22 +12,27 @@ const totalGrados = gradosData.length;
   title="UniMatch Cataluña | Orientación Universitaria y Notas de Corte"
   description="Calcula tu nota PAU sobre 14, descubre qué carreras puedes estudiar y compara universidades en Cataluña."
 >
-  <div class="space-y-16 py-8">
+  <div class="space-y-16 py-8 sm:py-12">
     
     <!-- HERO SECTION MINIMALISTA -->
-    <section class="text-center space-y-4 max-w-2xl mx-auto px-4">
+    <section class="hero-glow text-center space-y-5 max-w-3xl mx-auto px-4 py-5">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-xs font-medium tracking-wide">
         <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-        Convocatoria PAU Cataluña
+        Orientación universitaria en Cataluña
       </div>
       
       <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.1]">
-        Encuentra tu futuro <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">universitario.</span>
+        Tu próxima carrera empieza <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">con una buena decisión.</span>
       </h1>
       
       <p class="text-sm sm:text-base text-slate-400 font-normal leading-relaxed">
-        Calcula tu nota de admisión sobre 14 puntos de forma instantánea y descubre en qué titulaciones de Cataluña puedes ser admitido.
+        Calcula tu nota PAU, explora titulaciones de Cataluña y compara opciones con información clara. Planifica con datos de referencia, sin falsas promesas de admisión.
       </p>
+
+      <div class="flex flex-wrap justify-center gap-3 pt-2">
+        <a href="/grados" class="rounded-xl bg-amber-400 px-5 py-3 text-sm font-extrabold text-slate-950 shadow-lg shadow-amber-500/10 transition hover:bg-amber-300">Explorar carreras →</a>
+        <a href="/como-elegir-grado" class="rounded-xl border border-slate-700 bg-slate-900/65 px-5 py-3 text-sm font-semibold text-white transition hover:border-amber-400/60">Cómo elegir grado</a>
+      </div>
 
       <!-- DATOS CLAVE EN LÍNEA -->
       <div class="pt-2 flex flex-wrap justify-center gap-6 text-xs text-slate-400 font-mono">
@@ -40,13 +45,13 @@ const totalGrados = gradosData.length;
         </div>
         <span class="text-slate-800">•</span>
         <div class="flex items-center gap-1.5">
-          <span class="text-amber-400 font-bold">Oficial</span> Cataluña
+          <span class="text-amber-400 font-bold">Independiente</span> Proyecto
         </div>
       </div>
     </section>
 
     <!-- SECCIÓN DE LA CALCULADORA -->
-    <section class="max-w-xl mx-auto">
+    <section class="max-w-xl mx-auto px-4 sm:px-0">
       <CalculadoraPau />
     </section>
 
@@ -57,17 +62,17 @@ const totalGrados = gradosData.length;
         <p class="text-sm text-slate-400 leading-relaxed">Elegir carrera no depende únicamente de la nota de corte. Compara el plan de estudios, el campus, las asignaturas, las oportunidades de prácticas y el tipo de trabajo que te gustaría hacer. Utiliza las notas como referencia de acceso, no como una medida de la calidad de una titulación.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-4">
-        <article class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 space-y-2">
+        <article class="resource-card p-5 space-y-2">
           <h3 class="font-bold text-white">1. Comprueba tu nota</h3>
           <p class="text-sm text-slate-400 leading-relaxed">Calcula tu nota de acceso y admisión. Revisa las materias que ponderan para cada grado y comprueba los criterios de la convocatoria vigente.</p>
           <a href="/calculadora-pau" class="text-amber-400 text-sm hover:underline">Abrir calculadora PAU →</a>
         </article>
-        <article class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 space-y-2">
+        <article class="resource-card p-5 space-y-2">
           <h3 class="font-bold text-white">2. Compara opciones</h3>
           <p class="text-sm text-slate-400 leading-relaxed">Contrasta titulaciones de distintas universidades, sus notas de referencia, ubicación y otros datos disponibles antes de elaborar tu lista.</p>
           <a href="/comparar" class="text-amber-400 text-sm hover:underline">Ir al comparador →</a>
         </article>
-        <article class="bg-slate-900/50 border border-slate-800 rounded-2xl p-5 space-y-2">
+        <article class="resource-card p-5 space-y-2">
           <h3 class="font-bold text-white">3. Investiga la universidad</h3>
           <p class="text-sm text-slate-400 leading-relaxed">Consulta los planes de estudio y la información institucional. Si puedes, visita el campus o asiste a jornadas de puertas abiertas.</p>
           <a href="/universidades" class="text-amber-400 text-sm hover:underline">Ver universidades →</a>
@@ -93,6 +98,16 @@ const totalGrados = gradosData.length;
       {href:'/glosario-universitario',title:'Glosario PAU',text:'Entiende notas, ponderaciones y preinscripción.'},
       {href:'/preguntas-para-universidad',title:'Preguntas para la universidad',text:'Aprovecha jornadas de puertas abiertas.'},
       {href:'/como-elegir-grado',title:'Guía para elegir grado',text:'Aprende a comparar opciones con criterio.'}
-    ].map(item => <a href={item.href} class="block rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-amber-400/70 transition-colors"><h3 class="font-bold text-white mb-2">{item.title} →</h3><p class="text-sm text-slate-400">{item.text}</p></a>)}</div></section>
+    ].map(item => <a href={item.href} class="resource-card block p-5"><h3 class="font-bold text-white mb-2">{item.title} →</h3><p class="text-sm text-slate-400">{item.text}</p></a>)}</div></section>
+
+    <section class="mx-auto max-w-5xl px-4 space-y-5">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div><p class="mb-2 text-xs font-bold uppercase tracking-[.18em] text-amber-400">Resuelve tus dudas</p><h2 class="text-2xl font-bold text-white">Guías esenciales de acceso</h2><p class="mt-2 max-w-2xl text-sm leading-relaxed text-slate-400">Entiende cómo se calcula tu admisión y cómo ordenar tus preferencias. Incluimos enlaces directos a Canal Universitats para contrastar la información.</p></div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a class="resource-card block p-6" href="/ponderaciones-pau-cataluna"><span class="text-xs font-semibold text-amber-400">PAU · Admisión</span><h3 class="mt-2 text-xl font-bold text-white">Ponderaciones PAU: 0,1 o 0,2</h3><p class="mt-2 text-sm leading-relaxed text-slate-400">Qué significan, cómo influyen en la nota y dónde revisar la tabla de tu convocatoria.</p><span class="mt-4 inline-block text-sm font-semibold text-amber-300">Leer guía →</span></a>
+        <a class="resource-card block p-6" href="/preinscripcion-universitaria-cataluna"><span class="text-xs font-semibold text-amber-400">Plazas · Preferencias</span><h3 class="mt-2 text-xl font-bold text-white">Preinscripción en Cataluña</h3><p class="mt-2 text-sm leading-relaxed text-slate-400">Cómo preparar tu lista de carreras, comprobar los plazos y seguir las asignaciones.</p><span class="mt-4 inline-block text-sm font-semibold text-amber-300">Leer guía →</span></a>
+      </div>
+    </section>
   </div>
 </MainLayout>
