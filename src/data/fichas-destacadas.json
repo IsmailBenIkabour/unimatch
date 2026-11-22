@@ -1,0 +1,50 @@
+{
+  "bioinformatica-upc-ub-uab-upf": {
+    "busqueda": "Grau en Bioinformàtica a Catalunya",
+    "intro": "La bioinformática combina programación, estadística y ciencias de la vida para analizar datos biológicos. Es una opción para quien quiere trabajar con datos y biología, no solamente con experimentos de laboratorio.",
+    "aprender": ["Programación y manejo de datos para preguntas biológicas", "Estadística y análisis de secuencias o conjuntos de datos", "Fundamentos de biología molecular y genética"],
+    "diferencias": "No es lo mismo que Biología: en Bioinformática tienen mucho peso la programación y las matemáticas. Tampoco es exactamente Informática: los problemas y datos que se estudian provienen de las ciencias de la vida.",
+    "antes": ["¿Qué asignaturas de programación se cursan desde primero?", "¿Cuál es el idioma real de cada asignatura?", "¿Cómo se reparten docencia y prácticas entre las universidades participantes?"],
+    "relacionados": ["genetica-uab", "enginyeria-informatica-ub"]
+  },
+  "publicitat-relacions-publiques-upf": {
+    "busqueda": "Grau en Publicitat i Relacions Públiques",
+    "intro": "Publicidad y relaciones públicas estudia cómo se construyen mensajes, campañas y relaciones entre organizaciones y sus públicos. Incluye creatividad, estrategia y análisis de audiencias.",
+    "aprender": ["Diseño y planificación de campañas de comunicación", "Investigación de públicos y evaluación de mensajes", "Comunicación de marca y reputación"],
+    "diferencias": "Publicidad suele centrarse en campañas y mensajes de marca; las relaciones públicas se enfocan más en la comunicación con públicos y la reputación. Dentro de un grado pueden convivir ambas perspectivas.",
+    "antes": ["¿Cuánto trabajo práctico se hace con campañas y proyectos?", "¿Qué opciones de prácticas y convenios existen?", "¿Qué peso tienen estrategia, creatividad y análisis de datos?"],
+    "relacionados": ["relacions-internacionals-uab"]
+  },
+  "genetica-uab": {
+    "busqueda": "Grau en Genètica a la UAB",
+    "intro": "La genética estudia la herencia y la variación biológica. Combina conocimientos de biología celular, moléculas, técnicas de laboratorio y análisis de datos.",
+    "aprender": ["Bases de genética molecular y herencia", "Diseño e interpretación de experimentos biológicos", "Lectura crítica de resultados científicos"],
+    "diferencias": "Frente a Bioinformática, un grado de Genética suele dar mayor protagonismo a las bases biológicas y al trabajo experimental. Conviene mirar el plan docente para conocer el peso concreto de informática y estadística.",
+    "antes": ["¿Cuántas horas de laboratorio tiene el plan?", "¿Qué optativas o itinerarios hay en los últimos cursos?", "¿Qué oportunidades existen para iniciarse en investigación?"],
+    "relacionados": ["bioinformatica-upc-ub-uab-upf"]
+  },
+  "enginyeria-mecanica-upc": {
+    "busqueda": "Grau en Enginyeria Mecànica a Catalunya",
+    "intro": "La ingeniería mecánica aplica matemáticas, física y diseño al estudio de máquinas, estructuras, energía y sistemas de fabricación.",
+    "aprender": ["Mecánica, resistencia de materiales y diseño", "Termodinámica y aplicaciones energéticas", "Procesos de fabricación y resolución de problemas técnicos"],
+    "diferencias": "No se centra solo en reparar vehículos. El grado estudia el diseño y análisis de sistemas mecánicos muy diversos, desde componentes hasta procesos industriales.",
+    "antes": ["¿Qué software técnico se utiliza en las prácticas?", "¿Cómo se distribuyen laboratorios y proyectos?", "¿Qué especializaciones y optativas ofrece el centro?"],
+    "relacionados": ["arquitectura-tecnica-edificacio-upc"]
+  },
+  "arquitectura-tecnica-edificacio-upc": {
+    "busqueda": "Grau en Arquitectura Tècnica i Edificació",
+    "intro": "Arquitectura técnica y edificación se centra en el proceso constructivo: materiales, ejecución de obra, organización, costes, seguridad y control técnico de edificios.",
+    "aprender": ["Materiales y sistemas de construcción", "Mediciones, presupuestos y planificación de obras", "Control técnico, calidad y seguridad en edificación"],
+    "diferencias": "Arquitectura técnica no es idéntica a Arquitectura: su enfoque suele orientarse más a la gestión y ejecución técnica de la edificación. Las atribuciones profesionales concretas deben consultarse en la información oficial del título.",
+    "antes": ["¿Qué prácticas se hacen en obra o laboratorio?", "¿Qué herramientas de presupuestos y modelado se usan?", "¿Cómo se conecta el título con el ejercicio profesional?"],
+    "relacionados": ["enginyeria-mecanica-upc"]
+  },
+  "enginyeria-informatica-upc-fib": {
+    "busqueda": "Grau en Enginyeria Informàtica a la FIB (UPC)",
+    "intro": "El grado de Ingeniería Informática de la FIB se orienta al diseño, desarrollo y comprensión de sistemas informáticos. Combina programación con fundamentos matemáticos y otras áreas de la computación.",
+    "aprender": ["Programación, algoritmos y estructuras de datos", "Arquitectura, sistemas y funcionamiento de ordenadores", "Diseño y desarrollo de soluciones informáticas"],
+    "diferencias": "Para comparar la FIB con otros grados de Informática, revisa asignaturas obligatorias, especializaciones, ubicación del campus, idiomas y metodología de evaluación, no solo la nota de corte.",
+    "antes": ["¿Qué carga de programación y matemáticas hay en primero?", "¿Qué especialidades se pueden escoger?", "¿Cómo se organizan prácticas, proyectos y evaluación?"],
+    "relacionados": ["enginyeria-informatica-ub", "bioinformatica-upc-ub-uab-upf"]
+  }
+}

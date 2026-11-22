@@ -2,6 +2,7 @@
 // src/pages/grados/[id].astro
 import MainLayout from '../../layouts/MainLayout.astro';
 import gradosData from '../../data/grados.json';
+import fichasDestacadas from '../../data/fichas-destacadas.json';
 
 export async function getStaticPaths() {
   return gradosData
@@ -16,23 +17,25 @@ export async function getStaticPaths() {
 }
 
 const { grado } = Astro.props;
+const enfoque = (fichasDestacadas as Record<string, any>)[grado.id];
+const similares = enfoque ? gradosData.filter(g => enfoque.relacionados.includes(g.id)) : [];
+const pageTitle = enfoque ? `${enfoque.busqueda} | Asignaturas y orientación | UniMatchCAT` : `${grado.nombre} en ${grado.universidad} | UniMatchCAT`;
+const pageDescription = enfoque ? `${enfoque.intro} Compara el grado, la universidad y los aspectos que conviene revisar antes de matricularte.` : `Consulta el grado de ${grado.nombre} de ${grado.universidad}: características, nota de referencia, asignaturas y alternativas.`;
 const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.toFixed(3) : (grado.notaCorte2026 || 'N/D');
 ---
 
-<MainLayout title={`${grado.nombre || 'Grado'} | UniMatch Cataluña`}>
+<MainLayout title={pageTitle} description={pageDescription}>
   <!-- DATOS ESTRUCTURADOS SCHEMA.ORG (Course) -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Course",
     "name": grado.nombre,
-    "description": `Grado universitario en ${grado.nombre} impartido en la ${grado.universidad}. Nota de corte oficial 2026: ${nota2026}.`,
+    "description": `Información orientativa sobre ${grado.nombre} de ${grado.universidad}. Consulta los datos de acceso actualizados en las fuentes oficiales.`,
     "provider": {
       "@type": "CollegeOrUniversity",
-      "name": grado.universidad,
-      "sameAs": "https://unimatchcat.netlify.app"
+      "name": grado.universidad
     },
-    "educationalCredentialAwarded": "Grado Universitario",
-    "occupationalCredentialAwarded": grado.rama
+    "educationalCredentialAwarded": "Grado Universitario"
   })} />
 
   <div class="space-y-8 py-8 max-w-4xl mx-auto px-4">
@@ -53,7 +56,7 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
           </span>
         </div>
         <div class="text-right bg-slate-950/80 px-4 py-2 rounded-xl border border-slate-800">
-          <span class="text-[10px] text-slate-400 uppercase font-mono block">Nota de corte 2026 (Septiembre)</span>
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Nota de referencia en el catálogo</span>
           <span class="text-3xl font-mono font-black text-amber-400">
             {nota2026}
           </span>
@@ -65,8 +68,7 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
         <p class="text-base font-semibold text-slate-300 mt-1">{grado.universidad}</p>
         <p class="text-xs text-slate-400 mt-1 flex items-center gap-2">
           <span>📍 {grado.campus || grado.ciudad || 'Cataluña'}</span>
-          <span>•</span>
-          <span>💼 Empleabilidad: <strong class="text-emerald-400">{typeof grado.empleabilidad === 'number' ? `${grado.empleabilidad}%` : 'No disponible'}</strong></span>
+
         </p>
       </div>
 
@@ -94,10 +96,10 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
     <!-- RESUMEN INFORMATIVO DE ACCESO -->
     <section class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
       <h2 class="text-sm font-bold text-white uppercase tracking-wider font-mono flex items-center gap-2">
-        <span>📋</span> Detalles de la Asignación 2026
+        <span>📋</span> Información de acceso y admisión
       </h2>
       <p>
-        La nota de corte mostrada para <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es <strong class="text-amber-400">{nota2026}</strong>. Las notas de corte son referencias del proceso de asignación y pueden cambiar entre convocatorias. Consulta siempre la fuente oficial antes de tomar decisiones.
+        La nota guardada en este catálogo para <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es <strong class="text-amber-400">{nota2026}</strong>. Las notas de corte son referencias del proceso de asignación y pueden cambiar entre convocatorias. Consulta siempre la fuente oficial antes de tomar decisiones.
       </p>
     </section>
 
@@ -110,6 +112,35 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
         <a href="/comparar" class="text-amber-400 hover:underline">Comparar titulaciones →</a>
       </div>
     </section>
+
+    {enfoque && (
+      <section class="rounded-2xl border border-amber-400/30 bg-gradient-to-br from-amber-400/10 to-slate-900/70 p-6 sm:p-8 space-y-5" aria-labelledby="guia-especial">
+        <div class="space-y-2">
+          <p class="text-xs uppercase tracking-widest font-bold text-amber-400">Guía para elegir con criterio</p>
+          <h2 id="guia-especial" class="text-xl sm:text-2xl font-bold text-white">¿En qué consiste {grado.nombre}?</h2>
+          <p class="text-sm sm:text-base text-slate-200 leading-relaxed">{enfoque.intro}</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="rounded-xl bg-slate-950/60 border border-slate-800 p-5 space-y-3">
+            <h3 class="font-semibold text-white">Qué aprenderás a grandes rasgos</h3>
+            <ul class="text-sm text-slate-300 space-y-2 list-disc pl-5">{enfoque.aprender.map((t: string) => <li>{t}</li>)}</ul>
+          </div>
+          <div class="rounded-xl bg-slate-950/60 border border-slate-800 p-5 space-y-3">
+            <h3 class="font-semibold text-white">Qué debes tener en cuenta</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{enfoque.diferencias}</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <h3 class="font-semibold text-white">Preguntas que haría antes de escoger este grado</h3>
+          <ul class="grid sm:grid-cols-3 gap-3">{enfoque.antes.map((q: string) => <li class="rounded-lg border border-slate-700 bg-slate-900/80 p-3 text-sm text-slate-300">{q}</li>)}</ul>
+        </div>
+        {similares.length > 0 && <div class="space-y-3">
+          <h3 class="font-semibold text-white">También puedes comparar</h3>
+          <div class="flex flex-wrap gap-2">{similares.map((g) => <a href={`/grados/${g.id}`} class="rounded-lg border border-slate-700 px-3 py-2 text-sm text-amber-300 hover:border-amber-400">{g.nombre} →</a>)}</div>
+        </div>}
+        <p class="text-xs text-slate-400">Orientación general para estudiantes; los contenidos concretos, planes de estudio y datos de acceso deben verificarse con la universidad y Canal Universitats.</p>
+      </section>
+    )}
 
     <!-- PERFIL RECOMENDADO Y VENTAJAS -->
     {grado.perfilRecomendado && (
