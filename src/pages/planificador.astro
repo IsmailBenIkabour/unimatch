@@ -1,0 +1,75 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="Planificador de estudio semanal | UniMatchCAT" description="Organiza una semana de estudio universitaria con un planificador gratuito y sencillo.">
+  <div class="max-w-4xl mx-auto px-4 py-10 space-y-8">
+    <section class="space-y-3">
+      <p class="text-amber-400 text-sm font-semibold">Herramienta gratuita</p>
+      <h1 class="text-3xl sm:text-4xl font-black text-white">Planificador semanal de estudio</h1>
+      <p class="text-slate-400 leading-relaxed">Añade tus asignaturas, el tiempo que quieres dedicarles y los días disponibles. Genera una distribución orientativa para organizar tu semana. Puedes ajustarla a tu ritmo y a tus fechas de entrega.</p>
+    </section>
+    <section class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6 space-y-5">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="space-y-2 block"><span class="text-sm font-semibold text-slate-200">Asignatura</span><input id="subject" maxlength="60" placeholder="Ej. Matemática discreta" class="w-full rounded-xl bg-slate-950 border border-slate-700 px-3 py-3 text-white" /></label>
+        <label class="space-y-2 block"><span class="text-sm font-semibold text-slate-200">Horas semanales</span><input id="hours" type="number" min="1" max="30" step="0.5" value="3" class="w-full rounded-xl bg-slate-950 border border-slate-700 px-3 py-3 text-white" /></label>
+      </div>
+      <div class="space-y-2"><span class="text-sm font-semibold text-slate-200">Días disponibles</span><div id="days" class="flex flex-wrap gap-2">
+        {['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'].map((day,i)=><label class="flex items-center gap-2 rounded-xl border border-slate-700 px-3 py-2 text-sm text-slate-300"><input type="checkbox" value={day} checked={i<5} class="accent-amber-400" />{day}</label>)}
+      </div></div>
+      <button id="add" type="button" class="rounded-xl bg-amber-400 text-slate-950 font-bold px-5 py-3 hover:bg-amber-300">Añadir asignatura</button>
+      <p id="message" class="text-sm text-slate-400" aria-live="polite"></p>
+      <div id="subjects" class="space-y-2"></div>
+      <div class="flex flex-wrap gap-3 pt-2"><button id="generate" type="button" class="rounded-xl bg-white text-slate-950 font-bold px-5 py-3 hover:bg-slate-200">Generar semana</button><button id="clear" type="button" class="rounded-xl border border-slate-700 px-5 py-3 text-slate-200 hover:bg-slate-800">Borrar todo</button></div>
+    </section>
+    <section id="result" class="hidden rounded-2xl border border-slate-800 bg-slate-900/50 p-5 sm:p-6 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3"><h2 class="text-xl font-bold text-white">Tu distribución orientativa</h2><button id="print" type="button" class="text-sm text-amber-400 hover:underline">Imprimir / guardar PDF</button></div>
+      <div id="schedule" class="grid sm:grid-cols-2 gap-3"></div>
+      <p class="text-xs text-slate-500">Este plan es una distribución automática orientativa, no una recomendación académica personalizada. Revisa y ajusta las sesiones a tus necesidades.</p>
+    </section>
+  </div>
+  <script>
+    const subjectInput = document.querySelector('#subject');
+    const hoursInput = document.querySelector('#hours');
+    const dayBox = document.querySelector('#days');
+    const subjectsBox = document.querySelector('#subjects');
+    const message = document.querySelector('#message');
+    const result = document.querySelector('#result');
+    const schedule = document.querySelector('#schedule');
+    let subjects = [];
+    const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function renderSubjects(){
+      subjectsBox.innerHTML = subjects.map((s,i)=>`<div class="flex items-center justify-between gap-3 rounded-xl border border-slate-800 bg-slate-950/60 p-3"><span class="text-sm text-slate-200">${esc(s.name)} <span class="text-slate-500">· ${s.hours} h</span></span><button data-remove="${i}" class="text-xs text-rose-300 hover:underline">Eliminar</button></div>`).join('');
+      subjectsBox.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>{subjects.splice(Number(btn.dataset.remove),1);renderSubjects();}));
+    }
+    document.querySelector('#add').addEventListener('click',()=>{
+      const name=subjectInput.value.trim(), hours=Number(hoursInput.value);
+      if(!name){message.textContent='Escribe el nombre de una asignatura.';return;}
+      if(!Number.isFinite(hours)||hours<1||hours>30){message.textContent='Indica entre 1 y 30 horas semanales.';return;}
+      if(subjects.length>=12){message.textContent='Puedes añadir hasta 12 asignaturas.';return;}
+      subjects.push({name,hours}); subjectInput.value=''; message.textContent='Asignatura añadida.';renderSubjects();
+    });
+    document.querySelector('#clear').addEventListener('click',()=>{subjects=[];renderSubjects();schedule.innerHTML='';result.classList.add('hidden');message.textContent='Planificador borrado.';});
+    document.querySelector('#generate').addEventListener('click',()=>{
+      const days=[...dayBox.querySelectorAll('input:checked')].map(x=>x.value);
+      if(!subjects.length){message.textContent='Añade al menos una asignatura antes de generar el plan.';return;}
+      if(!days.length){message.textContent='Selecciona al menos un día disponible.';return;}
+      const daily=Object.fromEntries(days.map(d=>[d,[]]));
+      subjects.forEach(s=>{
+        const slots=Math.max(1,Math.ceil(s.hours*2)); // half-hour units
+        for(let k=0;k<slots;k++){
+          const day=days[k%days.length];daily[day].push({name:s.name,duration:0.5});
+        }
+      });
+      schedule.innerHTML=days.map(d=>{
+        const entries=daily[d]; if(!entries.length)return `<article class="rounded-xl border border-slate-800 p-4"><h3 class="font-bold text-white">${esc(d)}</h3><p class="text-sm text-slate-500 mt-2">Día libre o de descanso.</p></article>`;
+        const grouped={};entries.forEach(e=>grouped[e.name]=(grouped[e.name]||0)+e.duration);
+        return `<article class="rounded-xl border border-slate-800 p-4"><h3 class="font-bold text-white">${esc(d)}</h3><ul class="mt-3 space-y-2">${Object.entries(grouped).map(([n,h])=>`<li class="text-sm text-slate-300 flex justify-between gap-2"><span>${esc(n)}</span><span class="text-amber-400 whitespace-nowrap">${h.toFixed(1)} h</span></li>`).join('')}</ul></article>`;
+      }).join('');
+      result.classList.remove('hidden');message.textContent='Distribución generada. Puedes cambiar asignaturas y volver a generar.';result.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    document.querySelector('#print').addEventListener('click',()=>window.print());
+  </script>
+  <style>
+    @media print { body * { visibility:hidden } #result,#result * { visibility:visible } #result { position:absolute;left:0;top:0;width:100%;background:white!important;color:black!important;border:none!important } #result h2,#result h3,#result li,#result p { color:black!important } #print {display:none} }
+  </style>
+</MainLayout>
