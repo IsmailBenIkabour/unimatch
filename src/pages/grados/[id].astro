@@ -66,7 +66,7 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
         <p class="text-xs text-slate-400 mt-1 flex items-center gap-2">
           <span>📍 {grado.campus || grado.ciudad || 'Cataluña'}</span>
           <span>•</span>
-          <span>💼 Empleabilidad: <strong class="text-emerald-400">{grado.empleabilidad || '90'}%</strong></span>
+          <span>💼 Empleabilidad: <strong class="text-emerald-400">{typeof grado.empleabilidad === 'number' ? `${grado.empleabilidad}%` : 'No disponible'}</strong></span>
         </p>
       </div>
 
@@ -74,19 +74,19 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-800/80 text-xs font-mono">
         <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
           <span class="text-slate-500 block text-[10px]">DURACIÓN</span>
-          <span class="text-slate-200 font-bold">{grado.duracion || '4 años (240 ECTS)'}</span>
+          <span class="text-slate-200 font-bold">{grado.duracion || 'No disponible'}</span>
         </div>
         <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
           <span class="text-slate-500 block text-[10px]">MODALIDAD</span>
-          <span class="text-slate-200 font-bold">{grado.modalidad || 'Presencial'}</span>
+          <span class="text-slate-200 font-bold">{grado.modalidad || 'No disponible'}</span>
         </div>
         <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
           <span class="text-slate-500 block text-[10px]">IDIOMAS</span>
-          <span class="text-slate-200 font-bold">{Array.isArray(grado.idiomas) ? grado.idiomas.join(', ') : 'Catalán, Castellano'}</span>
+          <span class="text-slate-200 font-bold">{Array.isArray(grado.idiomas) && grado.idiomas.length ? grado.idiomas.join(', ') : 'No disponible'}</span>
         </div>
         <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800">
           <span class="text-slate-500 block text-[10px]">PRECIO CRÉDITO</span>
-          <span class="text-slate-200 font-bold">{grado.precioCredito ? `${grado.precioCredito}€` : 'Oficial'}</span>
+          <span class="text-slate-200 font-bold">{typeof grado.precioCredito === 'number' ? `${grado.precioCredito}€` : 'No disponible'}</span>
         </div>
       </div>
     </header>
@@ -97,8 +97,18 @@ const nota2026 = typeof grado.notaCorte2026 === 'number' ? grado.notaCorte2026.t
         <span>📋</span> Detalles de la Asignación 2026
       </h2>
       <p>
-        La nota de corte oficial de la 2ª asignación de septiembre para acceder a <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es de <strong class="text-amber-400">{nota2026}</strong>. Esta nota refleja la calificación del último admitido en la convocatoria general de la PAU.
+        La nota de corte mostrada para <strong class="text-white">{grado.nombre}</strong> en la <strong class="text-white">{grado.universidad}</strong> es <strong class="text-amber-400">{nota2026}</strong>. Las notas de corte son referencias del proceso de asignación y pueden cambiar entre convocatorias. Consulta siempre la fuente oficial antes de tomar decisiones.
       </p>
+    </section>
+
+    <section class="bg-slate-950 border border-slate-800 rounded-2xl p-5 space-y-3">
+      <h2 class="text-sm font-bold text-white">Cómo interpretar esta ficha</h2>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">La nota de corte no es una nota exigida de antemano: corresponde a la calificación del último estudiante admitido en una asignación concreta. No garantiza ni predice la admisión en el siguiente curso. Usa esta ficha como orientación y verifica los datos en las fuentes oficiales de acceso universitario.</p>
+      <div class="flex flex-wrap gap-3 text-xs">
+        <a href="/metodologia" class="text-amber-400 hover:underline">Cómo recopilamos y mostramos los datos →</a>
+        <a href="/notas-de-corte" class="text-amber-400 hover:underline">Explorar notas de corte →</a>
+        <a href="/comparar" class="text-amber-400 hover:underline">Comparar titulaciones →</a>
+      </div>
     </section>
 
     <!-- PERFIL RECOMENDADO Y VENTAJAS -->

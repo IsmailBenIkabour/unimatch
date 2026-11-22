@@ -50,6 +50,18 @@ import gradosData from '../data/grados.json';
       <div class="py-3 border-t border-slate-800 text-slate-400">Población</div>
       <div id="ciudadGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
       <div id="ciudadGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+
+      <div class="py-3 border-t border-slate-800 text-slate-400">Tipo de universidad</div>
+      <div id="tipoGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+      <div id="tipoGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+
+      <div class="py-3 border-t border-slate-800 text-slate-400">Duración</div>
+      <div id="duracionGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+      <div id="duracionGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+
+      <div class="py-3 border-t border-slate-800 text-slate-400">Campus</div>
+      <div id="campusGrado1" class="py-3 border-t border-slate-800 text-slate-300">--</div>
+      <div id="campusGrado2" class="py-3 border-t border-slate-800 text-slate-300">--</div>
     </div>
   </div>
 
@@ -80,16 +92,22 @@ import gradosData from '../data/grados.json';
       container.classList.remove('hidden');
 
       document.getElementById('nombreGrado1').innerText = g1.nombre;
-      document.getElementById('notaGrado1').innerText = g1.notaCorte2026.toFixed(3);
+      document.getElementById('notaGrado1').innerText = typeof g1.notaCorte2026 === 'number' ? g1.notaCorte2026.toFixed(3) : 'N/D';
       document.getElementById('uniGrado1').innerText = g1.universidad;
       document.getElementById('ramaGrado1').innerText = g1.rama;
-      document.getElementById('ciudadGrado1').innerText = g1.ciudad;
+      document.getElementById('ciudadGrado1').innerText = g1.ciudad || 'N/D';
+      document.getElementById('tipoGrado1').innerText = g1.tipo || 'N/D';
+      document.getElementById('duracionGrado1').innerText = g1.duracion || 'N/D';
+      document.getElementById('campusGrado1').innerText = g1.campus || 'N/D';
 
       document.getElementById('nombreGrado2').innerText = g2.nombre;
-      document.getElementById('notaGrado2').innerText = g2.notaCorte2026.toFixed(3);
+      document.getElementById('notaGrado2').innerText = typeof g2.notaCorte2026 === 'number' ? g2.notaCorte2026.toFixed(3) : 'N/D';
       document.getElementById('uniGrado2').innerText = g2.universidad;
       document.getElementById('ramaGrado2').innerText = g2.rama;
-      document.getElementById('ciudadGrado2').innerText = g2.ciudad;
+      document.getElementById('ciudadGrado2').innerText = g2.ciudad || 'N/D';
+      document.getElementById('tipoGrado2').innerText = g2.tipo || 'N/D';
+      document.getElementById('duracionGrado2').innerText = g2.duracion || 'N/D';
+      document.getElementById('campusGrado2').innerText = g2.campus || 'N/D';
     }
 
     select1.addEventListener('change', actualizarComparacion);
